@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Primer Seltzer Case Study Styles
+   ========================================================================== */
+
+/* Page Background - Brand grey color */
+.primer-page {
+    background-color: #636969;
+    background-image: none;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Navigation Override */
+.primer-nav {
+    background-color: transparent;
+}
+
+.primer-nav .nav-logo {
+    filter: brightness(0) invert(1);
+}
+
+.primer-nav .nav-link {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Hero Section - Similar to Mahi Restaurant */
+.primer-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 140px 120px 120px;
+    width: 100%;
+    margin: 0;
+    background-color: #636969;
+}
+
+.primer-hero .hero-content {
+    text-align: left;
+}
+
+.primer-hero .hero-title {
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 0.9;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+}
+
+.primer-hero .hero-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.primer-hero .hero-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-primer {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image-primer .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+/* Designs Section */
+.designs-section {
+    background-color: #636969;
+    padding: 80px 60px;
+}
+
+.designs-section .section-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Masonry Grid */
+.primer-page .masonry-grid {
+    display: columns;
+    columns: 4;
+    column-gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.primer-page .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.primer-page .primer2-item {
+    order: 999;
+    margin-left: auto;
+}
+
+.primer-page .masonry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.primer-page .masonry-item img,
+.primer-page .masonry-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.primer-page .masonry-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer Override - Transparent background */
+.primer-footer {
+    background-color: transparent;
+    padding: 50px 20px;
+}
+
+.primer-footer .footer-heading,
+.primer-footer .footer-text {
+    color: #FFFFFF;
+}
+
+.primer-footer .footer-link {
+    color: #9fd5d1;
+    text-decoration: underline;
+}
+
+.primer-footer .footer-link:hover {
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .primer-page .masonry-grid {
+        columns: 3;
+    }
+}
+
+@media (max-width: 1024px) {
+    .primer-hero {
+        grid-template-columns: 1fr;
+        padding: 100px 60px 60px;
+    }
+}
+
+@media (max-width: 900px) {
+    .primer-page .masonry-grid {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .primer-page {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .primer-hero {
+        padding: 100px 30px 60px;
+    }
+
+    .designs-section {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .primer-page .masonry-grid {
+        columns: 1;
+    }
+}

@@ -1,0 +1,321 @@
+/* ==========================================================================
+   TASI Clothing Brand Case Study Styles
+   ========================================================================== */
+
+/* Page Background - Purple theme matching brand */
+.tasi-page {
+    background-color: #7B2D8E;
+    background-image: none;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Navigation Override */
+.tasi-nav {
+    background-color: transparent;
+}
+
+.tasi-nav .nav-logo {
+    filter: brightness(0) invert(1);
+}
+
+.tasi-nav .nav-link {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Hero Section - Similar to Mahi Restaurant */
+.tasi-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 140px 120px 120px;
+    width: 100%;
+    margin: 0;
+    background-color: #7B2D8E;
+}
+
+.tasi-hero .hero-content {
+    text-align: left;
+}
+
+.tasi-hero .hero-title {
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 0.9;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+}
+
+.tasi-hero .hero-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.tasi-hero .hero-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-tasi {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image-tasi .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+/* Lookbook Gallery Section */
+.lookbook-section {
+    background-color: #7B2D8E;
+    padding: 60px 0;
+}
+
+.lookbook-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lookbook-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7B2D8E;
+}
+
+.lookbook-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Designs Section */
+.tasi-designs {
+    background-color: #7B2D8E;
+    padding: 80px 60px;
+}
+
+.tasi-designs .section-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Masonry Grid for TASI */
+.tasi-page .masonry-grid {
+    display: columns;
+    columns: 4;
+    column-gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tasi-page .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.tasi-page .masonry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.tasi-page .masonry-item img,
+.tasi-page .masonry-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* About TASI Section */
+.tasi-about {
+    background-color: #C9A0DC;
+    padding: 100px 60px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-logo {
+    text-align: center;
+}
+
+.tasi-symbol {
+    width: 150px;
+    height: 150px;
+    color: #5C1F6B;
+    margin-bottom: 20px;
+}
+
+.brand-tagline {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5C1F6B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    text-align: right;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Brand Meaning Section */
+.tasi-meaning {
+    background-color: #5C1F6B;
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.meaning-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.meaning-title {
+    font-size: clamp(60px, 10vw, 120px);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.1em;
+}
+
+.meaning-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer Override - Transparent background */
+.tasi-footer {
+    background-color: transparent;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.tasi-footer .footer-content {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.tasi-footer .footer-heading,
+.tasi-footer .footer-text {
+    color: #FFFFFF;
+}
+
+.tasi-footer .footer-link {
+    color: #C9A0DC;
+    text-decoration: underline;
+}
+
+.tasi-footer .footer-link:hover {
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tasi-page .masonry-grid {
+        columns: 3;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tasi-hero {
+        grid-template-columns: 1fr;
+        padding: 100px 60px 60px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .tasi-page .masonry-grid {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .tasi-page {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .tasi-hero {
+        padding: 100px 30px 60px;
+    }
+
+    .tasi-about {
+        padding: 60px 30px;
+    }
+
+    .tasi-meaning {
+        padding: 60px 30px;
+    }
+
+    .lookbook-section {
+        padding: 40px 0;
+    }
+
+    .lookbook-gallery {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tasi-page .masonry-grid {
+        columns: 1;
+    }
+}
