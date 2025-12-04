@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let curtainProgress = 0;
     let curtainsFullyOpen = false;
     let accumulatedScroll = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
 
     // Add hover effect for navigation options to change background
     const navOptions = document.querySelectorAll('.nav-option');
@@ -158,6 +160,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add wheel listener for curtain opening
     window.addEventListener('wheel', handleScroll, { passive: false });
+
+    // Touch event handlers for mobile
+    function handleTouchStart(e) {
+        if (curtainsFullyOpen) return;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+    }
+
+    function handleTouchMove(e) {
+        if (curtainsFullyOpen) return;
+
+        e.preventDefault();
+
+        const touchY = e.touches[0].clientY;
+        const touchDelta = touchStartY - touchY; // Positive when swiping up
+
+        // Add to accumulated scroll (swipe up = positive scroll)
+        accumulatedScroll += touchDelta * 2; // Multiply for more sensitivity
+
+        // Ensure we don't go negative
+        if (accumulatedScroll < 0) {
+            accumulatedScroll = 0;
+        }
+
+        // Update touch start for next move
+        touchStartY = touchY;
+
+        // Calculate progress
+        const maxScroll = window.innerHeight * 1.3;
+        curtainProgress = Math.min(accumulatedScroll / maxScroll, 1);
+
+        // Apply transforms
+        const translatePercent = curtainProgress * 100;
+        curtainTop.style.transform = `translateY(-${translatePercent}%)`;
+        curtainBottom.style.transform = `translateY(${translatePercent}%)`;
+
+        // Fade out scroll indicator
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = 1 - curtainProgress;
+        }
+
+        // Check if curtains are fully open
+        if (curtainProgress >= 1 && !curtainsFullyOpen) {
+            curtainsFullyOpen = true;
+
+            if (centeredNav) {
+                centeredNav.classList.add('visible');
+            }
+            if (topLeftLogo) {
+                topLeftLogo.classList.add('visible');
+            }
+
+            document.body.style.overflow = 'auto';
+
+            // Remove touch listeners
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
+        }
+    }
+
+    // Add touch listeners for mobile
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     // Handle click on scroll indicator
     if (scrollIndicator) {
