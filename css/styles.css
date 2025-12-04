@@ -2078,6 +2078,8 @@ body:has(.work-nav) .nav-link {
 
     .centered-navigation {
         gap: 80px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .hero-tagline {
@@ -2087,6 +2089,67 @@ body:has(.work-nav) .nav-link {
 
     .curtain-top {
         padding-top: 30px;
+    }
+
+    /* Curtain text adjustments for mobile */
+    .hey-text {
+        left: 20px;
+        bottom: calc(50% - 40px);
+        font-size: 14px;
+    }
+
+    .dhomne-text {
+        right: 20px;
+        top: calc(50% - 60px);
+        font-size: 14px;
+    }
+
+    .curtain-name-top,
+    .curtain-name-bottom {
+        max-width: 70%;
+    }
+
+    /* Location labels responsive */
+    .location-prefix-left,
+    .location-left {
+        left: 20px;
+    }
+
+    .location-prefix-right,
+    .location-right {
+        right: 20px;
+    }
+
+    .location-prefix {
+        font-size: 12px;
+        bottom: 50px;
+    }
+
+    .label-english,
+    .label-hindi,
+    .label-location {
+        font-size: 24px;
+    }
+
+    .location-label {
+        bottom: 20px;
+        font-size: 12px;
+    }
+
+    /* Main poster responsive */
+    .main-poster {
+        max-width: 250px;
+        right: 20px;
+    }
+
+    /* Top left logo responsive */
+    .top-left-logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .index-logo {
+        height: 45px;
     }
 
     .portfolio-section {
@@ -2181,6 +2244,64 @@ body:has(.work-nav) .nav-link {
     .centered-navigation {
         gap: 50px;
         flex-direction: column;
+        padding-left: 20px;
+    }
+
+    /* Curtain responsive for small screens */
+    .hey-text {
+        left: 15px;
+        font-size: 12px;
+        bottom: calc(50% - 30px);
+    }
+
+    .dhomne-text {
+        right: 15px;
+        font-size: 12px;
+        top: calc(50% - 50px);
+    }
+
+    .curtain-name-top,
+    .curtain-name-bottom {
+        max-width: 80%;
+    }
+
+    .location-prefix {
+        font-size: 11px;
+        bottom: 45px;
+    }
+
+    .label-english,
+    .label-hindi,
+    .label-location {
+        font-size: 20px;
+    }
+
+    .location-prefix-left,
+    .location-left {
+        left: 15px;
+    }
+
+    .location-prefix-right,
+    .location-right {
+        right: 15px;
+    }
+
+    .main-poster {
+        max-width: 200px;
+        right: 15px;
+    }
+
+    .index-logo {
+        height: 40px;
+    }
+
+    .scroll-indicator {
+        bottom: 30px;
+    }
+
+    .scroll-arrow {
+        width: 25px;
+        height: 25px;
     }
 
     .about-heading {
