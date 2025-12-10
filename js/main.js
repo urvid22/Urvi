@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.querySelector('.main-content');
     const topLeftLogo = document.getElementById('topLeftLogo');
     const mainPoster = document.getElementById('mainPoster');
+    const curtainNameTop = document.querySelector('.curtain-name-top');
+    const curtainNameBottom = document.querySelector('.curtain-name-bottom');
+    const fullnameImage = document.getElementById('fullnameImage');
 
     let curtainProgress = 0;
     let curtainsFullyOpen = false;
@@ -36,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const caseStudyColors = {
         'mahi-restaurant.html': '#0C3658',
         'slack.html': '#1A1A1A',
-        'metage.html': '#00725E',
+        'metage.html': '#9FD9B5',
         'tasi.html': '#7B2D8E',
         'primer-seltzer.html': '#636969'
     };
@@ -56,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Check if this is a voxel option
             if (this.classList.contains('nav-option-voxel')) {
-                document.body.style.setProperty('--nav-hover-bg', '#000000');
+                document.body.style.setProperty('--nav-hover-bg', '#E8E8E8');
                 document.body.classList.add('nav-hover-custom');
-                document.body.classList.add('nav-hover-voxel');
+                document.body.classList.add('nav-hover-light');
                 return;
             }
 
@@ -118,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Calculate progress based on accumulated scroll
         // Adjust the divisor to control how much scroll is needed
-        const maxScroll = window.innerHeight * 1.3; // 1.3x viewport height to fully open
+        const maxScroll = window.innerWidth <= 768 ? window.innerHeight * 0.5 : window.innerHeight * 0.8; // Faster on mobile
         curtainProgress = Math.min(accumulatedScroll / maxScroll, 1);
 
         // Apply transforms based on scroll progress (0% to 100%)
@@ -130,6 +133,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fade out scroll indicator
         if (scrollIndicator) {
             scrollIndicator.style.opacity = 1 - curtainProgress;
+        }
+
+        // Fade out fullname image at half scroll
+        if (fullnameImage) {
+            const fullnameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+            fullnameImage.style.opacity = fullnameOpacity;
+        }
+
+        // Fade out name images when curtains are halfway open (only on mobile)
+        if (window.innerWidth <= 768) {
+            if (curtainNameTop && curtainNameBottom) {
+                // Start fading at 50% progress, completely invisible at 50%
+                const nameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+                curtainNameTop.style.opacity = nameOpacity;
+                curtainNameBottom.style.opacity = nameOpacity;
+            }
         }
 
         // Check if curtains are fully open
@@ -177,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const touchDelta = touchStartY - touchY; // Positive when swiping up
 
         // Add to accumulated scroll (swipe up = positive scroll)
-        accumulatedScroll += touchDelta * 2; // Multiply for more sensitivity
+        accumulatedScroll += touchDelta * 5; // Multiply for more sensitivity (faster and smoother)
 
         // Ensure we don't go negative
         if (accumulatedScroll < 0) {
@@ -188,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         touchStartY = touchY;
 
         // Calculate progress
-        const maxScroll = window.innerHeight * 1.3;
+        const maxScroll = window.innerHeight * 0.5; // Much faster opening on mobile
         curtainProgress = Math.min(accumulatedScroll / maxScroll, 1);
 
         // Apply transforms
@@ -199,6 +218,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fade out scroll indicator
         if (scrollIndicator) {
             scrollIndicator.style.opacity = 1 - curtainProgress;
+        }
+
+        // Fade out fullname image at half scroll (mobile touch)
+        if (fullnameImage) {
+            const fullnameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+            fullnameImage.style.opacity = fullnameOpacity;
+        }
+
+        // Fade out name images when curtains are halfway open (mobile touch)
+        if (curtainNameTop && curtainNameBottom) {
+            // Start fading at 50% progress, completely invisible at 50%
+            const nameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+            curtainNameTop.style.opacity = nameOpacity;
+            curtainNameBottom.style.opacity = nameOpacity;
         }
 
         // Check if curtains are fully open
@@ -228,9 +261,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollIndicator) {
         scrollIndicator.addEventListener('click', function() {
             // Simulate scroll to open curtains
-            const targetScroll = window.innerHeight * 1.3;
+            const targetScroll = window.innerHeight * 0.8; // Match new faster speed
             const startScroll = accumulatedScroll;
-            const duration = 800; // 0.8 second animation
+            const duration = 600; // 0.6 second animation (faster)
             const startTime = performance.now();
 
             function animateCurtains(currentTime) {
