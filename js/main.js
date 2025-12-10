@@ -135,7 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollIndicator.style.opacity = 1 - curtainProgress;
         }
 
-        // Keep fullname image visible (removed fade out)
+        // Fade out fullname image at half scroll
+        if (fullnameImage) {
+            const fullnameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+            fullnameImage.style.opacity = fullnameOpacity;
+        }
 
         // Fade out name images when curtains are halfway open (only on mobile)
         if (window.innerWidth <= 768) {
@@ -216,7 +220,11 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollIndicator.style.opacity = 1 - curtainProgress;
         }
 
-        // Keep fullname image visible (removed fade out)
+        // Fade out fullname image at half scroll
+        if (fullnameImage) {
+            const fullnameOpacity = curtainProgress >= 0.5 ? 0 : 1;
+            fullnameImage.style.opacity = fullnameOpacity;
+        }
 
         // Fade out name images when curtains are halfway open (mobile touch)
         if (curtainNameTop && curtainNameBottom) {
