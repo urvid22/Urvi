@@ -155,6 +155,20 @@ ul {
     z-index: 0;
 }
 
+/* Full Name Image - Centered on screen (mobile only) */
+.fullname-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%;
+    height: auto;
+    z-index: 3000;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+    display: none; /* Hidden by default on desktop */
+}
+
 /* ==========================================================================
    2. Curtain Effect
    ========================================================================== */
@@ -183,6 +197,7 @@ ul {
     background-repeat: no-repeat;
     will-change: transform;
     overflow: hidden;
+    transition: transform 0.05s ease-out;
 }
 
 .curtain-top {
@@ -569,6 +584,14 @@ body.nav-hover.nav-hover-light .index-logo-beige {
     opacity: 0;
 }
 
+body.nav-hover.nav-hover-light .nav-option-voxel:hover {
+    color: var(--color-maroon);
+}
+
+body.nav-hover.nav-hover-light .nav-option-voxel:hover::after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23860A22"><path d="M5 12h14M12 5l7 7-7 7" stroke="%23860A22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>');
+}
+
 .nav-option {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
@@ -788,6 +811,23 @@ body.nav-hover .nav-option-voxel:not(:hover) {
 }
 
 .metage-page .about-link:hover {
+    opacity: 0.7;
+}
+
+/* Voxel pages - Red sun logo and black text */
+.voxel-page .case-study-nav {
+    background-color: transparent;
+}
+
+.voxel-page .nav-logo {
+    content: url('assets/redsun.svg');
+}
+
+.voxel-page .about-link {
+    color: #000000;
+}
+
+.voxel-page .about-link:hover {
     opacity: 0.7;
 }
 
@@ -1141,25 +1181,31 @@ body:has(.work-nav) .nav-link {
     left: -50%;
     background-color: transparent;
     border: none;
-    padding: 30px 0;
+    padding: 10px 0;
     overflow: visible;
     z-index: 10;
 }
 
 .scrolling-banner-left {
-    transform: rotate(-2deg) translateX(0);
-    margin-bottom: -15px;
+    transform: translateX(0);
+    margin-bottom: -5px;
 }
 
 .scrolling-banner-middle {
-    transform: rotate(0deg) translateX(-60%);
-    margin-top: -15px;
-    margin-bottom: -15px;
+    transform: translateX(-60%);
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 
 .scrolling-banner-right {
-    transform: rotate(2deg) translateX(0);
-    margin-top: -15px;
+    transform: translateX(0);
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.scrolling-banner-bottom {
+    transform: translateX(-30%);
+    margin-top: -5px;
 }
 
 .banner-content {
@@ -1174,7 +1220,7 @@ body:has(.work-nav) .nav-link {
     font-weight: 700;
     color: var(--color-cream);
     letter-spacing: 0.05em;
-    word-spacing: 0.1em;
+    word-spacing: 0.02em;
     display: flex;
     align-items: center;
     gap: 54px;
@@ -1547,17 +1593,19 @@ body:has(.work-nav) .nav-link {
     font-weight: 700;
 }
 
-/* Skills Section */
+/* Skills Section - Fixed for slide-over effect */
 .skills-section {
     background-color: white;
     padding: 80px 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .skills-container {
-    max-width: 1400px;
+    max-width: 1000px;
     width: 100%;
 }
 
@@ -1578,100 +1626,191 @@ body:has(.work-nav) .nav-link {
     gap: 0;
 }
 
+/* Skill cards */
 .skill-card {
-    padding: 60px 40px;
+    padding: 30px 25px;
     display: flex;
     flex-direction: column;
-    min-height: 500px;
+    min-height: 280px;
 }
 
-.skill-card-beige {
-    background-color: white;
+/* Card color variations - 4 light pastel shades */
+.skill-card-shade1 {
+    background-color: #fff4e0; /* Light pastel cream */
 }
 
-.skill-card-red {
-    background-color: var(--color-maroon);
-    color: white;
+.skill-card-shade2 {
+    background-color: #ffe8cc; /* Light pastel peach */
+}
+
+.skill-card-shade3 {
+    background-color: #ffd9b3; /* Light pastel apricot */
+}
+
+.skill-card-shade4 {
+    background-color: #ffccb3; /* Light pastel coral */
 }
 
 .skill-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(24px, 2.5vw, 32px);
-    font-weight: 700;
-    margin: 0 0 30px 0;
+    font-size: clamp(10px, 1vw, 12px);
+    font-weight: 400;
+    margin: 0 0 20px 0;
     line-height: 1.2;
+    text-align: left;
 }
 
-.skill-card-beige .skill-title {
+.skill-card-shade1 .skill-title,
+.skill-card-shade2 .skill-title,
+.skill-card-shade3 .skill-title,
+.skill-card-shade4 .skill-title {
     color: var(--color-maroon);
-}
-
-.skill-card-red .skill-title {
-    color: white;
 }
 
 .skill-label {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
 }
 
-.skill-card-beige .skill-label {
+.skill-card-shade1 .skill-label,
+.skill-card-shade2 .skill-label,
+.skill-card-shade3 .skill-label,
+.skill-card-shade4 .skill-label {
     color: var(--color-maroon);
     opacity: 0.7;
-}
-
-.skill-card-red .skill-label {
-    color: white;
-    opacity: 0.9;
 }
 
 .skill-description {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0 0 40px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
 }
 
-.skill-card-beige .skill-description {
+.skill-card-shade1 .skill-description,
+.skill-card-shade2 .skill-description,
+.skill-card-shade3 .skill-description,
+.skill-card-shade4 .skill-description {
     color: var(--color-maroon);
 }
 
-.skill-card-red .skill-description {
-    color: white;
-}
-
 .skill-tools-label {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
-    margin: auto 0 15px 0;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
 }
 
-.skill-card-beige .skill-tools-label {
+.skill-card-shade1 .skill-tools-label,
+.skill-card-shade2 .skill-tools-label,
+.skill-card-shade3 .skill-tools-label,
+.skill-card-shade4 .skill-tools-label {
     color: var(--color-maroon);
     opacity: 0.7;
 }
 
-.skill-card-red .skill-tools-label {
-    color: white;
-    opacity: 0.9;
-}
-
 .skill-tools {
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.skill-card-beige .skill-tools {
+.skill-card-shade1 .skill-tools,
+.skill-card-shade2 .skill-tools,
+.skill-card-shade3 .skill-tools,
+.skill-card-shade4 .skill-tools {
     color: var(--color-maroon);
 }
 
-.skill-card-red .skill-tools {
-    color: white;
+/* Tool styling based on year selection */
+.tool-active {
+    font-weight: 700;
+    opacity: 1;
+    color: var(--color-maroon);
+}
+
+.tool-future {
+    font-weight: 300;
+    opacity: 0.3;
+    color: var(--color-maroon);
+}
+
+/* Skills Timeline */
+.skills-timeline {
+    margin-top: 60px;
+    position: relative;
+    padding: 0 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-line {
+    display: none;
+}
+
+.timeline-years {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-year {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-cream);
+    border: 2px solid var(--color-maroon);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.timeline-year.active .timeline-dot {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/yellowsun.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+}
+
+.timeline-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-maroon);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-year.active .timeline-label {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.timeline-year:hover .timeline-dot {
+    transform: scale(1.2);
+}
+
+.timeline-year:hover .timeline-label {
+    opacity: 0.8;
 }
 
 @media (max-width: 1200px) {
@@ -1686,26 +1825,33 @@ body:has(.work-nav) .nav-link {
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
     }
 
     .skill-card {
-        padding: 40px 30px;
+        padding: 30px 20px;
         min-height: auto;
     }
 }
 
-/* Experience Section */
+/* Experience Section - Slides over Skills section */
 .experience-section {
-    background-color: var(--color-cream);
-    padding: 80px 60px;
+    background-color: var(--color-maroon);
+    padding: 30px 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -100vh;
+    min-height: 100vh;
+    transition: transform 0.05s linear;
+    will-change: transform;
 }
 
 .experience-content {
-    max-width: 1200px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -1713,31 +1859,21 @@ body:has(.work-nav) .nav-link {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(36px, 5vw, 64px);
     font-weight: 900;
-    color: var(--color-maroon);
+    color: white;
     text-transform: uppercase;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     letter-spacing: 0.02em;
 }
 
 .experience-timeline {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 12px;
     position: relative;
 }
 
-.experience-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color: var(--color-maroon);
-}
-
 .experience-item {
-    padding-left: 30px;
+    padding-left: 0;
     position: relative;
 }
 
@@ -1748,37 +1884,37 @@ body:has(.work-nav) .nav-link {
     align-items: baseline;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .experience-role {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: clamp(18px, 2.5vw, 22px);
     font-weight: 700;
-    color: var(--color-maroon);
+    color: white;
     margin: 0;
 }
 
 .experience-duration {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-maroon);
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
     opacity: 0.8;
     margin: 0;
 }
 
 .experience-company {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--color-maroon);
-    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin: 1px 0;
 }
 
 .experience-location {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    color: var(--color-maroon);
-    opacity: 0.7;
+    color: white;
+    opacity: 0.8;
     margin: 0;
 }
 
@@ -2016,6 +2152,16 @@ body:has(.work-nav) .nav-link {
         --grid-gap: 30px;
     }
 
+    /* Hide custom cursor on tablet */
+    .custom-cursor {
+        display: none !important;
+    }
+
+    body:has(.curtain-container),
+    body.about-page {
+        cursor: auto;
+    }
+
     .nav-link {
         font-size: 16px;
     }
@@ -2057,12 +2203,27 @@ body:has(.work-nav) .nav-link {
         --grid-gap: 25px;
     }
 
+    /* Hide custom cursor on mobile */
+    .custom-cursor {
+        display: none !important;
+    }
+
+    body:has(.curtain-container),
+    body.about-page {
+        cursor: auto;
+    }
+
     .top-nav {
         padding: 20px 20px;
+        z-index: 1000;
     }
 
     .nav-logo {
-        height: 18px;
+        height: 45px;
+    }
+
+    .about-link {
+        font-size: 16px;
     }
 
     .nav-link {
@@ -2077,7 +2238,7 @@ body:has(.work-nav) .nav-link {
     }
 
     .centered-navigation {
-        gap: 80px;
+        gap: 15px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2091,22 +2252,39 @@ body:has(.work-nav) .nav-link {
         padding-top: 30px;
     }
 
-    /* Curtain text adjustments for mobile */
+    /* Fix curtain gap on mobile - extend height */
+    .curtain {
+        height: 52vh;
+    }
+
+    /* Show fullname image on mobile */
+    .fullname-image {
+        display: block;
+        max-width: 70%;
+    }
+
+    /* Curtain text adjustments for mobile - centered */
     .hey-text {
-        left: 20px;
-        bottom: calc(50% - 40px);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: calc(50% + 20px);
         font-size: 14px;
     }
 
     .dhomne-text {
-        right: 20px;
-        top: calc(50% - 60px);
+        left: 50%;
+        transform: translateX(-50%);
+        top: 120px;
         font-size: 14px;
+        z-index: 1015;
     }
 
-    .curtain-name-top,
+    .curtain-name-top {
+        display: none;
+    }
+
     .curtain-name-bottom {
-        max-width: 70%;
+        display: none;
     }
 
     /* Location labels responsive */
@@ -2247,22 +2425,39 @@ body:has(.work-nav) .nav-link {
         padding-left: 20px;
     }
 
-    /* Curtain responsive for small screens */
+    /* Fix curtain gap on small mobile - extend height more */
+    .curtain {
+        height: 53vh;
+    }
+
+    /* Show fullname image on small mobile */
+    .fullname-image {
+        display: block;
+        max-width: 80%;
+    }
+
+    /* Curtain responsive for small screens - centered */
     .hey-text {
-        left: 15px;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 12px;
-        bottom: calc(50% - 30px);
+        bottom: calc(50% + 60px);
     }
 
     .dhomne-text {
-        right: 15px;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 12px;
-        top: calc(50% - 50px);
+        top: 100px;
+        z-index: 1015;
     }
 
-    .curtain-name-top,
+    .curtain-name-top {
+        display: none;
+    }
+
     .curtain-name-bottom {
-        max-width: 80%;
+        display: none;
     }
 
     .location-prefix {
@@ -2310,7 +2505,34 @@ body:has(.work-nav) .nav-link {
 
     .about-content-wrapper {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-title {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .about-text-left {
+        order: 3;
+        margin-bottom: 0;
+    }
+
+    .about-text-right {
+        order: 4;
+        margin-top: 0;
+    }
+
+    .about-video-centered {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .about-paragraph {
+        text-align: center;
+        max-width: 100%;
     }
 
     .about-image-content {
@@ -2326,7 +2548,20 @@ body:has(.work-nav) .nav-link {
     }
 
     .banner-content span {
-        font-size: 18px;
+        font-size: 200px;
+    }
+
+    .red-section {
+        padding: 60px 0;
+        margin: 20px 0;
+    }
+
+    .about-text-content {
+        padding: 20px 0;
+    }
+
+    .banner-icon {
+        height: 30px;
     }
 
     .about-section {

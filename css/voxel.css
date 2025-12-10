@@ -1,7 +1,7 @@
 /* Voxel Pages Styles */
 
 .voxel-page {
-    background-color: #000000;
+    background-color: #E8E8E8;
     min-height: 100vh;
 }
 
@@ -22,11 +22,11 @@
 .voxel-page-title {
     text-align: center;
     padding: 120px 20px 60px;
-    background-color: #000000;
+    background-color: #E8E8E8;
 }
 
 .voxel-page-title h1 {
-    color: #FFFFFF;
+    color: #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: clamp(48px, 10vw, 100px);
@@ -40,7 +40,7 @@
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: #FFFFFF;
+    color: #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 48px;
@@ -87,26 +87,26 @@
     display: block;
 }
 
-/* Footer Override - Matches black background */
+/* Footer Override - Matches grey background */
 .voxel-page .footer-cta {
-    background-color: #000000;
+    background-color: #E8E8E8;
     padding: 50px 20px;
 }
 
 .voxel-page .footer-heading {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .voxel-page .footer-text {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .voxel-page .footer-link {
-    color: #FFE7C4;
+    color: #860A22;
     text-decoration: underline;
 }
 
 .voxel-page .footer-link:hover {
-    color: #FFFFFF;
-    opacity: 0.9;
+    color: #860A22;
+    opacity: 0.7;
 }

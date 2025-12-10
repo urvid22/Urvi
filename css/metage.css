@@ -76,7 +76,7 @@
 
 .hero-image-restaurant,
 .hero-image-phone {
-    background-color: rgba(0, 114, 94, 0.1);
+    background-color: rgba(184, 230, 197, 0.3);
     border-radius: 20px;
     min-height: 400px;
     flex: 1;
@@ -144,7 +144,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #00725E;
+    background-color: #B8E6C5;
     border-radius: 20px 20px 0 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     transition: background-color 0.3s ease;
@@ -152,13 +152,13 @@
 }
 
 .accordion-header:hover {
-    background-color: #005a4a;
+    background-color: #9FD9B5;
 }
 
 .accordion-title {
     font-size: 18px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #1a4d3a;
     margin: 0;
     text-align: left;
 }
@@ -166,7 +166,7 @@
 .accordion-icon {
     font-size: 28px;
     font-weight: 300;
-    color: #FFFFFF;
+    color: #1a4d3a;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     line-height: 1;
 }
@@ -259,7 +259,7 @@
 }
 
 .footer-heading {
-    color: #00725E;
+    color: #B8E6C5;
 }
 
 .footer-text {
@@ -267,12 +267,12 @@
 }
 
 .footer-link {
-    color: #00725E;
+    color: #B8E6C5;
     text-decoration: underline;
 }
 
 .footer-link:hover {
-    color: #004D3F;
+    color: #9FD9B5;
     opacity: 0.9;
 }
 
@@ -310,8 +310,8 @@
 .overview-1,
 .overview-3,
 .overview-5 {
-    background-color: #00725E;
-    color: #ffffff;
+    background-color: #B8E6C5;
+    color: #1a4d3a;
 }
 
 .overview-2,
