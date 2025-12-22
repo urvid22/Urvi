@@ -2330,6 +2330,88 @@ body:has(.work-nav) .nav-link {
         height: 45px;
     }
 
+    /* Mobile About Me section - center heading and stack paragraphs */
+    .about-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-top: 150px;
+    }
+
+    .about-text-left,
+    .about-text-right {
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0 30px;
+        order: 2;
+        position: relative;
+        z-index: 20;
+    }
+
+    .about-text-left .about-title,
+    .about-text-right .about-title {
+        display: none;
+    }
+
+    /* Combined heading on mobile */
+    .about-text-left::before {
+        content: 'Product and Designer';
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        color: var(--color-maroon);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+    }
+
+    .about-text-left .about-paragraph,
+    .about-text-right .about-paragraph {
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Video moves to background */
+    .about-video-centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.3;
+        order: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .about-video-centered .about-profile-video {
+        max-width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    /* Remove parallax effect on Experience section */
+    .experience-section {
+        margin-top: 0;
+        transform: none !important;
+    }
+
+    /* Remove strips section container and background */
+    .red-section {
+        background-color: transparent;
+    }
+
+    .about-text-content {
+        background-color: transparent;
+    }
+
     .portfolio-section {
         padding: 100px 15px 60px;
     }
@@ -2508,31 +2590,84 @@ body:has(.work-nav) .nav-link {
         gap: 20px;
         display: flex;
         flex-direction: column;
+        position: relative;
+        padding-top: 200px;
     }
 
-    .about-title {
-        font-size: 48px;
-        text-align: center;
-    }
-
-    .about-text-left {
-        order: 3;
-        margin-bottom: 0;
-    }
-
+    /* Mobile About Me section - center heading and stack paragraphs */
+    .about-text-left,
     .about-text-right {
-        order: 4;
-        margin-top: 0;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0 20px;
+        order: 2;
+        position: relative;
+        z-index: 20;
     }
 
-    .about-video-centered {
-        order: 1;
+    .about-text-left .about-title,
+    .about-text-right .about-title {
+        display: none;
+    }
+
+    /* Combined heading on mobile */
+    .about-text-left::before {
+        content: 'Product and Designer';
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--color-maroon);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+    }
+
+    .about-text-left .about-paragraph,
+    .about-text-right .about-paragraph {
+        text-align: center;
+        max-width: 100%;
         margin-bottom: 20px;
     }
 
-    .about-paragraph {
-        text-align: center;
-        max-width: 100%;
+    /* Video moves to background */
+    .about-video-centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.3;
+        order: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .about-video-centered .about-profile-video {
+        max-width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    /* Remove parallax effect on Experience section */
+    .experience-section {
+        margin-top: 0;
+        transform: none !important;
+    }
+
+    /* Remove strips section container and background */
+    .red-section {
+        background-color: transparent;
+        padding: 60px 0;
+        margin: 20px 0;
+    }
+
+    .about-text-content {
+        padding: 20px 0;
+        background-color: transparent;
     }
 
     .about-image-content {
@@ -2549,15 +2684,6 @@ body:has(.work-nav) .nav-link {
 
     .banner-content span {
         font-size: 200px;
-    }
-
-    .red-section {
-        padding: 60px 0;
-        margin: 20px 0;
-    }
-
-    .about-text-content {
-        padding: 20px 0;
     }
 
     .banner-icon {
@@ -2607,10 +2733,6 @@ body:has(.work-nav) .nav-link {
     .portfolio-title {
         font-size: 14px;
         padding: 12px;
-    }
-
-    .about-section {
-        padding: 30px 20px 40px;
     }
 
     .about-paragraph {
