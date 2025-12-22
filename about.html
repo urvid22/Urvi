@@ -417,12 +417,18 @@
             // Initialize display with 2025 (showing all tools)
             updateToolsDisplay(selectedYear);
 
-            // Slide-over effect for Experience Section
+            // Slide-over effect for Experience Section (disabled on mobile)
             function handleExperienceSlideOver() {
                 const experienceSection = document.querySelector('.experience-section');
                 const skillsSection = document.querySelector('.skills-section');
 
                 if (!experienceSection || !skillsSection) return;
+
+                // Disable parallax on mobile (screen width < 768px)
+                if (window.innerWidth < 768) {
+                    experienceSection.style.transform = 'none';
+                    return;
+                }
 
                 const skillsRect = skillsSection.getBoundingClientRect();
                 const viewportHeight = window.innerHeight;
@@ -440,6 +446,7 @@
             }
 
             window.addEventListener('scroll', handleExperienceSlideOver);
+            window.addEventListener('resize', handleExperienceSlideOver); // Re-check on resize
             handleExperienceSlideOver(); // Call once on load
         });
     </script>
