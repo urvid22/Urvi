@@ -1946,6 +1946,18 @@ body:has(.work-nav) .nav-link {
     overflow: hidden;
 }
 
+/* Mobile - Reduce spacing around Mentally At */
+@media (max-width: 768px) {
+    .mentally-subsection {
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .mentally-section {
+        padding: 30px 20px;
+    }
+}
+
 .mentally-heading {
     font-size: 18px;
     font-weight: 700;
@@ -2358,7 +2370,7 @@ body:has(.work-nav) .nav-link {
 
     /* Combined heading on mobile */
     .about-text-left::before {
-        content: 'Product and Designer';
+        content: 'Product Designer';
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-size: 56px;
@@ -2377,24 +2389,25 @@ body:has(.work-nav) .nav-link {
         margin-bottom: 20px;
     }
 
-    /* Video moves to background */
+    /* Video stays in position behind text */
     .about-video-centered {
-        position: fixed;
-        top: 50%;
+        position: absolute;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
-        opacity: 0.3;
-        order: 0;
+        z-index: 5;
+        opacity: 1;
+        order: 1;
         margin: 0;
         pointer-events: none;
     }
 
     .about-video-centered .about-profile-video {
-        max-width: 100vw;
-        height: 100vh;
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
         object-fit: cover;
-        border-radius: 0;
     }
 
     /* Remove parallax effect on Experience section */
@@ -2406,10 +2419,13 @@ body:has(.work-nav) .nav-link {
     /* Remove strips section container and background */
     .red-section {
         background-color: transparent;
+        padding: 20px 0;
+        margin: 0;
     }
 
     .about-text-content {
         background-color: transparent;
+        padding: 0;
     }
 
     .portfolio-section {
@@ -2613,7 +2629,7 @@ body:has(.work-nav) .nav-link {
 
     /* Combined heading on mobile */
     .about-text-left::before {
-        content: 'Product and Designer';
+        content: 'Product Designer';
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-size: 48px;
@@ -2632,24 +2648,25 @@ body:has(.work-nav) .nav-link {
         margin-bottom: 20px;
     }
 
-    /* Video moves to background */
+    /* Video stays in position behind text */
     .about-video-centered {
-        position: fixed;
-        top: 50%;
+        position: absolute;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
-        opacity: 0.3;
-        order: 0;
+        z-index: 5;
+        opacity: 1;
+        order: 1;
         margin: 0;
         pointer-events: none;
     }
 
     .about-video-centered .about-profile-video {
-        max-width: 100vw;
-        height: 100vh;
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
         object-fit: cover;
-        border-radius: 0;
     }
 
     /* Remove parallax effect on Experience section */
@@ -2661,12 +2678,12 @@ body:has(.work-nav) .nav-link {
     /* Remove strips section container and background */
     .red-section {
         background-color: transparent;
-        padding: 60px 0;
-        margin: 20px 0;
+        padding: 20px 0;
+        margin: 0;
     }
 
     .about-text-content {
-        padding: 20px 0;
+        padding: 0;
         background-color: transparent;
     }
 
