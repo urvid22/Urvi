@@ -185,16 +185,24 @@
     }
 
     .primer-hero {
-        padding: 100px 30px 60px;
+        padding: 140px 30px 60px;
     }
 
     .designs-section {
         padding: 60px 30px;
     }
+
+    .primer-page .masonry-grid {
+        columns: 2;
+    }
 }
 
 @media (max-width: 600px) {
+    .primer-hero {
+        padding: 140px 20px 60px;
+    }
+
     .primer-page .masonry-grid {
-        columns: 1;
+        columns: 2;
     }
 }
