@@ -384,8 +384,13 @@
 
     <!-- JavaScript for Parallax Effect -->
     <script>
-        // Parallax effect for overview cards
+        // Parallax effect for overview cards (disabled on mobile)
         window.addEventListener('scroll', function() {
+            // Disable parallax on mobile (screen width < 768px)
+            if (window.innerWidth < 768) {
+                return;
+            }
+
             const overviewSection = document.querySelector('.project-overview-section');
             if (!overviewSection) return;
 

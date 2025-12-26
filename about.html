@@ -448,6 +448,68 @@
             window.addEventListener('scroll', handleExperienceSlideOver);
             window.addEventListener('resize', handleExperienceSlideOver); // Re-check on resize
             handleExperienceSlideOver(); // Call once on load
+
+            // Touch/swipe functionality for Mentally At carousel on mobile
+            const mentallyGrid = document.querySelector('.mentally-grid');
+            if (mentallyGrid && window.innerWidth < 768) {
+                let isDragging = false;
+                let startX = 0;
+                let scrollLeft = 0;
+                let currentTranslate = 0;
+
+                // Pause animation on touch
+                mentallyGrid.style.animationPlayState = 'paused';
+
+                mentallyGrid.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    startX = e.touches[0].pageX;
+                    mentallyGrid.style.cursor = 'grabbing';
+                });
+
+                mentallyGrid.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const x = e.touches[0].pageX;
+                    const walk = (startX - x) * 2; // Multiply for faster scroll
+                    currentTranslate -= walk;
+                    mentallyGrid.style.transform = `translateX(${currentTranslate}px)`;
+                    startX = x;
+                });
+
+                mentallyGrid.addEventListener('touchend', () => {
+                    isDragging = false;
+                    mentallyGrid.style.cursor = 'grab';
+                });
+
+                // Also add mouse events for testing on desktop
+                mentallyGrid.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.pageX;
+                    mentallyGrid.style.cursor = 'grabbing';
+                });
+
+                mentallyGrid.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const x = e.pageX;
+                    const walk = (startX - x) * 2;
+                    currentTranslate -= walk;
+                    mentallyGrid.style.transform = `translateX(${currentTranslate}px)`;
+                    startX = x;
+                });
+
+                mentallyGrid.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    mentallyGrid.style.cursor = 'grab';
+                });
+
+                mentallyGrid.addEventListener('mouseleave', () => {
+                    isDragging = false;
+                    mentallyGrid.style.cursor = 'grab';
+                });
+
+                mentallyGrid.style.cursor = 'grab';
+            }
         });
     </script>
 
