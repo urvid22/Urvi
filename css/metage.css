@@ -561,7 +561,10 @@
         padding-right: 20px;
     }
 
-    .hero-section,
+    .hero-section {
+        padding: 140px 30px 60px;
+    }
+
     .project-overview-section,
     .design-system-section,
     .website-ui-section,
@@ -570,27 +573,71 @@
         padding: 60px 30px;
     }
 
+    /* Remove dark bars (hero images) on mobile */
+    .hero-images {
+        display: none;
+    }
+
+    /* Overview cards - 2 columns, centered, smaller font */
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .overview-card {
+        padding: 20px;
+        min-height: 180px;
+        text-align: center;
+        transform: none !important;
+    }
+
+    .overview-number {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .overview-title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .overview-text {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
     .design-system-content {
         flex-direction: column;
         gap: 40px;
     }
 
+    /* Reduce website UI size on mobile */
     .website-ui-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 280px;
+    }
+
+    .website-ui-image {
+        border-radius: 6px;
     }
 
     .phone-ui-grid {
         flex-wrap: wrap;
     }
 
-
     .hero-title {
-        font-size: 48px;
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .accordion-container {
@@ -602,6 +649,6 @@
     }
 
     .footer-heading {
-        font-size: 24px;
+        font-size: 22px;
     }
 }

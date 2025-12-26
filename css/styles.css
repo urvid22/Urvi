@@ -2228,10 +2228,11 @@ body:has(.work-nav) .nav-link {
     .top-nav {
         padding: 20px 20px;
         z-index: 1000;
+        top: 20px;
     }
 
     .nav-logo {
-        height: 45px;
+        height: 70px;
     }
 
     .about-link {
@@ -2243,16 +2244,48 @@ body:has(.work-nav) .nav-link {
     }
 
     .nav-option {
-        font-size: 18px;
-        padding: 12px 50px;
+        font-size: 13px;
+        padding: 10px 40px;
         border-radius: 25px;
         min-width: 160px;
+        white-space: nowrap;
+        pointer-events: auto;
+    }
+
+    .nav-option::before,
+    .nav-option::after {
+        display: none;
+    }
+
+    .nav-option:hover,
+    .nav-option:focus {
+        color: var(--color-maroon);
+        background-color: transparent;
+    }
+
+    body.nav-hover {
+        background-color: transparent;
+        background-image: none;
+    }
+
+    /* Hide main poster (About Me image) on mobile */
+    .main-poster {
+        display: none !important;
     }
 
     .centered-navigation {
-        gap: 15px;
+        gap: 8px;
         left: 50%;
         transform: translateX(-50%);
+        align-items: flex-start;
+    }
+
+    .nav-spacer {
+        height: 15px;
+    }
+
+    .nav-category {
+        display: none;
     }
 
     .hero-tagline {
@@ -2279,16 +2312,19 @@ body:has(.work-nav) .nav-link {
     .hey-text {
         left: 50%;
         transform: translateX(-50%);
-        bottom: calc(50% + 20px);
+        top: 30%;
+        bottom: auto;
         font-size: 14px;
+        text-align: center;
     }
 
     .dhomne-text {
         left: 50%;
         transform: translateX(-50%);
-        top: 120px;
+        top: 53%;
         font-size: 14px;
         z-index: 1015;
+        text-align: center;
     }
 
     .curtain-name-top {
@@ -2339,7 +2375,7 @@ body:has(.work-nav) .nav-link {
     }
 
     .index-logo {
-        height: 45px;
+        height: 70px;
     }
 
     /* Mobile About Me section - center heading and stack paragraphs */
@@ -2349,7 +2385,7 @@ body:has(.work-nav) .nav-link {
         display: flex;
         flex-direction: column;
         position: relative;
-        padding-top: 150px;
+        padding-top: 80px;
     }
 
     .about-text-left,
@@ -2370,7 +2406,7 @@ body:has(.work-nav) .nav-link {
 
     /* Combined heading on mobile */
     .about-text-left::before {
-        content: 'Product Designer';
+        content: 'Product\A Designer';
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-size: 56px;
@@ -2380,6 +2416,8 @@ body:has(.work-nav) .nav-link {
         text-align: center;
         margin-bottom: 30px;
         letter-spacing: -1px;
+        white-space: pre-line;
+        line-height: 2.5;
     }
 
     .about-text-left .about-paragraph,
@@ -2419,13 +2457,39 @@ body:has(.work-nav) .nav-link {
     /* Remove strips section container and background */
     .red-section {
         background-color: transparent;
-        padding: 20px 0;
+        padding: 0;
         margin: 0;
+        min-height: auto;
     }
 
     .about-text-content {
         background-color: transparent;
         padding: 0;
+    }
+
+    /* Reduce spacing for Skills section after strips */
+    .skills-section {
+        margin-top: -40px;
+    }
+
+    /* Change strip text color to red on mobile */
+    .scrolling-banner {
+        background-color: transparent;
+        padding: 15px 0;
+    }
+
+    .banner-content {
+        background-color: transparent;
+    }
+
+    .banner-content span {
+        color: var(--color-maroon);
+    }
+
+    /* Fix strip positioning on mobile - move starting point to left */
+    .scrolling-banner-middle,
+    .scrolling-banner-bottom {
+        transform: translateX(-30%);
     }
 
     .portfolio-section {
@@ -2502,8 +2566,12 @@ body:has(.work-nav) .nav-link {
         font-size: 14px;
     }
 
+    .top-nav {
+        top: 20px;
+    }
+
     .nav-logo {
-        height: 16px;
+        height: 60px;
     }
 
     .nav-link {
@@ -2511,16 +2579,48 @@ body:has(.work-nav) .nav-link {
     }
 
     .nav-option {
-        font-size: 16px;
-        padding: 10px 45px;
+        font-size: 12px;
+        padding: 8px 35px;
         border-radius: 20px;
         min-width: 140px;
+        white-space: nowrap;
+        pointer-events: auto;
+    }
+
+    .nav-option::before,
+    .nav-option::after {
+        display: none;
+    }
+
+    .nav-option:hover,
+    .nav-option:focus {
+        color: var(--color-maroon);
+        background-color: transparent;
+    }
+
+    body.nav-hover {
+        background-color: transparent;
+        background-image: none;
+    }
+
+    /* Hide main poster (About Me image) on mobile */
+    .main-poster {
+        display: none !important;
     }
 
     .centered-navigation {
-        gap: 50px;
+        gap: 6px;
         flex-direction: column;
-        padding-left: 20px;
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    .nav-spacer {
+        height: 12px;
+    }
+
+    .nav-category {
+        display: none;
     }
 
     /* Fix curtain gap on small mobile - extend height more */
@@ -2539,15 +2639,18 @@ body:has(.work-nav) .nav-link {
         left: 50%;
         transform: translateX(-50%);
         font-size: 12px;
-        bottom: calc(50% + 60px);
+        top: 30%;
+        bottom: auto;
+        text-align: center;
     }
 
     .dhomne-text {
         left: 50%;
         transform: translateX(-50%);
         font-size: 12px;
-        top: 100px;
+        top: 53%;
         z-index: 1015;
+        text-align: center;
     }
 
     .curtain-name-top {
@@ -2585,7 +2688,7 @@ body:has(.work-nav) .nav-link {
     }
 
     .index-logo {
-        height: 40px;
+        height: 60px;
     }
 
     .scroll-indicator {
@@ -2607,7 +2710,7 @@ body:has(.work-nav) .nav-link {
         display: flex;
         flex-direction: column;
         position: relative;
-        padding-top: 200px;
+        padding-top: 100px;
     }
 
     /* Mobile About Me section - center heading and stack paragraphs */
@@ -2629,7 +2732,7 @@ body:has(.work-nav) .nav-link {
 
     /* Combined heading on mobile */
     .about-text-left::before {
-        content: 'Product Designer';
+        content: 'Product\A Designer';
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-size: 48px;
@@ -2639,6 +2742,8 @@ body:has(.work-nav) .nav-link {
         text-align: center;
         margin-bottom: 30px;
         letter-spacing: -1px;
+        white-space: pre-line;
+        line-height: 2.5;
     }
 
     .about-text-left .about-paragraph,
@@ -2678,13 +2783,39 @@ body:has(.work-nav) .nav-link {
     /* Remove strips section container and background */
     .red-section {
         background-color: transparent;
-        padding: 20px 0;
+        padding: 0;
         margin: 0;
+        min-height: auto;
     }
 
     .about-text-content {
         padding: 0;
         background-color: transparent;
+    }
+
+    /* Reduce spacing for Skills section after strips */
+    .skills-section {
+        margin-top: -40px;
+    }
+
+    /* Change strip text color to red on mobile */
+    .scrolling-banner {
+        background-color: transparent;
+        padding: 15px 0;
+    }
+
+    .banner-content {
+        background-color: transparent;
+    }
+
+    .banner-content span {
+        color: var(--color-maroon);
+    }
+
+    /* Fix strip positioning on mobile - move starting point to left */
+    .scrolling-banner-middle,
+    .scrolling-banner-bottom {
+        transform: translateX(-30%);
     }
 
     .about-image-content {
@@ -2759,6 +2890,58 @@ body:has(.work-nav) .nav-link {
     .mentally-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        animation: scrollToCenter 15s linear infinite;
+    }
+
+    /* Make mentally at images smaller on mobile */
+    .mentally-item {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .mentally-item:nth-child(1) {
+        width: 150px !important;
+        height: 190px !important;
+    }
+
+    .mentally-item:nth-child(2) {
+        width: 210px !important;
+        height: 210px !important;
+    }
+
+    .mentally-item:nth-child(3) {
+        width: 170px !important;
+        height: 180px !important;
+    }
+
+    .mentally-item:nth-child(4) {
+        width: 230px !important;
+        height: 240px !important;
+    }
+
+    .mentally-item:nth-child(5) {
+        width: 190px !important;
+        height: 200px !important;
+    }
+
+    .mentally-item:nth-child(6) {
+        width: 160px !important;
+        height: 180px !important;
+    }
+
+    .mentally-item:nth-child(7) {
+        width: auto !important;
+        height: 250px !important;
+    }
+
+    .mentally-item:nth-child(8) {
+        width: 140px !important;
+        height: 170px !important;
+    }
+
+    .mentally-item:nth-child(9) {
+        width: 240px !important;
+        height: 250px !important;
     }
 
     .banner-content span {

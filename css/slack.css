@@ -255,8 +255,9 @@
 
 @media (max-width: 768px) {
     .design-process-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         padding: 20px;
+        gap: 15px;
     }
 }
 
@@ -1184,7 +1185,72 @@
     .key-insights-section,
     .project-overview-section,
     .prototype-section {
-        padding: 60px 30px;
+        padding: 140px 30px 60px;
+    }
+
+    .hero-title {
+        font-size: clamp(36px, 10vw, 55px);
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: clamp(28px, 5vw, 40px);
+    }
+
+    /* Remove dark bars (hero images) on mobile */
+    .hero-images {
+        display: none;
+    }
+
+    /* Project breakdown cards - 2 columns, centered */
+    .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .breakdown-card {
+        padding: 18px 15px;
+        min-height: 120px;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .breakdown-card-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .breakdown-card-text {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Design process cards - 2 columns, smaller font */
+    .process-card {
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .process-number {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .process-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .process-text {
+        font-size: 12px;
+        line-height: 1.4;
     }
 
     .persona-content {

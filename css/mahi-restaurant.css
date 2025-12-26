@@ -1025,7 +1025,11 @@
 }
 
 @media (max-width: 768px) {
-    .hero-section,
+    /* Move content down to avoid sun logo */
+    .hero-section {
+        padding: 140px 30px 60px;
+    }
+
     .personas-section,
     .pain-points-section,
     .wireframe-section,
@@ -1037,6 +1041,95 @@
     .prototype-section,
     .thankyou-section {
         padding: 60px 30px;
+    }
+
+    /* Reduce hero title font size to fit */
+    .hero-title {
+        font-size: clamp(40px, 10vw, 60px);
+    }
+
+    /* Remove dark blue bars (hero images) */
+    .hero-images {
+        display: none;
+    }
+
+    /* Arrange 6 cards in 2 columns */
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    /* Reduce card size and center align */
+    .overview-card {
+        padding: 20px;
+        min-height: 200px;
+        text-align: center;
+    }
+
+    .overview-number {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .overview-title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .overview-text {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    /* Reduce accordion title font size for mobile */
+    .accordion-title {
+        font-size: 12px;
+    }
+
+    .accordion-header {
+        padding: 12px 15px;
+    }
+
+    .accordion-icon {
+        font-size: 20px;
+    }
+
+    /* Remove parallax transforms on mobile */
+    .overview-card {
+        transform: none !important;
+    }
+
+    /* Key Insights cards - 2 columns, centered, smaller font */
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .insight-card {
+        padding: 20px;
+        min-height: 180px;
+        text-align: center;
+    }
+
+    .insight-number {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .insight-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .insight-text {
+        font-size: 11px;
+        line-height: 1.5;
     }
 
     .persona-content {
