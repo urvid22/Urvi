@@ -32,16 +32,53 @@ document.addEventListener('DOMContentLoaded', function() {
     let touchStartY = 0;
     let touchStartTime = 0;
 
+    // Mobile toggle for nav items with suboptions
+    const navItemWrappers = document.querySelectorAll('.nav-item-wrapper');
+
+    navItemWrappers.forEach(wrapper => {
+        const parentOption = wrapper.querySelector('.nav-option-parent');
+
+        parentOption.addEventListener('click', function(e) {
+            // Only handle on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+
+                // Close other open wrappers
+                navItemWrappers.forEach(other => {
+                    if (other !== wrapper) {
+                        other.classList.remove('mobile-open');
+                    }
+                });
+
+                // Toggle this wrapper
+                wrapper.classList.toggle('mobile-open');
+
+                // Apply background color
+                const dataHref = this.getAttribute('data-href');
+                if (wrapper.classList.contains('mobile-open') && caseStudyColors[dataHref]) {
+                    document.body.style.setProperty('--nav-hover-bg', caseStudyColors[dataHref]);
+                    document.body.classList.add('nav-hover');
+                    document.body.classList.add('nav-hover-custom');
+                } else {
+                    document.body.classList.remove('nav-hover');
+                    document.body.classList.remove('nav-hover-custom');
+                    document.body.style.removeProperty('--nav-hover-bg');
+                }
+            }
+        });
+    });
+
     // Add hover effect for navigation options to change background
     const navOptions = document.querySelectorAll('.nav-option');
 
     // Define background colors for each case study
     const caseStudyColors = {
-        'mahi-restaurant.html': '#0C3658',
-        'slack.html': '#1A1A1A',
+        'mahi-restaurant.html': '#5568af',
+        'slack.html': '#A5509F',
         'metage.html': '#9FD9B5',
         'tasi.html': '#7B2D8E',
-        'primer-seltzer.html': '#636969'
+        'primer-seltzer.html': '#636969',
+        'ai.html': '#CC5500'
     };
 
     // Light background pages that need red font/logo
@@ -65,13 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            // Check for data-href attribute (for span elements or placeholder links)
+            const dataHref = this.getAttribute('data-href');
+            const linkHref = dataHref || href;
+
             // Check if this link has a specific color
-            if (caseStudyColors[href]) {
-                document.body.style.setProperty('--nav-hover-bg', caseStudyColors[href]);
+            if (caseStudyColors[linkHref]) {
+                document.body.style.setProperty('--nav-hover-bg', caseStudyColors[linkHref]);
                 document.body.classList.add('nav-hover-custom');
 
                 // Add light class for pages with white/light backgrounds
-                if (lightBackgroundPages.includes(href)) {
+                if (lightBackgroundPages.includes(linkHref)) {
                     document.body.classList.add('nav-hover-light');
                 }
             }
