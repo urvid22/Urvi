@@ -545,7 +545,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #A31EAA;
+    background-color: #A5509F;
     border-radius: 20px 20px 0 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     transition: background-color 0.3s ease;
@@ -553,7 +553,7 @@
 }
 
 .accordion-header:hover {
-    background-color: #8a1990;
+    background-color: #8c4488;
 }
 
 .accordion-title {

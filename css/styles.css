@@ -514,7 +514,7 @@ body.nav-hover .index-logo-beige {
     transition: opacity 300ms ease;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
     align-items: flex-start;
     padding-bottom: 100px;
     overflow: visible;
@@ -687,6 +687,68 @@ body.nav-hover .nav-option:not(:hover) {
 
 body.nav-hover .nav-option-voxel:not(:hover) {
     color: var(--color-cream);
+}
+
+/* Navigation Item Wrapper with Suboptions */
+.nav-item-wrapper {
+    position: relative;
+}
+
+.nav-option-parent {
+    cursor: pointer;
+}
+
+.nav-suboptions {
+    display: none;
+    padding-left: 70px;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+.nav-item-wrapper:hover .nav-suboptions {
+    display: flex;
+}
+
+.nav-suboption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-maroon);
+    text-decoration: none;
+    transition: color var(--transition-hover);
+}
+
+@media (max-width: 768px) {
+    .nav-suboption {
+        font-size: 11px;
+    }
+}
+
+.nav-suboption:hover {
+    opacity: 0.7;
+}
+
+.nav-option-parent:hover ~ .nav-suboptions .nav-suboption {
+    color: #ffffff;
+}
+
+/* Mobile suboptions toggle */
+@media (max-width: 768px) {
+    .nav-item-wrapper:hover .nav-suboptions {
+        display: none;
+    }
+
+    .nav-item-wrapper.mobile-open .nav-suboptions {
+        display: flex;
+    }
+
+    .nav-item-wrapper.mobile-open .nav-option-parent {
+        color: var(--color-maroon);
+    }
+
+    .nav-item-wrapper.mobile-open .nav-suboption {
+        color: var(--color-maroon);
+    }
 }
 
 /* Decorative Diagonal Banners */
@@ -1835,19 +1897,95 @@ body:has(.work-nav) .nav-link {
     }
 }
 
-/* Experience Section - Slides over Skills section */
-.experience-section {
+/* Education Section */
+.education-section {
     background-color: var(--color-maroon);
-    padding: 30px 60px;
+    padding: 30px 60px 0 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 10;
-    margin-top: -100vh;
-    min-height: 100vh;
-    transition: transform 0.05s linear;
-    will-change: transform;
+    z-index: 9;
+}
+
+.education-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.education-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+}
+
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.education-item {
+    padding-left: 0;
+    position: relative;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+.education-degree {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.education-duration {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.education-school {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin: 1px 0;
+}
+
+@media (max-width: 768px) {
+    .education-section {
+        padding: 60px 30px;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Experience Section */
+.experience-section {
+    background-color: var(--color-maroon);
+    padding: 30px 60px 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .experience-content {
@@ -2890,7 +3028,7 @@ body:has(.work-nav) .nav-link {
     .mentally-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-        animation: scrollToCenter 15s linear infinite;
+        animation: scrollToCenter 10s linear infinite;
     }
 
     /* Make mentally at images smaller on mobile */

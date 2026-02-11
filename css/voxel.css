@@ -1,16 +1,17 @@
 /* Voxel Pages Styles */
 
 .voxel-page {
-    background-color: #E8E8E8;
+    background-color: #1a1a1a;
     min-height: 100vh;
 }
 
 .voxel-main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     line-height: 0;
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
+    padding-top: 100px;
 }
 
 .voxel-hero {
@@ -56,6 +57,7 @@
     margin: 0;
     padding: 0;
     border: none;
+    border-radius: 15px;
 }
 
 /* Responsive */
@@ -87,18 +89,18 @@
     display: block;
 }
 
-/* Footer Override - Matches grey background */
+/* Footer Override - Matches dark background */
 .voxel-page .footer-cta {
-    background-color: #E8E8E8;
+    background-color: #1a1a1a;
     padding: 50px 20px;
 }
 
 .voxel-page .footer-heading {
-    color: #000000;
+    color: #ffffff;
 }
 
 .voxel-page .footer-text {
-    color: #000000;
+    color: #ffffff;
 }
 
 .voxel-page .footer-link {
