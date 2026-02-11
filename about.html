@@ -190,45 +190,70 @@
         </section>
 
         <!-- Experience Section -->
-        <section class="experience-section section-fullscreen">
+        <section class="experience-section">
             <div class="experience-content">
                 <h2 class="experience-heading">Experience</h2>
 
                 <div class="experience-timeline">
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 class="experience-role">👾 Project Designer and Analyst</h3>
+                            <h3 class="experience-role">Analyst & Product Designer</h3>
                             <p class="experience-duration">Aug 2025 - Present</p>
                         </div>
-                        <p class="experience-company">Rebecca Everlene Trust Company</p>
+                        <p class="experience-company">Rebecca Everlene Trust Company · Full-time</p>
                         <p class="experience-location">Chicago, Illinois, United States · Remote</p>
                     </div>
 
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 class="experience-role">🎨 Product Designer</h3>
+                            <h3 class="experience-role">Data Analyst & Designer</h3>
                             <p class="experience-duration">Jun 2022 - Jun 2023</p>
                         </div>
-                        <p class="experience-company">PRIMER</p>
-                        <p class="experience-location">Mumbai, India</p>
+                        <p class="experience-company">PRIMER · Full-time</p>
+                        <p class="experience-location">Mumbai, Maharashtra, India · On-site</p>
                     </div>
 
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 class="experience-role">✨ Lead Designer</h3>
+                            <h3 class="experience-role">Junior Analyst & Designer</h3>
                             <p class="experience-duration">Oct 2021 - Jun 2022</p>
                         </div>
-                        <p class="experience-company">TASI</p>
-                        <p class="experience-location">Mumbai</p>
+                        <p class="experience-company">TASI · Full-time</p>
+                        <p class="experience-location">Mumbai, Maharashtra, India · On-site</p>
                     </div>
 
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 class="experience-role">💡 Product Designer - UI/UX</h3>
+                            <h3 class="experience-role">Product Designer - UI/UX</h3>
                             <p class="experience-duration">Jan 2020 - Jun 2021</p>
                         </div>
                         <p class="experience-company">Freelancing</p>
                         <p class="experience-location">Mumbai</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section">
+            <div class="education-content">
+                <h2 class="education-heading">Education</h2>
+
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3 class="education-degree">Master of Science - MS, Engineering Management</h3>
+                            <p class="education-duration">Aug 2023 - May 2025</p>
+                        </div>
+                        <p class="education-school">University of Massachusetts Amherst</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3 class="education-degree">BE, Electronics Engineering</h3>
+                            <p class="education-duration">Aug 2017 - Jun 2022</p>
+                        </div>
+                        <p class="education-school">University of Mumbai</p>
                     </div>
                 </div>
             </div>
@@ -416,38 +441,6 @@
 
             // Initialize display with 2025 (showing all tools)
             updateToolsDisplay(selectedYear);
-
-            // Slide-over effect for Experience Section (disabled on mobile)
-            function handleExperienceSlideOver() {
-                const experienceSection = document.querySelector('.experience-section');
-                const skillsSection = document.querySelector('.skills-section');
-
-                if (!experienceSection || !skillsSection) return;
-
-                // Disable parallax on mobile (screen width < 768px)
-                if (window.innerWidth < 768) {
-                    experienceSection.style.transform = 'none';
-                    return;
-                }
-
-                const skillsRect = skillsSection.getBoundingClientRect();
-                const viewportHeight = window.innerHeight;
-
-                // Calculate the scroll progress through the skills section
-                // Delay the start: only start sliding after scrolling 40% through skills section
-                const delay = skillsRect.height * 0.4; // 40% delay
-                const scrollProgress = Math.max(0, -skillsRect.top - delay);
-                const maxScroll = skillsRect.height - delay;
-                const progress = Math.min(Math.max(scrollProgress / maxScroll, 0), 1);
-
-                // Move experience section up as we scroll through skills
-                const translateY = (1 - progress) * 100;
-                experienceSection.style.transform = `translateY(${translateY}vh)`;
-            }
-
-            window.addEventListener('scroll', handleExperienceSlideOver);
-            window.addEventListener('resize', handleExperienceSlideOver); // Re-check on resize
-            handleExperienceSlideOver(); // Call once on load
 
             // Touch/swipe functionality for Mentally At carousel on mobile
             const mentallyGrid = document.querySelector('.mentally-grid');
