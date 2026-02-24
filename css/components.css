@@ -2131,22 +2131,11 @@ body:has(.work-nav) .nav-link {
     }
 
     .hey-text {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 70%;
-        bottom: auto;
-        font-size: 14px;
-        text-align: center;
+        display: none;
     }
 
     .dhomne-text {
-        left: 50%;
-        transform: translateX(-50%);
-        top: auto;
-        bottom: 70%;
-        font-size: 14px;
-        z-index: 1015;
-        text-align: center;
+        display: none;
     }
 
     .curtain-name-top {
@@ -2527,21 +2516,11 @@ body:has(.work-nav) .nav-link {
     }
 
     .hey-text {
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        top: 70%;
-        bottom: auto;
-        text-align: center;
+        display: none;
     }
 
     .dhomne-text {
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        top: auto;
-        bottom: 70%;
-        z-index: 1015;
+        display: none;
         text-align: center;
     }
 
