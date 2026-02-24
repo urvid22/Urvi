@@ -1,7 +1,7 @@
 /* Voxel Pages Styles */
 
 .voxel-page {
-    background-color: #1a1a1a;
+    background-color: #3a3a3a;
     min-height: 100vh;
 }
 
@@ -11,7 +11,7 @@
     line-height: 0;
     width: 100%;
     margin: 0;
-    padding-top: 100px;
+    padding-top: 0;
 }
 
 .voxel-hero {
@@ -19,18 +19,18 @@
     line-height: 0;
 }
 
-/* Page Title - Centered above images */
+/* Page Title - Aligned like Slack hero */
 .voxel-page-title {
-    text-align: center;
-    padding: 120px 20px 60px;
-    background-color: #E8E8E8;
+    text-align: left;
+    padding: 140px 120px 120px;
+    background-color: #3a3a3a;
 }
 
 .voxel-page-title h1 {
-    color: #000000;
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: clamp(48px, 10vw, 100px);
+    font-size: clamp(48px, 10vw, 90px);
     letter-spacing: 8px;
     text-transform: uppercase;
     margin: 0;
@@ -67,6 +67,18 @@
         letter-spacing: 4px;
         top: 20px;
     }
+
+    .voxel-page-title {
+        padding: 100px 30px 60px;
+    }
+
+    .voxel-page-title h1 {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .voxel-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -74,6 +86,14 @@
         font-size: 24px;
         letter-spacing: 2px;
         top: 15px;
+    }
+
+    .voxel-page-title {
+        padding: 80px 20px 40px;
+    }
+
+    .voxel-main {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -91,7 +111,7 @@
 
 /* Footer Override - Matches dark background */
 .voxel-page .footer-cta {
-    background-color: #1a1a1a;
+    background-color: #3a3a3a;
     padding: 50px 20px;
 }
 

@@ -185,7 +185,11 @@
     }
 
     .primer-hero {
-        padding: 140px 30px 60px;
+        padding: 100px 24px 60px;
+    }
+
+    .primer-hero .hero-title {
+        font-size: clamp(24px, 7vw, 32px);
     }
 
     .designs-section {
@@ -199,7 +203,7 @@
 
 @media (max-width: 600px) {
     .primer-hero {
-        padding: 140px 20px 60px;
+        padding: 80px 20px 50px;
     }
 
     .primer-page .masonry-grid {

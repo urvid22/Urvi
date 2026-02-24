@@ -3,14 +3,14 @@
    ========================================================================== */
 
 .ai-page {
-    background-color: #CC5500;
+    background: linear-gradient(160deg, #CC5500 0%, #a03d00 50%, #1a0a00 100%);
     padding-left: 60px;
     padding-right: 60px;
 }
 
 /* Footer Override */
 .ai-page .footer-cta {
-    background-color: #CC5500;
+    background-color: transparent;
     padding: 50px 20px;
 }
 
@@ -39,14 +39,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 140px 60px 80px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 140px 120px 120px;
 }
 
 .ai-menu-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: clamp(60px, 8vw, 90px);
     font-weight: 900;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -103,8 +101,11 @@
 
 .ai-menu-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(16px, 2vw, 20px);
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
     flex: 1;
 }
 
@@ -136,17 +137,19 @@
 
 .ai-doc-content {
     padding: 20px 20px 30px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.7);
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .ai-doc-content h3 {
-    font-size: 14px;
-    font-weight: 500;
-    color: #FFFFFF;
-    margin: 20px 0 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 24px 0 8px;
 }
 
 .ai-doc-content h3:first-child {
@@ -202,11 +205,11 @@
     }
 
     .ai-menu-section {
-        padding: 120px 20px 60px;
+        padding: 100px 20px 60px;
     }
 
     .ai-menu-option {
-        padding: 24px 16px;
+        padding: 20px 16px;
         gap: 16px;
     }
 
@@ -216,5 +219,39 @@
 
     .ai-menu-arrow {
         opacity: 1;
+    }
+
+    /* Doc images stack vertically */
+    .ai-doc-images {
+        flex-direction: column;
+    }
+
+    .ai-doc-images img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-menu-section {
+        padding: 80px 16px 40px;
+    }
+
+    .ai-menu-title {
+        font-size: clamp(24px, 7vw, 32px);
+        margin-bottom: 24px;
+    }
+
+    .ai-menu-option {
+        padding: 16px 12px;
+        gap: 12px;
+    }
+
+    .ai-menu-label {
+        font-size: 13px;
+    }
+
+    .ai-doc-content {
+        padding: 16px 12px 20px;
+        font-size: 14px;
     }
 }

@@ -51,18 +51,18 @@
 
 .challenge-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 900;
-    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
     line-height: 1;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
     text-transform: uppercase;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.2em;
 }
 
 .challenge-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     font-style: italic;
     color: #FFFFFF;
@@ -111,11 +111,8 @@
 
 @media (max-width: 768px) {
     .challenge-section {
-        padding: 80px 30px 60px;
-    }
-
-    .challenge-title {
-        font-size: 40px;
+        padding: 60px 24px;
+        min-height: auto;
     }
 }
 
@@ -127,13 +124,13 @@
 
 .breakdown-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 900;
-    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
     text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 60px 0;
-    letter-spacing: 0.05em;
+    text-align: left;
+    margin: 0 0 40px 0;
+    letter-spacing: 0.2em;
 }
 
 .breakdown-grid {
@@ -146,25 +143,26 @@
 
 .breakdown-card {
     background-color: transparent;
-    border: 3px dashed #9B59B6;
-    border-radius: 40px;
-    padding: 40px 30px;
-    min-height: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 24px;
+    min-height: auto;
+    letter-spacing: -0.02em;
 }
 
 .breakdown-card-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
     color: #FFFFFF;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
 }
 
 .breakdown-card-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.6;
     margin: 0;
 }
@@ -192,19 +190,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .project-breakdown-section {
-        padding: 60px 30px;
-    }
-
-    .breakdown-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .breakdown-title {
-        font-size: 36px;
-    }
-}
 
 /* Design Process Grid (inside accordion) */
 .design-process-grid {
@@ -215,35 +200,36 @@
 }
 
 .process-card {
-    background-color: #4A235A;
-    border: none;
-    border-radius: 30px;
-    padding: 25px 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
     text-align: left;
+    letter-spacing: -0.02em;
 }
 
 .process-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 900;
-    color: #FFFFFF;
-    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 8px;
 }
 
 .process-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #FFFFFF;
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
 }
 
 .process-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    color: #FFFFFF;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -276,12 +262,36 @@
     }
 }
 
+/* Expected Impact & Metrics standalone section */
+.metrics-section {
+    padding: 100px 120px;
+    background-color: #1A1A1A;
+}
+
+.metrics-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 20px;
+}
+
+.metrics-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
 /* Metrics Grid (inside accordion) */
 .metrics-grid {
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding: 20px 30px 40px 30px;
+    padding: 0;
     flex-wrap: wrap;
 }
 
@@ -295,13 +305,14 @@
 .metric-circle {
     width: 100px;
     height: 100px;
-    background-color: #4A235A;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: #FFFFFF;
 }
@@ -336,13 +347,14 @@
 
 .prototype-section .section-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 900;
-    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
     text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 60px 0;
-    letter-spacing: 0.05em;
+    text-align: left;
+    margin: 0 0 40px 0;
+    letter-spacing: 0.2em;
+    padding: 0 120px;
 }
 
 .prototype-container {
@@ -368,26 +380,11 @@
     }
 }
 
-@media (max-width: 768px) {
-    .prototype-section {
-        padding: 60px 0;
-    }
-
-    .prototype-container {
-        padding: 0 30px;
-    }
-
-    .prototype-section .section-title {
-        font-size: 36px;
-    }
-}
 
 /* Hero Section - Dark background */
 .hero-section {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
     align-items: center;
     padding: 140px 120px 120px;
     width: 100%;
@@ -408,7 +405,7 @@
 }
 
 .hero-title {
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 8vw, 90px);
     font-weight: 900;
     color: #FFFFFF;
     line-height: 0.9;
@@ -529,15 +526,14 @@
 
 .accordion-panel {
     background-color: #1A1A1A;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    border-radius: 20px 20px 0 0;
-    margin-bottom: 20px;
-    transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .accordion-panel.active {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
 }
 
 .accordion-header {
@@ -545,23 +541,25 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #A5509F;
-    border-radius: 20px 20px 0 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: opacity 0.3s ease;
     cursor: pointer;
 }
 
 .accordion-header:hover {
-    background-color: #8c4488;
+    opacity: 0.7;
 }
 
 .accordion-title {
-    font-size: 18px;
+    font-size: 11px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.45);
     margin: 0;
     text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
 }
 
 .accordion-icon {
@@ -579,19 +577,19 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.3s ease,
+                opacity 0.25s ease,
+                padding 0.25s ease;
     background-color: #1A1A1A;
     opacity: 0;
 }
 
 .accordion-panel.active .accordion-content {
-    max-height: 800px;
-    overflow-y: auto;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 3000px;
+    overflow: visible;
+    transition: max-height 0.4s ease,
+                opacity 0.3s ease,
+                padding 0.3s ease;
     opacity: 1;
 }
 
@@ -599,6 +597,22 @@
     padding: 30px 30px 20px 30px;
     color: #ffffff;
     margin: 0;
+}
+
+.accordion-prose {
+    padding: 36px 40px;
+}
+
+.accordion-prose p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 780px;
+}
+
+.accordion-prose strong {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .accordion-content .personas-container {
@@ -1136,14 +1150,6 @@
 }
 
 /* Prototype Section */
-.prototype-section {
-    padding: 80px 80px;
-    background-color: #2D2D2D;
-}
-
-.prototype-section .section-title {
-    color: #ffffff;
-}
 
 .prototype-container {
     max-width: 1200px;
@@ -1177,27 +1183,72 @@
 }
 
 @media (max-width: 768px) {
-    .hero-section,
-    .personas-section,
-    .pain-points-section,
-    .wireframe-section,
-    .refining-section,
-    .key-insights-section,
-    .project-overview-section,
+    /* Remove body-level padding so sections control their own spacing */
+    .case-study-page {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-section {
+        padding: 100px 24px 60px;
+        min-height: auto;
+    }
+
+    .metrics-section {
+        padding: 60px 24px;
+    }
+
+    .project-breakdown-section {
+        padding: 60px 24px;
+    }
+
     .prototype-section {
-        padding: 140px 30px 60px;
+        padding: 60px 0;
+    }
+
+    .prototype-section .section-title {
+        padding: 0 24px;
+        font-size: 11px;
+    }
+
+    .prototype-container {
+        padding: 0 24px;
+    }
+
+    /* Accordion */
+    .accordion-container {
+        padding: 20px 0;
+        max-width: 100%;
+    }
+
+    .accordion-header {
+        padding: 16px 20px;
+    }
+
+    .accordion-prose {
+        padding: 20px;
+    }
+
+    /* Design process grid - single column */
+    .design-process-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px;
     }
 
     .hero-title {
-        font-size: clamp(36px, 10vw, 55px);
+        font-size: clamp(24px, 7vw, 32px);
     }
 
     .hero-subtitle {
         font-size: 14px;
     }
 
-    .section-title {
-        font-size: clamp(28px, 5vw, 40px);
+    /* Keep label titles as labels — do NOT resize them */
+    .challenge-title,
+    .breakdown-title,
+    .metrics-label {
+        font-size: 11px;
     }
 
     /* Remove dark bars (hero images) on mobile */
@@ -1205,55 +1256,111 @@
         display: none;
     }
 
-    /* Project breakdown cards - 2 columns, centered */
+    /* Project breakdown cards - 2 columns, equal size */
     .breakdown-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-auto-rows: 1fr;
+        gap: 12px;
         max-width: 100%;
-        margin: 0 auto;
-        justify-items: center;
+        width: 100%;
+        margin: 0;
     }
 
     .breakdown-card {
-        padding: 18px 15px;
-        min-height: 120px;
+        padding: 14px;
+        min-height: 140px;
         width: 100%;
-        max-width: 100%;
-        text-align: center;
+        box-sizing: border-box;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .breakdown-card-title {
-        font-size: 14px;
-        margin-bottom: 8px;
+        font-size: 13px;
+        margin-bottom: 6px;
     }
 
     .breakdown-card-text {
-        font-size: 11px;
-        line-height: 1.4;
+        font-size: 12px;
+        line-height: 1.5;
     }
 
-    /* Design process cards - 2 columns, smaller font */
+    .color-dot {
+        width: 24px;
+        height: 24px;
+    }
+
+    .color-dots {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Design process cards */
     .process-card {
-        padding: 20px 15px;
-        text-align: center;
+        padding: 14px;
     }
 
     .process-number {
-        font-size: 24px;
-        margin-bottom: 8px;
+        font-size: 14px;
+        margin-bottom: 6px;
     }
 
     .process-title {
-        font-size: 14px;
-        margin-bottom: 8px;
+        font-size: 13px;
+        margin-bottom: 6px;
     }
 
     .process-text {
         font-size: 12px;
-        line-height: 1.4;
+        line-height: 1.5;
+    }
+
+    /* Metrics */
+    .metric-circle {
+        width: 72px;
+        height: 72px;
+        font-size: 16px;
+    }
+
+    .metric-label {
+        font-size: 12px;
+    }
+
+    .metrics-grid {
+        gap: 24px;
     }
 
     .persona-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Persona cards compact */
+    .persona-card {
+        padding: 14px;
+    }
+
+    .persona-name {
+        font-size: 15px;
+    }
+
+    .persona-quote {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .persona-goals h4,
+    .persona-frustrations h4 {
+        font-size: 11px;
+    }
+
+    .persona-goals ul,
+    .persona-frustrations ul {
+        font-size: 10px;
+    }
+
+    .persona-bio {
+        font-size: 10px;
     }
 }

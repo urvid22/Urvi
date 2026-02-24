@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Animations — Curtain Effect, Keyframes, Reduced Motion
+   ========================================================================== */
+
+/* ==========================================================================
+   Curtain Effect
+   ========================================================================== */
+
+.curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.curtain-container.active {
+    pointer-events: auto;
+}
+
+.curtain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    overflow: hidden;
+    transition: transform 0.05s ease-out;
+}
+
+.curtain-top {
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+    background-color: var(--color-maroon);
+    background-position: center bottom;
+}
+
+.curtain-bottom {
+    bottom: 0;
+    background-color: var(--color-maroon);
+    background-position: center top;
+}
+
+/* Top Right Text */
+.top-right-text {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-cream);
+    letter-spacing: 1px;
+    z-index: 1015;
+}
+
+/* Hey Text */
+.hey-text {
+    position: absolute;
+    bottom: calc(50% - 60px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-cream);
+    z-index: 1015;
+}
+
+/* Curtain Name Images */
+.curtain-name-top {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+    height: auto;
+    z-index: 1010;
+}
+
+/* Arc Text */
+.arc-text-container {
+    position: absolute;
+    bottom: 5%;
+    left: 35%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    z-index: 1015;
+    overflow: visible;
+}
+
+.arc-text-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.arc-text {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    fill: var(--color-cream);
+    letter-spacing: 1px;
+}
+
+.curtain-name-bottom {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+    height: auto;
+    z-index: 1010;
+}
+
+/* DHOMNE Text */
+.dhomne-text {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-cream);
+    z-index: 1015;
+}
+
+/* Location Labels */
+.location-label {
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-cream);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.location-prefix {
+    position: absolute;
+    bottom: 65px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-cream);
+    z-index: 100;
+}
+
+.location-prefix-left {
+    left: 40px;
+}
+
+.location-prefix-right {
+    right: 40px;
+}
+
+.location-left {
+    left: 40px;
+}
+
+.location-right {
+    right: 40px;
+}
+
+/* Location text styling */
+.label-english,
+.label-location {
+    font-family: 'Oooh Baby', cursive;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+/* Location text */
+.label-english {
+    opacity: 1;
+    position: relative;
+}
+
+/* Logo Container */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    transition: opacity var(--transition-fade);
+    pointer-events: none;
+    display: none;
+}
+
+.logo {
+    font-size: clamp(80px, 15vw, 220px);
+    font-weight: 900;
+    color: var(--color-cream);
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Hero Tagline */
+.hero-tagline {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-cream);
+    max-width: 600px;
+    text-align: center;
+    line-height: normal;
+    padding: 0 20px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1002;
+    animation: bounce 2s infinite;
+    transition: opacity var(--transition-fade);
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 30px;
+    border-left: 3px solid var(--color-cream);
+    border-bottom: 3px solid var(--color-cream);
+    transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scroll-diagonal {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-cream); }
+}
+
+@keyframes scrollToCenter {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ==========================================================================
+   Accessibility — Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .curtain-top,
+    .curtain-bottom,
+    .logo-container,
+    .scroll-indicator {
+        display: none;
+    }
+
+    .banner-content {
+        animation: none;
+    }
+}

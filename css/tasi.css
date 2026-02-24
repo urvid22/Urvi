@@ -294,7 +294,11 @@
     }
 
     .tasi-hero {
-        padding: 140px 30px 60px;
+        padding: 100px 24px 60px;
+    }
+
+    .tasi-hero .hero-title {
+        font-size: clamp(24px, 7vw, 32px);
     }
 
     .tasi-about {
@@ -320,7 +324,7 @@
 
 @media (max-width: 600px) {
     .tasi-hero {
-        padding: 140px 20px 60px;
+        padding: 80px 20px 50px;
     }
 
     .tasi-page .masonry-grid {

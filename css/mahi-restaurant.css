@@ -27,9 +27,7 @@
 /* Hero Section - Navy background from PRD */
 .hero-section {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
     align-items: center;
     padding: 140px 120px 120px;
     width: 100%;
@@ -50,7 +48,7 @@
 }
 
 .hero-title {
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 8vw, 90px);
     font-weight: 900;
     color: #FFFFFF;
     line-height: 0.9;
@@ -197,19 +195,19 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.3s ease,
+                opacity 0.25s ease,
+                padding 0.25s ease;
     background-color: #0C3658;
     opacity: 0;
 }
 
 .accordion-panel.active .accordion-content {
-    max-height: 800px;
-    overflow-y: auto;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 3000px;
+    overflow: visible;
+    transition: max-height 0.4s ease,
+                opacity 0.3s ease,
+                padding 0.3s ease;
     opacity: 1;
 }
 
@@ -500,7 +498,12 @@
 }
 
 .refining-section .section-title {
-    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 .refining-content {
@@ -611,64 +614,85 @@
     }
 }
 
-/* Key Insights Section - Navy blue background */
+/* User Research Section */
+.user-research-section {
+    padding: 100px 120px;
+    background-color: #0C3658;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.research-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    padding-top: 6px;
+}
+
+.research-paragraph {
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 720px;
+}
+
+.research-paragraph strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Key Insights Section */
 .key-insights-section {
-    padding: 80px 80px;
+    padding: 100px 120px;
     background-color: #0C3658;
 }
 
-.key-insights-section .section-title {
-    color: #ffffff;
-}
-
-.insights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.insight-card {
-    padding: 40px;
-    border-radius: 20px;
-    min-height: 300px;
-}
-
-.insight-1,
-.insight-3 {
-    background-color: #1a3d5c;
-    color: #ffffff;
-}
-
-.insight-2,
-.insight-5 {
-    background-color: #FFD4E5;
-    color: #000000;
-}
-
-.insight-4,
-.insight-6 {
-    background-color: #B8D4E8;
-    color: #000000;
-}
-
-.insight-number {
-    font-size: 32px;
+.insights-label {
+    display: block;
+    font-size: 11px;
     font-weight: 700;
-    margin-bottom: 20px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 60px;
+}
+
+.insights-list {
+}
+
+.insight-row {
+    display: grid;
+    grid-template-columns: 80px 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 16px 0;
+}
+
+.insight-index {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.1em;
+    padding-top: 4px;
 }
 
 .insight-title {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    color: #ffffff;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
 }
 
 .insight-text {
     font-size: 15px;
     line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Project Overview Section - Navy blue background */
@@ -686,42 +710,44 @@
 }
 
 .overview-card {
-    padding: 40px;
-    border-radius: 20px;
-    min-height: 280px;
+    padding: 16px;
+    border-radius: 10px;
+    min-height: auto;
     transition: transform 0.1s ease-out;
     will-change: transform;
+    letter-spacing: -0.02em;
 }
 
 .overview-1,
-.overview-3,
-.overview-5 {
-    background-color: #FFD4E5;
-    color: #000000;
-}
-
 .overview-2,
+.overview-3,
 .overview-4,
+.overview-5,
 .overview-6 {
-    background-color: #B8D4E8;
-    color: #000000;
+    background-color: transparent;
+    border: 1px solid #B8D4E8;
+    color: #ffffff;
 }
 
 .overview-number {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.45;
+    margin-right: 4px;
 }
 
 .overview-title {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
 }
 
 .overview-text {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* User Journey Map - Sugi Section */
@@ -931,7 +957,12 @@
 }
 
 .prototype-section .section-title {
-    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 .prototype-container {
@@ -1013,6 +1044,8 @@
     .insights-grid,
     .overview-grid {
         grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0;
     }
 
     .refining-mockups {
@@ -1025,9 +1058,16 @@
 }
 
 @media (max-width: 768px) {
+    /* Remove body-level padding so sections control their own spacing */
+    .case-study-page {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     /* Move content down to avoid sun logo */
     .hero-section {
-        padding: 140px 30px 60px;
+        padding: 100px 24px 60px;
+        min-height: auto;
     }
 
     .personas-section,
@@ -1036,16 +1076,41 @@
     .refining-section,
     .key-insights-section,
     .project-overview-section,
+    .ujm-sugi-section,
+    .ujm-bucky-section,
     .journey-section,
     .mobile-visuals-section,
     .prototype-section,
     .thankyou-section {
-        padding: 60px 30px;
+        padding: 60px 24px;
+    }
+
+    /* User Research - stack label above prose */
+    .user-research-section {
+        padding: 60px 24px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Key Insights */
+    .key-insights-section {
+        padding: 60px 24px;
+    }
+
+    /* Insight rows - collapse 3-col grid to single column */
+    .insight-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 20px 0;
+    }
+
+    .insight-index {
+        display: none;
     }
 
     /* Reduce hero title font size to fit */
     .hero-title {
-        font-size: clamp(40px, 10vw, 60px);
+        font-size: clamp(24px, 7vw, 32px);
     }
 
     /* Remove dark blue bars (hero images) */
@@ -1056,32 +1121,32 @@
     /* Arrange 6 cards in 2 columns */
     .overview-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 12px;
         max-width: 100%;
-        margin: 0 auto;
-        justify-items: center;
+        width: 100%;
+        margin: 0;
     }
 
-    /* Reduce card size and center align */
     .overview-card {
-        padding: 20px;
-        min-height: 200px;
-        text-align: center;
+        padding: 16px;
+        min-height: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
     }
 
     .overview-number {
-        font-size: 16px;
-        margin-bottom: 8px;
+        font-size: 12px;
     }
 
     .overview-title {
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 13px;
+        margin-bottom: 8px;
     }
 
     .overview-text {
-        font-size: 10px;
-        line-height: 1.5;
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     /* Reduce accordion title font size for mobile */
@@ -1089,12 +1154,29 @@
         font-size: 12px;
     }
 
+    /* Accordion container - remove desktop side padding on mobile */
+    .accordion-container {
+        padding: 20px 0;
+        max-width: 100%;
+    }
+
     .accordion-header {
-        padding: 12px 15px;
+        padding: 16px 20px;
     }
 
     .accordion-icon {
         font-size: 20px;
+    }
+
+    /* Inner accordion content - reduce padding on mobile */
+    .accordion-content .ujm-container,
+    .accordion-content .wireframe-container,
+    .accordion-content .pain-points-grid {
+        padding: 20px;
+    }
+
+    .accordion-content .section-note {
+        padding: 0 20px 20px 20px;
     }
 
     /* Remove parallax transforms on mobile */
@@ -1134,6 +1216,57 @@
 
     .persona-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Persona cards - compact for mobile */
+    .accordion-content .personas-container {
+        padding: 0 0 20px 0;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .persona-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .persona-header {
+        gap: 10px;
+    }
+
+    .avatar-placeholder {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .persona-name {
+        font-size: 15px;
+    }
+
+    .persona-details {
+        font-size: 10px;
+    }
+
+    .persona-quote {
+        font-size: 11px;
+        padding: 8px 10px;
+        margin: 10px 0;
+    }
+
+    .persona-goals h4,
+    .persona-frustrations h4 {
+        font-size: 11px;
+    }
+
+    .persona-goals ul,
+    .persona-frustrations ul {
+        font-size: 10px;
+    }
+
+    .persona-bio {
+        font-size: 10px;
+        margin-top: 10px;
     }
 
     .phone-mockup-placeholder {
