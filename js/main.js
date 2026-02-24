@@ -2,6 +2,7 @@
 // Curtain Scroll Effect Handler
 
 // Custom cursor
+/* COMMENTED OUT
 document.addEventListener('DOMContentLoaded', function() {
     const cursor = document.getElementById('customCursor');
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cursor.style.top = e.clientY + 'px';
     });
 });
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -195,23 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if curtains are fully open
         if (curtainProgress >= 1 && !curtainsFullyOpen) {
             curtainsFullyOpen = true;
-
-            // Show curtain container (don't hide it)
-            curtainContainer.style.display = 'block';
-
-            // Show centered navigation and logo
-            if (centeredNav) {
-                centeredNav.classList.add('visible');
-            }
-            if (topLeftLogo) {
-                topLeftLogo.classList.add('visible');
-            }
-
-            // Enable body scrolling for navigation
-            document.body.style.overflow = 'auto';
-
-            // Remove wheel event listener as curtains are now fully open
             window.removeEventListener('wheel', handleScroll);
+
+            // Fade to white then navigate to about page
+            document.body.style.transition = 'opacity 150ms ease';
+            document.body.style.opacity = '0';
+            setTimeout(() => { window.location.href = 'about.html'; }, 150);
         }
     }
 
@@ -279,18 +270,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (curtainProgress >= 1 && !curtainsFullyOpen) {
             curtainsFullyOpen = true;
 
-            if (centeredNav) {
-                centeredNav.classList.add('visible');
-            }
-            if (topLeftLogo) {
-                topLeftLogo.classList.add('visible');
-            }
-
-            document.body.style.overflow = 'auto';
-
             // Remove touch listeners
             window.removeEventListener('touchstart', handleTouchStart);
             window.removeEventListener('touchmove', handleTouchMove);
+
+            // Fade to white then navigate to about page
+            document.body.style.transition = 'opacity 150ms ease';
+            document.body.style.opacity = '0';
+            setTimeout(() => { window.location.href = 'about.html'; }, 150);
         }
     }
 
