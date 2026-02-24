@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fade to white then navigate to about page
             document.body.style.transition = 'opacity 150ms ease';
             document.body.style.opacity = '0';
-            setTimeout(() => { window.location.href = 'about.html'; }, 150);
+            setTimeout(() => { window.location.href = './about.html'; }, 150);
         }
     }
 
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fade to white then navigate to about page
             document.body.style.transition = 'opacity 150ms ease';
             document.body.style.opacity = '0';
-            setTimeout(() => { window.location.href = 'about.html'; }, 150);
+            setTimeout(() => { window.location.href = './about.html'; }, 150);
         }
     }
 
