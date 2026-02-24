@@ -19,12 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body class="about-page">
 
     <!-- Custom Cursor -->
-    <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor">
+    <!-- <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor"> -->
 
 
     <!-- Top Navigation -->
@@ -32,7 +34,7 @@
         <a href="index.html" class="logo-link">
             <img src="assets/sun red.svg" alt="Urvi" class="nav-logo">
         </a>
-        <a href="about.html" class="about-link">UD</a>
+        <a href="about.html#projects" class="about-link">Projects</a>
     </nav>
 
     <!-- Menu Overlay -->
@@ -50,7 +52,6 @@
                 <!-- Left Text Content -->
                 <div class="about-text-left">
                     <h2 class="about-title">Product</h2>
-                    <p class="about-paragraph">I design digital products that solve real user problems, then push them further with 3D visualization. I founded a clothing brand to see my designs in the real world.</p>
                 </div>
 
                 <!-- Profile Video (Center) -->
@@ -64,14 +65,32 @@
                 <!-- Right Text Content -->
                 <div class="about-text-right">
                     <h2 class="about-title">Designer</h2>
-                    <p class="about-paragraph">I learned voxel art and 3D modeling to break free from flat interfaces. I code because understanding constraints makes me design smarter solutions.</p>
                 </div>
 
             </div>
+
+            <!-- Sentences below video -->
+            <p class="about-below-text"><span class="typewriter-line" id="typeLine1"></span><br><span class="typewriter-line" id="typeLine2"></span></p>
+
         </section>
 
-        <!-- Section 2: Red Background with Strips and Mentally At -->
-        <section class="red-section section-fullscreen">
+        <!-- Nav Section — full screen, links Primer → Voxels -->
+        <section class="about-nav-section section-fullscreen" id="projects">
+            <div class="about-nav-container">
+                <div class="centered-navigation visible">
+                    <h2 class="info-heading">Projects</h2>
+                    <a href="tasi.html" class="nav-option">TASI <span class="nav-tag">Product design</span></a>
+                    <a href="primer-seltzer.html" class="nav-option">PRIMER SELTZER <span class="nav-tag">Product design</span></a>
+                    <a href="mahi-restaurant.html" class="nav-option">MAHI RESTAURANT <span class="nav-tag">Case study</span></a>
+                    <a href="slack.html" class="nav-option">SLACK UI <span class="nav-tag">Case study</span></a>
+                    <a href="ai.html" class="nav-option" data-href="ai.html">AI POWERED <span class="nav-tag">Projects</span></a>
+                    <a href="voxel.html" class="nav-option nav-option-voxel">3D VOXELS <span class="nav-tag">Projects</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Banners -->
+        <section class="red-section">
             <div class="about-text-content">
 
                     <!-- Scrolling Banner -->
@@ -90,172 +109,101 @@
                         </div>
                     </div>
 
-                    <!-- Scrolling Banner 3 (Right) -->
-                    <div class="scrolling-banner scrolling-banner-right">
-                        <div class="banner-content">
-                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> </span>
-                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> 3 YEARS EXPERIENCE <img src="assets/sym4.png" class="banner-icon" alt=""> </span>
-                        </div>
-                    </div>
-
-                    <!-- Scrolling Banner 4 (Bottom) -->
-                    <div class="scrolling-banner scrolling-banner-bottom">
-                        <div class="banner-content">
-                            <span>FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> </span>
-                            <span>FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> FIGMA <img src="assets/sym1.png" class="banner-icon" alt=""> PROTOTYPING <img src="assets/sym3.png" class="banner-icon" alt=""> WIREFRAMING <img src="assets/sym4.png" class="banner-icon" alt=""> </span>
-                        </div>
-                    </div>
 
             </div>
         </section>
 
-        <!-- Section 3: Skills and Tools -->
-        <section class="skills-section section-fullscreen">
-            <div class="skills-container">
-                <h2 class="skills-main-heading">Skills and Tools</h2>
+        <!-- Skills, Experience, Education — Three Column Section -->
+        <section class="info-section">
+            <div class="info-grid">
 
-                <div class="skills-grid">
-                    <!-- UX & Product Design -->
-                    <div class="skill-card skill-card-shade1">
-                        <h3 class="skill-title">UX & Product Design</h3>
-                        <div class="skill-tools" data-tools='{"2022":["Figma","Miro"],"2023":["Adobe XD"],"2024":["FigJam"],"2025":["Notion"]}'>
-                            <span class="tool-active">Figma</span>
-                            <span class="tool-active">Adobe XD</span>
-                            <span class="tool-active">Miro</span>
-                            <span class="tool-active">FigJam</span>
-                            <span class="tool-active">Notion</span>
-                        </div>
+                <!-- Left: Skills -->
+                <div class="info-card info-card-skills">
+                    <h2 class="info-heading">Skills and Tools</h2>
+                    <div class="skill-tools skill-tools-flat" data-tools='{"2022":["Figma","Miro","Photoshop","MagicaVoxel","Autocad"],"2023":["Adobe XD","Illustrator","Procreate"],"2024":["FigJam","After Effects","Lottie","Framer"],"2025":["Notion","Cursor","Claude Code"]}'>
+                        <span class="tool-active">Figma</span>
+                        <span class="tool-active">Miro</span>
+                        <span class="tool-active">Photoshop</span>
+                        <span class="tool-active">MagicaVoxel</span>
+                        <span class="tool-active">Autocad</span>
+                        <span class="tool-active">Adobe XD</span>
+                        <span class="tool-active">Illustrator</span>
+                        <span class="tool-active">Procreate</span>
+                        <span class="tool-active">FigJam</span>
+                        <span class="tool-active">After Effects</span>
+                        <span class="tool-active">Lottie</span>
+                        <span class="tool-active">Framer</span>
+                        <span class="tool-active">Notion</span>
+                        <span class="tool-active">Cursor</span>
+                        <span class="tool-active">Claude Code</span>
                     </div>
-
-                    <!-- UI & Visual Design -->
-                    <div class="skill-card skill-card-shade2">
-                        <h3 class="skill-title">UI & Visual Design</h3>
-                        <div class="skill-tools" data-tools='{"2022":["Figma","Photoshop"],"2023":["Illustrator","Procreate"],"2024":["After Effects","Lottie"],"2025":[]}'>
-                            <span class="tool-active">Figma</span>
-                            <span class="tool-active">Photoshop</span>
-                            <span class="tool-active">Illustrator</span>
-                            <span class="tool-active">Procreate</span>
-                            <span class="tool-active">After Effects</span>
-                            <span class="tool-active">Lottie</span>
-                        </div>
-                    </div>
-
-                    <!-- Design Systems & Development -->
-                    <div class="skill-card skill-card-shade3">
-                        <h3 class="skill-title">Design Systems & Development</h3>
-                        <div class="skill-tools" data-tools='{"2022":["Figma"],"2023":[],"2024":["Framer"],"2025":["Cursor","Claude Code"]}'>
-                            <span class="tool-active">Figma</span>
-                            <span class="tool-active">Framer</span>
-                            <span class="tool-active">Cursor</span>
-                            <span class="tool-active">Claude Code</span>
-                        </div>
-                    </div>
-
-                    <!-- 3D & Collaboration -->
-                    <div class="skill-card skill-card-shade4">
-                        <h3 class="skill-title">3D & Collaboration</h3>
-                        <div class="skill-tools" data-tools='{"2022":["MagicaVoxel","Autocad","Miro"],"2023":[],"2024":["FigJam"],"2025":["Notion"]}'>
-                            <span class="tool-active">MagicaVoxel</span>
-                            <span class="tool-active">Autocad</span>
-                            <span class="tool-active">Miro</span>
-                            <span class="tool-active">FigJam</span>
-                            <span class="tool-active">Notion</span>
+                    <div class="skills-timeline">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-years">
+                            <div class="timeline-year" data-year="2022">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">2022</span>
+                            </div>
+                            <div class="timeline-year" data-year="2023">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">2023</span>
+                            </div>
+                            <div class="timeline-year" data-year="2024">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">2024</span>
+                            </div>
+                            <div class="timeline-year active" data-year="2025">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">2025</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Timeline -->
-                <div class="skills-timeline">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-years">
-                        <div class="timeline-year" data-year="2022">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-label">2022</span>
-                        </div>
-                        <div class="timeline-year" data-year="2023">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-label">2023</span>
-                        </div>
-                        <div class="timeline-year" data-year="2024">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-label">2024</span>
-                        </div>
-                        <div class="timeline-year active" data-year="2025">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-label">2025</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="experience-section">
-            <div class="experience-content">
-                <h2 class="experience-heading">Experience</h2>
-
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <div class="experience-header">
+                <!-- Middle: Experience -->
+                <div class="info-card">
+                    <h2 class="info-heading">Experience</h2>
+                    <div class="experience-timeline">
+                        <div class="experience-item">
                             <h3 class="experience-role">Analyst & Product Designer</h3>
-                            <p class="experience-duration">Aug 2025 - Present</p>
+                            <p class="experience-duration">Aug 2025 - Present, Chicago, IL</p>
+                            <p class="experience-company">Rebecca Everlene Trust Company</p>
                         </div>
-                        <p class="experience-company">Rebecca Everlene Trust Company · Full-time</p>
-                        <p class="experience-location">Chicago, Illinois, United States · Remote</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3 class="experience-role">Data Analyst & Designer</h3>
-                            <p class="experience-duration">Jun 2022 - Jun 2023</p>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Product Designer</h3>
+                            <p class="experience-duration">Jun 2022 - Jun 2023, Mumbai</p>
+                            <p class="experience-company">Primer Seltzer</p>
                         </div>
-                        <p class="experience-company">PRIMER · Full-time</p>
-                        <p class="experience-location">Mumbai, Maharashtra, India · On-site</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3 class="experience-role">Junior Analyst & Designer</h3>
-                            <p class="experience-duration">Oct 2021 - Jun 2022</p>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Junior Designer</h3>
+                            <p class="experience-duration">Oct 2021 - Jun 2022, Mumbai</p>
+                            <p class="experience-company">TASI</p>
                         </div>
-                        <p class="experience-company">TASI · Full-time</p>
-                        <p class="experience-location">Mumbai, Maharashtra, India · On-site</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3 class="experience-role">Product Designer - UI/UX</h3>
-                            <p class="experience-duration">Jan 2020 - Jun 2021</p>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Product Designer</h3>
+                            <p class="experience-duration">Jan 2020 - Jun 2021, Mumbai</p>
+                            <p class="experience-company">Freelancing</p>
                         </div>
-                        <p class="experience-company">Freelancing</p>
-                        <p class="experience-location">Mumbai</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Education Section -->
-        <section class="education-section">
-            <div class="education-content">
-                <h2 class="education-heading">Education</h2>
-
-                <div class="education-timeline">
-                    <div class="education-item">
-                        <div class="education-header">
-                            <h3 class="education-degree">Master of Science - MS, Engineering Management</h3>
+                <!-- Right: Education -->
+                <div class="info-card">
+                    <h2 class="info-heading">Education</h2>
+                    <div class="education-timeline">
+                        <div class="education-item">
+                            <h3 class="education-degree">Master of Science, Engineering Management</h3>
                             <p class="education-duration">Aug 2023 - May 2025</p>
+                            <p class="education-school">University of Massachusetts Amherst</p>
                         </div>
-                        <p class="education-school">University of Massachusetts Amherst</p>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-header">
+                        <div class="education-item">
                             <h3 class="education-degree">BE, Electronics Engineering</h3>
                             <p class="education-duration">Aug 2017 - Jun 2022</p>
+                            <p class="education-school">University of Mumbai</p>
                         </div>
-                        <p class="education-school">University of Mumbai</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -345,12 +293,37 @@
                 });
             }
 
+            // Nav hover effects — change container background only
+            const navContainer = document.querySelector('.about-nav-container');
+            const caseStudyColors = {
+                'mahi-restaurant.html': '#5568af',
+                'slack.html': '#A5509F',
+                'tasi.html': '#7B2D8E',
+                'primer-seltzer.html': '#636969',
+                'ai.html': '#CC5500'
+            };
+
+            document.querySelectorAll('.about-nav-section .nav-option').forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    if (!navContainer) return;
+                    const isLight = this.classList.contains('nav-option-voxel');
+                    const href = this.getAttribute('data-href') || this.getAttribute('href');
+                    const color = isLight ? '#E8E8E8' : (caseStudyColors[href] || '');
+                    navContainer.style.backgroundColor = color;
+                    navContainer.classList.toggle('nav-container-dark', !isLight && !!color);
+                });
+
+                option.addEventListener('mouseleave', function() {
+                    if (!navContainer) return;
+                    navContainer.style.backgroundColor = '';
+                    navContainer.classList.remove('nav-container-dark');
+                });
+            });
+
             // Scroll-based movement for banners
             function updateBanners() {
                 const bannerLeft = document.querySelector('.scrolling-banner-left');
                 const bannerMiddle = document.querySelector('.scrolling-banner-middle');
-                const bannerRight = document.querySelector('.scrolling-banner-right');
-                const bannerBottom = document.querySelector('.scrolling-banner-bottom');
                 const scrollY = window.scrollY;
                 const moveAmount = scrollY * 1.0; // Movement speed
 
@@ -358,13 +331,7 @@
                     bannerLeft.style.transform = `translateX(-${moveAmount}px)`;
                 }
                 if (bannerMiddle) {
-                    bannerMiddle.style.transform = `translateX(${moveAmount - 500}px)`;
-                }
-                if (bannerRight) {
-                    bannerRight.style.transform = `translateX(-${moveAmount}px)`;
-                }
-                if (bannerBottom) {
-                    bannerBottom.style.transform = `translateX(${moveAmount - 300}px)`;
+                    bannerMiddle.style.transform = `translateX(${moveAmount - 900}px)`;
                 }
             }
 
@@ -442,72 +409,111 @@
             // Initialize display with 2025 (showing all tools)
             updateToolsDisplay(selectedYear);
 
-            // Touch/swipe functionality for Mentally At carousel on mobile
-            const mentallyGrid = document.querySelector('.mentally-grid');
-            if (mentallyGrid && window.innerWidth < 768) {
+            // Drag-to-scroll for Mentally At on mobile
+            const mentallySection = document.querySelector('.mentally-section');
+            if (mentallySection && window.innerWidth < 768) {
                 let isDragging = false;
                 let startX = 0;
-                let scrollLeft = 0;
-                let currentTranslate = 0;
+                let startScroll = 0;
 
-                // Pause animation on touch
-                mentallyGrid.style.animationPlayState = 'paused';
-
-                mentallyGrid.addEventListener('touchstart', (e) => {
-                    isDragging = true;
-                    startX = e.touches[0].pageX;
-                    mentallyGrid.style.cursor = 'grabbing';
-                });
-
-                mentallyGrid.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                    e.preventDefault();
-                    const x = e.touches[0].pageX;
-                    const walk = (startX - x) * 2; // Multiply for faster scroll
-                    currentTranslate -= walk;
-                    mentallyGrid.style.transform = `translateX(${currentTranslate}px)`;
-                    startX = x;
-                });
-
-                mentallyGrid.addEventListener('touchend', () => {
-                    isDragging = false;
-                    mentallyGrid.style.cursor = 'grab';
-                });
-
-                // Also add mouse events for testing on desktop
-                mentallyGrid.addEventListener('mousedown', (e) => {
+                mentallySection.addEventListener('mousedown', (e) => {
                     isDragging = true;
                     startX = e.pageX;
-                    mentallyGrid.style.cursor = 'grabbing';
+                    startScroll = mentallySection.scrollLeft;
+                    mentallySection.style.cursor = 'grabbing';
                 });
 
-                mentallyGrid.addEventListener('mousemove', (e) => {
+                mentallySection.addEventListener('mousemove', (e) => {
                     if (!isDragging) return;
                     e.preventDefault();
-                    const x = e.pageX;
-                    const walk = (startX - x) * 2;
-                    currentTranslate -= walk;
-                    mentallyGrid.style.transform = `translateX(${currentTranslate}px)`;
-                    startX = x;
+                    mentallySection.scrollLeft = startScroll - (e.pageX - startX);
                 });
 
-                mentallyGrid.addEventListener('mouseup', () => {
+                mentallySection.addEventListener('mouseup', () => {
                     isDragging = false;
-                    mentallyGrid.style.cursor = 'grab';
+                    mentallySection.style.cursor = 'grab';
                 });
 
-                mentallyGrid.addEventListener('mouseleave', () => {
+                mentallySection.addEventListener('mouseleave', () => {
                     isDragging = false;
-                    mentallyGrid.style.cursor = 'grab';
+                    mentallySection.style.cursor = 'grab';
                 });
 
-                mentallyGrid.style.cursor = 'grab';
+                mentallySection.style.cursor = 'grab';
             }
         });
     </script>
 
     <!-- Burger Menu Script -->
     <script src="js/burger-menu.js"></script>
+
+    <!-- Inflate Text Animation -->
+    <script>
+        (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                const titles = document.querySelectorAll('.about-title');
+
+                // Split each title into letter spans
+                titles.forEach(function(title) {
+                    const chars = title.textContent.split('');
+                    title.innerHTML = chars.map(function(char, i) {
+                        return '<span class="letter" style="animation-delay:' + (i * 180) + 'ms">' + char + '</span>';
+                    }).join('');
+                });
+
+                // Trigger on scroll into view
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('inflate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                titles.forEach(function(t) { observer.observe(t); });
+            });
+        })();
+    </script>
+
+    <!-- Typewriter Animation -->
+    <script>
+        (function() {
+            const line1 = 'I founded a clothing brand to see my designs in the real world.';
+            const line2 = 'I code because understanding constraints makes me design smarter solutions.';
+            const speed = 45; // ms per character (medium speed)
+
+            function typeText(el, text, callback) {
+                let i = 0;
+                function tick() {
+                    el.textContent = text.slice(0, ++i);
+                    if (i < text.length) setTimeout(tick, speed);
+                    else if (callback) setTimeout(callback, 300);
+                }
+                tick();
+            }
+
+            function startTypewriter() {
+                const el1 = document.getElementById('typeLine1');
+                const el2 = document.getElementById('typeLine2');
+                if (!el1 || !el2) return;
+
+                // Start when about section is in view
+                const observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        observer.disconnect();
+                        typeText(el1, line1, function() {
+                            typeText(el2, line2);
+                        });
+                    }
+                }, { threshold: 0.4 });
+
+                observer.observe(document.getElementById('about'));
+            }
+
+            document.addEventListener('DOMContentLoaded', startTypewriter);
+        })();
+    </script>
 
     <!-- Image Loader Script -->
     <script src="js/image-loader.js"></script>

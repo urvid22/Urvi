@@ -19,7 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/voxel.css">
 </head>
 <body class="voxel-page">
@@ -29,7 +31,7 @@
         <a href="index.html" class="logo-link">
             <img src="assets/sun red.svg" alt="Urvi" class="nav-logo">
         </a>
-        <a href="about.html" class="about-link">UD</a>
+        <a href="about.html#projects" class="about-link">Projects</a>
     </nav>
 
     <!-- Menu Overlay -->
@@ -37,6 +39,11 @@
         <a href="index.html">Menu</a>
         <a href="about.html">About Me</a>
     </div>
+
+    <!-- Page Title -->
+    <section class="voxel-page-title">
+        <h1>3D Voxels</h1>
+    </section>
 
     <!-- Main Content -->
     <main class="voxel-main">
@@ -81,6 +88,55 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        // Departure board (split-flap) effect
+        function departureEffect(element) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const SCRAMBLE_SPEED = 40;
+            const STAGGER = 70;
+            const SETTLE_AFTER = 500;
+
+            const nodes = Array.from(element.childNodes);
+            element.innerHTML = '';
+            const spans = [];
+
+            nodes.forEach(node => {
+                if (node.nodeName === 'BR') {
+                    element.appendChild(document.createElement('br'));
+                } else if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent.split('').forEach(char => {
+                        const span = document.createElement('span');
+                        span.dataset.target = char;
+                        span.textContent = char === ' ' ? '\u00A0' : chars[Math.floor(Math.random() * chars.length)];
+                        element.appendChild(span);
+                        spans.push(span);
+                    });
+                }
+            });
+
+            spans.forEach((span, i) => {
+                const target = span.dataset.target;
+                if (target === ' ') return;
+                const delay = i * STAGGER;
+                let timer;
+                setTimeout(() => {
+                    timer = setInterval(() => {
+                        span.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    }, SCRAMBLE_SPEED);
+                    setTimeout(() => {
+                        clearInterval(timer);
+                        span.textContent = target;
+                    }, SETTLE_AFTER);
+                }, delay);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.voxel-page-title h1');
+            if (title) departureEffect(title);
+        });
+    </script>
 
     <!-- Burger Menu Script -->
     <script src="js/burger-menu.js"></script>

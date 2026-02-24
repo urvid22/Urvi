@@ -19,7 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Advent+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/ai.css">
 </head>
 <body class="case-study-page ai-page">
@@ -29,7 +31,7 @@
         <a href="index.html" class="logo-link">
             <img src="assets/sun beige.svg" alt="Urvi" class="nav-logo">
         </a>
-        <a href="about.html" class="about-link">UD</a>
+        <a href="about.html#projects" class="about-link">Projects</a>
     </nav>
 
     <!-- Menu Overlay -->
@@ -42,7 +44,7 @@
     <main class="main-content">
 
         <section class="ai-menu-section">
-            <h1 class="ai-menu-title">AI Powered Projects</h1>
+            <h1 class="ai-menu-title">AI Powered</h1>
             <div class="ai-menu-options">
                 <div class="ai-menu-item">
                     <div class="ai-menu-option ai-menu-toggle" data-target="portfolio-doc">
@@ -141,7 +143,52 @@
 
     <!-- Toggle Script -->
     <script>
+        // Departure board (split-flap) effect
+        function departureEffect(element) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const SCRAMBLE_SPEED = 40;
+            const STAGGER = 70;
+            const SETTLE_AFTER = 500;
+
+            const nodes = Array.from(element.childNodes);
+            element.innerHTML = '';
+            const spans = [];
+
+            nodes.forEach(node => {
+                if (node.nodeName === 'BR') {
+                    element.appendChild(document.createElement('br'));
+                } else if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent.split('').forEach(char => {
+                        const span = document.createElement('span');
+                        span.dataset.target = char;
+                        span.textContent = char === ' ' ? '\u00A0' : chars[Math.floor(Math.random() * chars.length)];
+                        element.appendChild(span);
+                        spans.push(span);
+                    });
+                }
+            });
+
+            spans.forEach((span, i) => {
+                const target = span.dataset.target;
+                if (target === ' ') return;
+                const delay = i * STAGGER;
+                let timer;
+                setTimeout(() => {
+                    timer = setInterval(() => {
+                        span.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    }, SCRAMBLE_SPEED);
+                    setTimeout(() => {
+                        clearInterval(timer);
+                        span.textContent = target;
+                    }, SETTLE_AFTER);
+                }, delay);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.ai-menu-title');
+            if (title) departureEffect(title);
+
             const toggles = document.querySelectorAll('.ai-menu-toggle');
             toggles.forEach(function(toggle) {
                 toggle.addEventListener('click', function() {

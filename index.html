@@ -19,12 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&family=Oooh+Baby&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
     <!-- Custom Cursor -->
-    <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor">
+    <!-- <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor"> -->
 
     <!-- Full Name Image -->
     <img src="assets/fullnameimage.png" alt="Urvi Dhomne" class="fullname-image" id="fullnameImage">
@@ -51,7 +53,6 @@
                 <span class="location-prefix location-prefix-left">Originally from</span>
                 <div class="location-label location-left">
                     <span class="label-english">Mumbai</span>
-                    <span class="label-hindi">मुंबई</span>
                 </div>
                 <span class="location-prefix location-prefix-right">Currently in</span>
                 <div class="location-label location-right">
@@ -80,20 +81,8 @@
     <!-- Main Navigation - Centered after curtains open -->
     <div class="centered-navigation" id="centeredNav">
         <a href="about.html" class="nav-option">ABOUT ME</a>
-        <div class="nav-item-wrapper">
-            <span class="nav-option nav-option-parent" data-href="tasi.html">TASI</span>
-            <div class="nav-suboptions">
-                <a href="tasi.html" class="nav-suboption">Product Design</a>
-                <a href="https://github.com/urvidhomne" class="nav-suboption">Analytics</a>
-            </div>
-        </div>
-        <div class="nav-item-wrapper">
-            <span class="nav-option nav-option-parent" data-href="primer-seltzer.html">PRIMER SELTZER</span>
-            <div class="nav-suboptions">
-                <a href="primer-seltzer.html" class="nav-suboption">Product Design</a>
-                <a href="https://github.com/urvidhomne" class="nav-suboption">Analytics</a>
-            </div>
-        </div>
+        <a href="tasi.html" class="nav-option">TASI</a>
+        <a href="primer-seltzer.html" class="nav-option">PRIMER SELTZER</a>
         <a href="mahi-restaurant.html" class="nav-option">MAHI RESTAURANT - UI/UX CASE STUDY</a>
         <a href="slack.html" class="nav-option">SLACK - UI INTERFACE</a>
         <a href="ai.html" class="nav-option" data-href="ai.html">AI POWERED PROJECTS</a>
@@ -108,6 +97,49 @@
         </section>
 
     </main>
+
+    <!-- Location Label Typewriter -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function typeText(el, text, speed, callback) {
+                el.textContent = '';
+                var i = 0;
+                function tick() {
+                    el.textContent = text.slice(0, ++i);
+                    if (i < text.length) setTimeout(tick, speed);
+                    else if (callback) setTimeout(callback, 150);
+                }
+                tick();
+            }
+
+            var prefixLeft    = document.querySelector('.location-prefix-left');
+            var prefixRight   = document.querySelector('.location-prefix-right');
+            var labelEnglish  = document.querySelector('.label-english');
+            var labelLocation = document.querySelector('.label-location');
+
+            // Clear text so it types in fresh
+            if (prefixLeft)    prefixLeft.textContent    = '';
+            if (prefixRight)   prefixRight.textContent   = '';
+            if (labelEnglish)  labelEnglish.textContent  = '';
+            if (labelLocation) labelLocation.textContent = '';
+
+            var delay = 600;
+
+            // Left side: "Originally from" → "Mumbai"
+            setTimeout(function () {
+                typeText(prefixLeft, 'Originally from', 45, function () {
+                    typeText(labelEnglish, 'Mumbai', 90);
+                });
+            }, delay);
+
+            // Right side: staggered slightly → "Currently in" → "Washington DC"
+            setTimeout(function () {
+                typeText(prefixRight, 'Currently in', 45, function () {
+                    typeText(labelLocation, 'Washington DC', 90);
+                });
+            }, delay + 150);
+        });
+    </script>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
