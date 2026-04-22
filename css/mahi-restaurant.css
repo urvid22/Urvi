@@ -4,8 +4,9 @@
 
 /* Case Study Page Background - Navy blue */
 .case-study-page {
-    background-color: #0C3658;
-    background-image: none;
+    background-color: #FFF2DE;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -16,7 +17,7 @@
 }
 
 .case-study-nav .nav-logo {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .case-study-nav .nav-link {
@@ -32,7 +33,7 @@
     padding: 140px 120px 120px;
     width: 100%;
     margin: 0;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .hero-content {
@@ -140,11 +141,11 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .accordion-panel {
-    background-color: #0C3658;
+    background-color: transparent;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px 20px 0 0;
     margin-bottom: 20px;
@@ -161,15 +162,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #B8D4E8;
+    background-color: rgba(134, 10, 34, 0.08);
     border-radius: 20px 20px 0 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(134, 10, 34, 0.15);
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
 .accordion-header:hover {
-    background-color: #9fc5de;
+    background-color: rgba(134, 10, 34, 0.14);
 }
 
 .accordion-title {
@@ -198,7 +199,7 @@
     transition: max-height 0.3s ease,
                 opacity 0.25s ease,
                 padding 0.25s ease;
-    background-color: #0C3658;
+    background-color: transparent;
     opacity: 0;
 }
 
@@ -213,7 +214,7 @@
 
 .accordion-content .section-intro-single {
     padding: 30px 30px 20px 30px;
-    color: #ffffff;
+    color: #000000;
     margin: 0;
 }
 
@@ -223,7 +224,7 @@
 
 .accordion-content .section-note {
     padding: 0 30px 30px 30px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(134, 10, 34, 0.5);
 }
 
 .accordion-content .ujm-container {
@@ -247,7 +248,7 @@
 
 /* Personas Section - Navy blue background */
 .personas-section {
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .personas-section .section-title,
@@ -301,7 +302,7 @@
 .persona-name {
     font-size: 20px;
     font-weight: 600;
-    color: #860a22;
+    color: #000000;
     margin: 0 0 6px 0;
 }
 
@@ -368,7 +369,7 @@
 /* Pain Points Section - Navy blue background */
 .pain-points-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .pain-points-section .section-title {
@@ -473,7 +474,7 @@
 /* Wireframe Section - Navy blue background */
 .wireframe-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .wireframe-section .section-title {
@@ -494,7 +495,7 @@
 /* Refining Design Section - Navy blue background */
 .refining-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .refining-section .section-title {
@@ -617,7 +618,7 @@
 /* User Research Section */
 .user-research-section {
     padding: 100px 120px;
-    background-color: #0C3658;
+    background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -649,7 +650,7 @@
 /* Key Insights Section */
 .key-insights-section {
     padding: 100px 120px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .insights-label {
@@ -698,7 +699,7 @@
 /* Project Overview Section - Navy blue background */
 .project-overview-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .overview-grid {
@@ -753,7 +754,7 @@
 /* User Journey Map - Sugi Section */
 .ujm-sugi-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .ujm-sugi-section .section-title {
@@ -763,7 +764,7 @@
 /* User Journey Map - Bucky Section */
 .ujm-bucky-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .ujm-bucky-section .section-title {
@@ -785,7 +786,7 @@
 /* Journey Section - Navy blue background */
 .journey-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .journey-content {
@@ -846,7 +847,7 @@
 /* Mobile Visuals Section - Navy blue background */
 .mobile-visuals-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .mobile-content {
@@ -953,7 +954,7 @@
 /* Prototype Section */
 .prototype-section {
     padding: 80px 80px;
-    background-color: #0C3658;
+    background-color: transparent;
 }
 
 .prototype-section .section-title {
@@ -1275,26 +1276,26 @@
     }
 }
 
-/* Footer Override - Matches Navy Blue page background */
+/* Footer Override - Matches beige page background */
 .case-study-page .footer-cta {
-    background-color: #0C3658;
+    background-color: transparent;
     padding: 50px 20px;
 }
 
 .case-study-page .footer-heading {
-    color: #FFFFFF;
+    color: #860a22;
 }
 
 .case-study-page .footer-text {
-    color: #FFFFFF;
+    color: #860a22;
 }
 
 .case-study-page .footer-link {
-    color: #B8D4E8;
+    color: #860a22;
     text-decoration: underline;
 }
 
 .case-study-page .footer-link:hover {
-    color: #FFFFFF;
-    opacity: 0.9;
+    color: #860a22;
+    opacity: 0.7;
 }

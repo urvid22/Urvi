@@ -30,7 +30,6 @@
     background-repeat: no-repeat;
     will-change: transform;
     overflow: hidden;
-    transition: transform 0.05s ease-out;
 }
 
 .curtain-top {
@@ -39,13 +38,13 @@
     align-items: flex-start;
     justify-content: center;
     padding-top: 40px;
-    background-color: var(--color-maroon);
+    background-color: var(--color-curtain);
     background-position: center bottom;
 }
 
 .curtain-bottom {
     bottom: 0;
-    background-color: var(--color-maroon);
+    background-color: var(--color-curtain);
     background-position: center top;
 }
 
@@ -57,7 +56,7 @@
     font-family: 'Advent Pro', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     letter-spacing: 1px;
     z-index: 1015;
 }
@@ -71,7 +70,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     z-index: 1015;
 }
 
@@ -108,7 +107,7 @@
     font-family: 'Advent Pro', sans-serif;
     font-size: 30px;
     font-weight: 400;
-    fill: var(--color-cream);
+    fill: var(--color-maroon);
     letter-spacing: 1px;
 }
 
@@ -131,7 +130,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     z-index: 1015;
 }
 
@@ -141,7 +140,7 @@
     bottom: 30px;
     font-size: 14px;
     font-weight: 700;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     z-index: 100;
     cursor: pointer;
 }
@@ -152,7 +151,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     z-index: 100;
 }
 
@@ -201,7 +200,7 @@
 .logo {
     font-size: clamp(80px, 15vw, 220px);
     font-weight: 900;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     letter-spacing: 0.05em;
     text-align: center;
     line-height: 1;
@@ -212,7 +211,7 @@
 .hero-tagline {
     font-size: 14px;
     font-weight: 700;
-    color: var(--color-cream);
+    color: var(--color-maroon);
     max-width: 600px;
     text-align: center;
     line-height: normal;
@@ -322,6 +321,70 @@
 .fade-in {
     animation: fadeIn 0.5s ease-in-out;
 }
+
+/* ==========================================================================
+   Dot Markers
+   ========================================================================== */
+
+.dot-marker {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-maroon);
+    z-index: 1020;
+    pointer-events: none;
+}
+
+/* Expanding pulse ring when active */
+.dot-marker::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(134, 10, 34, 0.3);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.dot-marker.dot-active::after {
+    opacity: 1;
+    transform: scale(1);
+    animation: dot-pulse 1.4s ease-out infinite;
+}
+
+@keyframes dot-pulse {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Pill tag */
+.dot-tag {
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-maroon);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-maroon);
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+}
+
+.dot-marker.dot-active .dot-tag {
+    opacity: 1;
+}
+
 
 /* ==========================================================================
    Accessibility — Reduced Motion

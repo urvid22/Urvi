@@ -4,8 +4,9 @@
 
 /* Page Background - Purple theme matching brand */
 .tasi-page {
-    background-color: #7B2D8E;
-    background-image: none;
+    background-color: #FFF2DE;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -16,7 +17,7 @@
 }
 
 .tasi-nav .nav-logo {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .tasi-nav .nav-link {
@@ -34,7 +35,7 @@
     padding: 140px 120px 120px;
     width: 100%;
     margin: 0;
-    background-color: #7B2D8E;
+    background-color: transparent;
 }
 
 .tasi-hero .hero-content {
@@ -44,7 +45,7 @@
 .tasi-hero .hero-title {
     font-size: clamp(60px, 8vw, 120px);
     font-weight: 900;
-    color: #FFFFFF;
+    color: #860a22;
     line-height: 0.9;
     margin: 40px 0 30px 0;
     text-transform: uppercase;
@@ -53,7 +54,7 @@
 .tasi-hero .hero-subtitle {
     font-size: 16px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #860a22;
     line-height: 1.6;
     max-width: 600px;
 }
@@ -81,7 +82,7 @@
 
 /* Lookbook Gallery Section */
 .lookbook-section {
-    background-color: #7B2D8E;
+    background-color: transparent;
     padding: 60px 0;
 }
 
@@ -96,7 +97,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #7B2D8E;
+    background-color: transparent;
 }
 
 .lookbook-image {
@@ -110,14 +111,14 @@
 
 /* Designs Section */
 .tasi-designs {
-    background-color: #7B2D8E;
+    background-color: transparent;
     padding: 80px 60px;
 }
 
 .tasi-designs .section-title {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
-    color: #FFFFFF;
+    color: #860a22;
     text-align: center;
     margin-bottom: 60px;
     text-transform: uppercase;
@@ -245,17 +246,119 @@
 
 .tasi-footer .footer-heading,
 .tasi-footer .footer-text {
-    color: #FFFFFF;
+    color: #860a22;
 }
 
 .tasi-footer .footer-link {
-    color: #C9A0DC;
+    color: #860a22;
     text-decoration: underline;
 }
 
 .tasi-footer .footer-link:hover {
-    color: #FFFFFF;
-    opacity: 0.9;
+    color: #860a22;
+    opacity: 0.7;
+}
+
+/* ── Definition table (Research, Design Direction, Prototype, Iterations) ── */
+.tasi-table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(134, 10, 34, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 680px;
+}
+
+.tasi-table-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(134, 10, 34, 0.12);
+    padding: 20px 24px;
+    align-items: baseline;
+}
+
+.tasi-table-row:last-child {
+    border-bottom: none;
+}
+
+.tasi-table-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-maroon);
+    letter-spacing: 0.04em;
+    padding-right: 20px;
+    line-height: 1.5;
+    padding-top: 1px;
+}
+
+.tasi-table-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-maroon);
+    line-height: 1.7;
+    opacity: 0.88;
+    margin: 0;
+}
+
+/* ── Roadmap (What's Next) ── */
+.tasi-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(134, 10, 34, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 680px;
+    margin-top: 32px;
+}
+
+.tasi-roadmap-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0;
+    padding: 24px 24px;
+    border-bottom: 1px solid rgba(134, 10, 34, 0.12);
+    align-items: start;
+}
+
+.tasi-roadmap-item:last-child {
+    border-bottom: none;
+}
+
+.tasi-roadmap-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-maroon);
+    opacity: 0.5;
+    padding-top: 2px;
+}
+
+.tasi-roadmap-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-maroon);
+    line-height: 1.7;
+    opacity: 0.88;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .tasi-table-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .tasi-table-label {
+        opacity: 0.55;
+    }
+
+    .tasi-roadmap-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
 }
 
 /* Responsive Design */

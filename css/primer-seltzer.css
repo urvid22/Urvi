@@ -4,8 +4,9 @@
 
 /* Page Background - Brand grey color */
 .primer-page {
-    background-color: #636969;
-    background-image: none;
+    background-color: #FFF2DE;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -16,7 +17,7 @@
 }
 
 .primer-nav .nav-logo {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .primer-nav .nav-link {
@@ -34,7 +35,7 @@
     padding: 140px 120px 120px;
     width: 100%;
     margin: 0;
-    background-color: #636969;
+    background-color: transparent;
 }
 
 .primer-hero .hero-content {
@@ -44,7 +45,7 @@
 .primer-hero .hero-title {
     font-size: clamp(60px, 8vw, 120px);
     font-weight: 900;
-    color: #FFFFFF;
+    color: #860a22;
     line-height: 0.9;
     margin: 0 0 30px 0;
     text-transform: uppercase;
@@ -53,7 +54,7 @@
 .primer-hero .hero-subtitle {
     font-size: 16px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #860a22;
     line-height: 1.6;
     max-width: 600px;
 }
@@ -81,14 +82,14 @@
 
 /* Designs Section */
 .designs-section {
-    background-color: #636969;
+    background-color: transparent;
     padding: 80px 60px;
 }
 
 .designs-section .section-title {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
-    color: #FFFFFF;
+    color: #860a22;
     text-align: center;
     margin-bottom: 60px;
     text-transform: uppercase;
@@ -145,17 +146,17 @@
 
 .primer-footer .footer-heading,
 .primer-footer .footer-text {
-    color: #FFFFFF;
+    color: #860a22;
 }
 
 .primer-footer .footer-link {
-    color: #9fd5d1;
+    color: #860a22;
     text-decoration: underline;
 }
 
 .primer-footer .footer-link:hover {
-    color: #FFFFFF;
-    opacity: 0.9;
+    color: #860a22;
+    opacity: 0.7;
 }
 
 /* Responsive Design */

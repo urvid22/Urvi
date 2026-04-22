@@ -846,7 +846,7 @@ body:has(.work-nav) .nav-link {
 
 .banner-content span {
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: 64px;
     font-weight: 700;
     color: var(--color-maroon);
     letter-spacing: 0em;
@@ -1620,7 +1620,9 @@ body:has(.work-nav) .nav-link {
 }
 
 .about-nav-container .centered-navigation {
-    top: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 0;
 }
 
 .about-nav-container .info-heading {
@@ -1633,6 +1635,9 @@ body:has(.work-nav) .nav-link {
     gap: 16px;
     color: #000000;
     text-decoration: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 42px;
 }
 
 .nav-tag {
@@ -2104,6 +2109,10 @@ body:has(.work-nav) .nav-link {
         padding: 0;
     }
 
+    .about-nav-container .nav-option {
+        font-size: 22px;
+    }
+
     .nav-spacer {
         height: 15px;
     }
@@ -2296,7 +2305,7 @@ body:has(.work-nav) .nav-link {
 
     .banner-content span {
         color: var(--color-maroon);
-        font-size: 28px;
+        font-size: 48px;
     }
 
     .scrolling-banner-middle,
@@ -2463,6 +2472,10 @@ body:has(.work-nav) .nav-link {
 
     .nav-link {
         font-size: 12px;
+    }
+
+    .about-nav-container .nav-option {
+        font-size: 17px;
     }
 
     .nav-option {
@@ -2714,7 +2727,7 @@ body:has(.work-nav) .nav-link {
     }
 
     .banner-content span {
-        font-size: 20px;
+        font-size: 36px;
     }
 
     .banner-icon {
@@ -2791,7 +2804,7 @@ body:has(.work-nav) .nav-link {
     .mentally-item { width: 100% !important; height: 100% !important; }
 
     .banner-content span {
-        font-size: 16px;
+        font-size: 28px;
     }
 
     .tools-heading,
@@ -2818,6 +2831,80 @@ body:has(.work-nav) .nav-link {
 
     .info-heading {
         font-size: 16px;
+    }
+}
+
+/* ==========================================================================
+   Landing Buttons (shown after curtains open)
+   ========================================================================== */
+
+.landing-buttons {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    display: flex;
+    gap: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms ease;
+}
+
+.landing-buttons.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.landing-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 52px;
+    border-radius: 60px;
+    transition: background-color 250ms ease, color 250ms ease, transform 250ms ease, box-shadow 250ms ease;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.landing-btn-design {
+    background-color: var(--color-maroon);
+    color: #FFD4A8;
+    border: 2px solid #FFD4A8;
+}
+
+.landing-btn-analytics {
+    background-color: var(--color-maroon);
+    color: #FFD4A8;
+    border: 2px solid #FFD4A8;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .landing-btn-design:hover,
+    .landing-btn-analytics:hover {
+        background-color: #FFD4A8;
+        color: var(--color-maroon);
+        border-color: var(--color-maroon);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(134, 10, 34, 0.25);
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-buttons {
+        flex-direction: column;
+        gap: 14px;
+        width: calc(100% - 60px);
+        max-width: 320px;
+    }
+
+    .landing-btn {
+        font-size: 15px;
+        padding: 16px 40px;
+        text-align: center;
     }
 }
 
