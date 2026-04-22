@@ -135,60 +135,14 @@
             <p class="footer-text">
                 Get in touch with me on
                 <a href="https://www.linkedin.com/in/urvidhomne/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                or
-                <a href="mailto:urvi99@gmail.com" class="footer-link">Email Me</a>.
+.
             </p>
         </div>
     </footer>
 
     <!-- Toggle Script -->
     <script>
-        // Departure board (split-flap) effect
-        function departureEffect(element) {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            const SCRAMBLE_SPEED = 40;
-            const STAGGER = 70;
-            const SETTLE_AFTER = 500;
-
-            const nodes = Array.from(element.childNodes);
-            element.innerHTML = '';
-            const spans = [];
-
-            nodes.forEach(node => {
-                if (node.nodeName === 'BR') {
-                    element.appendChild(document.createElement('br'));
-                } else if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent.split('').forEach(char => {
-                        const span = document.createElement('span');
-                        span.dataset.target = char;
-                        span.textContent = char === ' ' ? '\u00A0' : chars[Math.floor(Math.random() * chars.length)];
-                        element.appendChild(span);
-                        spans.push(span);
-                    });
-                }
-            });
-
-            spans.forEach((span, i) => {
-                const target = span.dataset.target;
-                if (target === ' ') return;
-                const delay = i * STAGGER;
-                let timer;
-                setTimeout(() => {
-                    timer = setInterval(() => {
-                        span.textContent = chars[Math.floor(Math.random() * chars.length)];
-                    }, SCRAMBLE_SPEED);
-                    setTimeout(() => {
-                        clearInterval(timer);
-                        span.textContent = target;
-                    }, SETTLE_AFTER);
-                }, delay);
-            });
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
-            const title = document.querySelector('.ai-menu-title');
-            if (title) departureEffect(title);
-
             const toggles = document.querySelectorAll('.ai-menu-toggle');
             toggles.forEach(function(toggle) {
                 toggle.addEventListener('click', function() {

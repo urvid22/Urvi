@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
+<body class="index-page">
 
     <!-- Custom Cursor -->
     <!-- <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor"> -->
@@ -37,6 +37,9 @@
         <div class="curtain curtain-top">
             <div class="hey-text">Hey, I'm</div>
             <img src="assets/nametop.png" alt="" class="curtain-name-top">
+            <div class="dot-marker" data-dot-index="0" style="left:9%;top:22%"><span class="dot-tag">love art</span></div>
+            <div class="dot-marker" data-dot-index="1" style="left:83%;top:18%"><span class="dot-tag">analyses everything</span></div>
+            <div class="dot-marker" data-dot-index="2" style="left:13%;top:67%"><span class="dot-tag">photography lover</span></div>
         </div>
 
         <!-- URVI Logo (centered between curtains) -->
@@ -48,6 +51,9 @@
         <div class="curtain curtain-bottom">
             <img src="assets/namebottom.png" alt="" class="curtain-name-bottom">
             <div class="dhomne-text">DHOMNE</div>
+            <div class="dot-marker" data-dot-index="3" style="left:79%;top:28%"><span class="dot-tag">exploring cafes</span></div>
+            <div class="dot-marker" data-dot-index="4" style="left:86%;top:55%"><span class="dot-tag">running a 5k</span></div>
+            <div class="dot-marker" data-dot-index="5" style="left:38%;top:48%"><span class="dot-tag">romanticizing life</span></div>
             <div class="curtain-content">
                 <!-- Location Labels -->
                 <span class="location-prefix location-prefix-left">Originally from</span>
@@ -87,6 +93,12 @@
         <a href="slack.html" class="nav-option">SLACK - UI INTERFACE</a>
         <a href="ai.html" class="nav-option" data-href="ai.html">AI POWERED PROJECTS</a>
         <a href="voxel.html" class="nav-option nav-option-voxel">3D VOXELS</a>
+    </div>
+
+    <!-- Landing Buttons (revealed after curtains open) -->
+    <div class="landing-buttons" id="landingButtons">
+        <a href="about.html" class="landing-btn landing-btn-design">Design</a>
+        <a href="https://github.com/urvidhomne" target="_blank" rel="noopener noreferrer" class="landing-btn landing-btn-analytics">Analytics</a>
     </div>
 
     <!-- Main Content -->
@@ -139,6 +151,49 @@
                 });
             }, delay + 150);
         });
+    </script>
+
+    <!-- Dot marker cycling -->
+    <script>
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            var dots = Array.from(document.querySelectorAll('.dot-marker')).sort(function (a, b) {
+                return +a.dataset.dotIndex - +b.dataset.dotIndex;
+            });
+            if (!dots.length) return;
+
+            var current = 0;
+            var active = true;
+            var timer = null;
+
+            function next() {
+                if (!active) return;
+                dots.forEach(function (d) { d.classList.remove('dot-active'); });
+                dots[current].classList.add('dot-active');
+                timer = setTimeout(function () {
+                    dots[current].classList.remove('dot-active');
+                    current = (current + 1) % dots.length;
+                    timer = setTimeout(next, 600); // gap between dots
+                }, 3000);
+            }
+
+            // Start after initial settle
+            timer = setTimeout(next, 1400);
+
+            // Stop when curtains finish opening
+            var landingButtons = document.getElementById('landingButtons');
+            if (landingButtons) {
+                new MutationObserver(function (mutations, obs) {
+                    if (landingButtons.classList.contains('visible')) {
+                        active = false;
+                        clearTimeout(timer);
+                        dots.forEach(function (d) { d.classList.remove('dot-active'); });
+                        obs.disconnect();
+                    }
+                }).observe(landingButtons, { attributes: true, attributeFilter: ['class'] });
+            }
+        });
+    })();
     </script>
 
     <!-- JavaScript -->
