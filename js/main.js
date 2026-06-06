@@ -18,13 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const curtainTop = document.querySelector('.curtain-top');
     const curtainBottom = document.querySelector('.curtain-bottom');
-    const centeredNav = document.getElementById('centeredNav');
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const curtainContainer = document.getElementById('curtainContainer');
     const mainContent = document.querySelector('.main-content');
     const topLeftLogo = document.getElementById('topLeftLogo');
     const mainPoster = document.getElementById('mainPoster');
-    const landingButtons = document.getElementById('landingButtons');
     const curtainNameTop = document.querySelector('.curtain-name-top');
     const curtainNameBottom = document.querySelector('.curtain-name-bottom');
     const fullnameImage = document.getElementById('fullnameImage');
@@ -140,15 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if navigating from another page (skip curtain animation)
     if (window.location.hash === '#main') {
-        curtainTop.style.transform = 'translateY(-100%)';
-        curtainBottom.style.transform = 'translateY(100%)';
-        if (scrollIndicator) scrollIndicator.style.opacity = 0;
-        if (centeredNav) centeredNav.classList.add('visible');
-        if (topLeftLogo) topLeftLogo.classList.add('visible');
-        document.body.style.overflow = 'auto';
-        curtainsFullyOpen = true;
-        targetProgress = 1;
-        currentProgress = 1;
+        window.location.href = 'about.html';
         return;
     }
 
@@ -188,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.removeEventListener('wheel', handleScroll);
                 window.removeEventListener('touchstart', handleTouchStart);
                 window.removeEventListener('touchmove', handleTouchMove);
-                if (landingButtons) landingButtons.classList.add('visible');
+                window.location.href = 'about.html';
             }
             return;
         }
