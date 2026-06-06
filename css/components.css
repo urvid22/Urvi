@@ -811,7 +811,7 @@ body:has(.work-nav) .nav-link {
     left: -50%;
     background-color: transparent;
     border: none;
-    padding: 10px 0;
+    padding: 4px 0;
     overflow: visible;
     z-index: 10;
 }
@@ -822,7 +822,7 @@ body:has(.work-nav) .nav-link {
 }
 
 .scrolling-banner-middle {
-    transform: translateX(-60%);
+    transform: translateX(40%);
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -846,20 +846,20 @@ body:has(.work-nav) .nav-link {
 
 .banner-content span {
     font-family: 'Montserrat', sans-serif;
-    font-size: 64px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--color-maroon);
     letter-spacing: 0em;
     word-spacing: 0em;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     flex-shrink: 0;
 }
 
 
 .banner-icon {
-    height: 24px;
+    height: 12px;
     width: auto;
     display: inline-block;
     vertical-align: middle;
@@ -888,7 +888,7 @@ body:has(.work-nav) .nav-link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .about-text-left {
@@ -908,19 +908,68 @@ body:has(.work-nav) .nav-link {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    text-align: center;
     align-items: flex-end;
     justify-content: flex-start;
-    margin-right: 100px;
-    margin-top: -100px;
+    text-align: right;
+    padding-left: 40px;
+    margin-top: -102px;
+    align-self: stretch;
     position: relative;
     z-index: 20;
+}
+
+.about-cta-btn {
+    display: inline-block;
+    background-color: #FFD4A0;
+    color: var(--color-maroon);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 80px;
+    border-radius: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.about-cta-btn:hover {
+    opacity: 0.8;
+}
+
+.about-cta-group {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.about-cta-btn--primary {
+    background-color: var(--color-maroon);
+    color: var(--color-cream);
+}
+
+.about-cta-btn--sm {
+    padding: 14px 100px;
+}
+
+
+.about-bio {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-maroon);
+    text-align: right;
+    max-width: 420px;
+    margin: 0;
 }
 
 .about-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 100px;
     font-weight: 900;
+    line-height: 0.9;
     color: var(--color-maroon);
     margin: 0;
     text-transform: uppercase;
@@ -976,22 +1025,17 @@ body:has(.work-nav) .nav-link {
 .about-video-centered {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-items: flex-start;
     z-index: 10;
-    pointer-events: none;
 }
 
 .about-video-centered .about-profile-video {
-    max-width: 250px;
+    max-width: 420px;
     width: 100%;
+    max-height: 560px;
     height: auto;
     border-radius: 40px;
     object-fit: cover;
-    pointer-events: auto;
 }
 
 /* Red Section - Second Fullscreen Section */
@@ -1425,7 +1469,7 @@ body:has(.work-nav) .nav-link {
 
 .timeline-year.active .timeline-label {
     opacity: 1;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .timeline-year:hover .timeline-dot {
@@ -1637,12 +1681,31 @@ body:has(.work-nav) .nav-link {
     text-decoration: none;
     padding-top: 14px;
     padding-bottom: 14px;
+    padding-left: 0;
+    padding-right: 40px;
     font-size: 42px;
+}
+
+.about-nav-container .nav-option::before {
+    width: 60vw;
+}
+
+.nav-rect {
+    display: inline-block;
+    width: 72px;
+    height: 1em;
+    background-color: var(--color-maroon);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .nav-tag {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     color: #999999;
     text-transform: none;
@@ -1662,8 +1725,9 @@ body:has(.work-nav) .nav-link {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 24px;
     align-items: start;
 }
 
@@ -1683,9 +1747,7 @@ body:has(.work-nav) .nav-link {
     margin-bottom: 16px;
 }
 
-/* Skills card — nudge right */
 .info-card-skills {
-    margin-left: 40px;
 }
 
 /* Flat two-column tools list inside skills card */
@@ -1697,19 +1759,25 @@ body:has(.work-nav) .nav-link {
 }
 
 .skill-tools-flat .tool-active,
-.skill-tools-flat .tool-future {
+.skill-tools-flat .tool-future,
+.skill-tools-flat .tool-neutral {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.4;
     color: #000000;
 }
 
 .skill-tools-flat .tool-active {
+    font-weight: 500;
     opacity: 1;
 }
 
 .skill-tools-flat .tool-future {
     opacity: 0.3;
+}
+
+.skill-tools-flat .tool-neutral {
+    opacity: 1;
 }
 
 /* Timeline — 2×2 matrix, compact */
@@ -1722,10 +1790,10 @@ body:has(.work-nav) .nav-link {
 }
 
 .info-card .timeline-years {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: start;
-    gap: 6px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
 }
 
 .info-card .timeline-year {
@@ -1740,7 +1808,7 @@ body:has(.work-nav) .nav-link {
     min-width: 8px;
     margin-bottom: 0;
     background-color: transparent;
-    border-color: #000000;
+    border: 2px solid #F7AE31;
 }
 
 .info-card .timeline-year.active .timeline-dot {
@@ -1807,6 +1875,7 @@ body:has(.work-nav) .nav-link {
 /* Mentally At Section */
 .mentally-subsection {
     background-color: transparent;
+    margin-top: 20px;
 }
 
 .mentally-section {
@@ -2203,7 +2272,6 @@ body:has(.work-nav) .nav-link {
         padding-top: 80px;
     }
 
-    .about-text-left,
     .about-text-right {
         align-items: center;
         text-align: center;
@@ -2214,31 +2282,11 @@ body:has(.work-nav) .nav-link {
         z-index: 20;
     }
 
-    .about-text-left .about-title,
     .about-text-right .about-title {
         display: block;
         font-size: 56px;
     }
 
-    .about-text-left {
-        order: 1;
-    }
-
-    .about-text-right {
-        order: 3;
-        margin-top: auto;
-    }
-
-    .about-text-left::before {
-        display: none;
-    }
-
-    .about-content-wrapper {
-        min-height: 480px;
-        justify-content: space-between;
-    }
-
-    .about-text-left .about-paragraph,
     .about-text-right .about-paragraph {
         text-align: center;
         max-width: 100%;
@@ -2246,15 +2294,8 @@ body:has(.work-nav) .nav-link {
     }
 
     .about-video-centered {
-        position: absolute;
-        top: 58%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        order: 1;
         z-index: 5;
-        opacity: 1;
-        order: 2;
-        margin: 0;
-        pointer-events: none;
     }
 
     .about-video-centered .about-profile-video {
@@ -2596,7 +2637,6 @@ body:has(.work-nav) .nav-link {
         padding-top: 100px;
     }
 
-    .about-text-left,
     .about-text-right {
         align-items: center;
         text-align: center;
@@ -2607,17 +2647,11 @@ body:has(.work-nav) .nav-link {
         z-index: 20;
     }
 
-    .about-text-left .about-title,
     .about-text-right .about-title {
         display: block;
         font-size: 48px;
     }
 
-    .about-text-left::before {
-        display: none;
-    }
-
-    .about-text-left .about-paragraph,
     .about-text-right .about-paragraph {
         text-align: center;
         max-width: 100%;
@@ -2625,15 +2659,8 @@ body:has(.work-nav) .nav-link {
     }
 
     .about-video-centered {
-        position: absolute;
-        top: 58%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        order: 1;
         z-index: 5;
-        opacity: 1;
-        order: 2;
-        margin: 0;
-        pointer-events: none;
     }
 
     .about-video-centered .about-profile-video {
