@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/marathi.css">
     <link rel="stylesheet" href="css/tasi.css">
+    <link rel="stylesheet" href="css/tasi-sidebar.css">
 </head>
 <body class="case-study-page tasi-page">
 
@@ -38,288 +39,172 @@
 
     <main class="main-content">
 
-        <!-- Hero -->
-        <div class="marathi-hero">
-            <p class="marathi-eyebrow">Case Study &mdash; Brand &amp; Product Design</p>
-            <h1 class="marathi-hero-title">TASI</h1>
-            <p class="marathi-hero-subtitle">
-                A self-initiated clothing brand exploring customisable graphics as a form of &lsquo;direction&rsquo; &mdash;
-                a solo effort in brand identity, experience design, and product strategy from concept to launch.
-            </p>
+        <div class="ts-layout">
+            <!-- Sticky index sidebar -->
+            <aside class="ts-sidebar">
+                <nav class="ts-sidebar-nav" aria-label="Case study sections">
+                    <ol class="ts-sidebar-list">
+                        <li class="ts-sidebar-item"><a href="#product-problem" class="ts-sidebar-link"><span class="ts-sidebar-dot" aria-hidden="true"></span><span class="ts-sidebar-label">01 &middot; The Product &amp; The Problem</span></a></li>
+                        <li class="ts-sidebar-item"><a href="#role-contribution" class="ts-sidebar-link"><span class="ts-sidebar-dot" aria-hidden="true"></span><span class="ts-sidebar-label">02 &middot; My Role &amp; Contribution</span></a></li>
+                        <li class="ts-sidebar-item"><a href="#design-decisions" class="ts-sidebar-link"><span class="ts-sidebar-dot" aria-hidden="true"></span><span class="ts-sidebar-label">03 &middot; Key Design Decisions</span></a></li>
+                        <li class="ts-sidebar-item"><a href="#outcome" class="ts-sidebar-link"><span class="ts-sidebar-dot" aria-hidden="true"></span><span class="ts-sidebar-label">04 &middot; The Outcome</span></a></li>
+                        <li class="ts-sidebar-item"><a href="#designs" class="ts-sidebar-link"><span class="ts-sidebar-dot" aria-hidden="true"></span><span class="ts-sidebar-label">05 &middot; Designs</span></a></li>
+                    </ol>
+                </nav>
+            </aside>
 
-            <div class="marathi-meta">
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Role</p>
-                    <p class="marathi-meta-value">Co-founder · Product<br>Designer &amp; Analyst</p>
+            <div class="ts-content">
+                <!-- Top metadata row -->
+                <div class="ts-meta-row">
+                    <div>
+                        <p class="ts-meta-label">Timeline</p>
+                        <p class="ts-meta-value">2023</p>
+                    </div>
+                    <div>
+                        <p class="ts-meta-label">Tool</p>
+                        <p class="ts-meta-value">Figma &middot; SQL &middot; Adobe Illustrator &middot; Procreate &middot; Adobe Photoshop</p>
+                    </div>
                 </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Deliverables</p>
-                    <p class="marathi-meta-value">Brand system · Web<br>experience · Product strategy</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Scope</p>
-                    <p class="marathi-meta-value">Solo — end to end</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Status</p>
-                    <p class="marathi-meta-value">Launched — v1 live</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- 01 — The Problem -->
-        <section class="marathi-section">
+        <!-- 01 — The Product & The Problem -->
+        <section class="marathi-section" id="product-problem">
             <div class="marathi-section-header">
                 <span class="marathi-section-number">01</span>
-                <h2 class="marathi-section-title">The Problem</h2>
+                <h2 class="marathi-section-title">The Product &amp; The Problem</h2>
             </div>
-            <p class="marathi-lead">Graphic apparel lacks meaning.</p>
-            <p class="marathi-body">The custom clothing market is saturated with generic print-on-demand platforms that treat apparel as a blank canvas for any image. The result is a race to the bottom on price, with no coherent brand narrative or design intent behind what people wear.</p>
-            <p class="marathi-body" style="margin-top: 16px;">The deeper problem: clothing is one of the most visible forms of self-expression humans have &mdash; yet most custom apparel tools are built like office printers, not design systems. There was no brand in the market treating custom graphics as a deliberate, narrative-driven design discipline.</p>
+
+            <p class="marathi-lead">
+                TASI is a self-initiated clothing brand exploring customisable graphics as a form of
+                &ldquo;direction&rdquo; &mdash; not another print-on-demand platform, but a brand that treats custom
+                apparel as a deliberate, narrative-driven design discipline.
+            </p>
+
+            <p class="marathi-body">
+                The custom clothing market is saturated with generic tools that treat apparel as a blank canvas for
+                any image; a race to the bottom on price, with no coherent brand narrative behind what people wear.
+                The deeper problem: clothing is one of the most visible forms of self-expression people have, yet
+                most custom apparel platforms are built like office printers, not design systems.
+            </p>
+
+            <p class="marathi-body">
+                The conceptual anchor came from the Sanskrit root &ldquo;tasi&rdquo; &mdash; meaning &ldquo;showing
+                direction by means of a thing.&rdquo; Apparel as directional signal, not decoration.
+            </p>
+
             <div class="marathi-quote">
-                <p>&ldquo;Clothing isn&rsquo;t just fabric. It&rsquo;s directional. People use what they wear to signal identity, community, and belief. TASI was built to take that seriously.&rdquo;</p>
+                <p>&ldquo;Clothing isn&rsquo;t just fabric. It&rsquo;s directional. People use what they wear to
+                signal identity, community, and belief. TASI was built to take that seriously.&rdquo;</p>
             </div>
         </section>
 
-        <!-- 02 — Research -->
-        <section class="marathi-section">
+        <!-- 02 — My Role & Contribution -->
+        <section class="marathi-section" id="role-contribution">
             <div class="marathi-section-header">
                 <span class="marathi-section-number">02</span>
-                <h2 class="marathi-section-title">Research</h2>
+                <h2 class="marathi-section-title">My Role &amp; Contribution</h2>
             </div>
-            <p class="marathi-lead">Understanding the gap between expression and execution.</p>
-            <p class="marathi-body">Before designing anything, I mapped the competitive landscape and spoke with potential customers &mdash; people who&rsquo;d either tried custom apparel platforms or wanted to but didn&rsquo;t know where to start.</p>
 
-            <div class="cs-table">
+            <p class="marathi-lead">Founding Manager, end to end, from concept to launch.</p>
+
+            <div class="cs-table" style="margin-top: 8px;">
                 <div class="cs-table-row">
-                    <span class="cs-table-label">Competitive audit</span>
-                    <p class="cs-table-value">Analysed 10+ custom apparel platforms (Printful, Redbubble, Custom Ink). Found: strong on fulfilment, weak on design narrative. None led with concept.</p>
+                    <span class="cs-table-label">Research</span>
+                    <p class="cs-table-value">Audited 10+ competitor platforms (Printful, Redbubble, Custom Ink) and ran 8 user conversations across two segments (individuals wanting statement pieces, teams wanting branded merch) to find the market gap.</p>
                 </div>
                 <div class="cs-table-row">
-                    <span class="cs-table-label">User conversations</span>
-                    <p class="cs-table-value">Talked to 8 potential customers across two groups: individuals wanting statement pieces, and small teams wanting branded merch. Both wanted more than a template &mdash; they wanted a collaborator.</p>
+                    <span class="cs-table-label">Brand strategy</span>
+                    <p class="cs-table-value">Anchored the entire brand system to a single conceptual idea (the &ldquo;tasi&rdquo; naming insight), letting it drive typography, colour, copy tone, and IA.</p>
                 </div>
                 <div class="cs-table-row">
-                    <span class="cs-table-label">Market gap</span>
-                    <p class="cs-table-value">No brand in the mid-market segment combined a strong conceptual identity with accessible custom graphics. The space was either luxury/bespoke or mass-market/generic. Nothing thoughtful and accessible existed.</p>
+                    <span class="cs-table-label">Product strategy</span>
+                    <p class="cs-table-value">Made the deliberate call to de-scope e-commerce entirely for v1, routing to LinkedIn/email instead, to validate the brand story before building commerce infrastructure.</p>
                 </div>
                 <div class="cs-table-row">
-                    <span class="cs-table-label">Cultural insight</span>
-                    <p class="cs-table-value">The Sanskrit root &lsquo;tasi&rsquo; &mdash; meaning &lsquo;showing direction by means of a thing&rsquo; &mdash; became the conceptual anchor. Apparel as directional signal rather than decoration. This reframe shaped everything downstream.</p>
+                    <span class="cs-table-label">Experience design</span>
+                    <p class="cs-table-value">Designed a linear IA (read the concept &rarr; browse designs &rarr; get in touch), tested across three Figma prototyping rounds before any production code.</p>
+                </div>
+                <div class="cs-table-row">
+                    <span class="cs-table-label">Analytics</span>
+                    <p class="cs-table-value">Built SQL-based tracking from day one to monitor which design categories and contact touchpoints performed best, feeding directly back into design iteration.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 03 — Core Insights -->
-        <section class="marathi-section">
+        <!-- 03 — Key Design Decisions -->
+        <section class="marathi-section" id="design-decisions">
             <div class="marathi-section-header">
                 <span class="marathi-section-number">03</span>
-                <h2 class="marathi-section-title">Core Insights</h2>
+                <h2 class="marathi-section-title">Key Design Decisions</h2>
             </div>
-            <p class="marathi-lead">Three insights that shaped every subsequent decision.</p>
 
-            <div class="marathi-decisions" style="margin-top: 32px;">
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">1</span>
-                    <div class="marathi-decision-content">
-                        <strong>People don&rsquo;t want a tool &mdash; they want a collaborator</strong>
-                        <p>The friction wasn&rsquo;t technical. It was creative. People knew what they wanted to express but didn&rsquo;t know how to turn it into a design. The product needed to feel like working with a designer, not uploading a file.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">2</span>
-                    <div class="marathi-decision-content">
-                        <strong>The name is the strategy</strong>
-                        <p>TASI&rsquo;s Sanskrit root gave the brand a conceptual spine &mdash; direction through an object. Every design decision (typography, colour, copy tone) became an extension of that idea. Naming isn&rsquo;t decoration; it&rsquo;s architecture.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">3</span>
-                    <div class="marathi-decision-content">
-                        <strong>v1 should validate, not scale</strong>
-                        <p>Routing customers to LinkedIn and email instead of a checkout cart was intentional. The goal was qualified conversations, not conversion volume. Over-engineering commerce flows would have buried the brand story before it had a chance to land.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <p class="marathi-lead">(Only the ones that mattered.)</p>
 
-        <!-- 04 — Design Direction -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">04</span>
-                <h2 class="marathi-section-title">Design Direction</h2>
-            </div>
-            <p class="marathi-lead">Signal-rich branding. Minimal friction.</p>
-            <p class="marathi-body">The brand system was built around one question: what does &lsquo;direction&rsquo; look like as a visual language? The answer was restraint &mdash; clean typography, deliberate whitespace, and graphics that communicate without shouting.</p>
-
-            <div class="cs-table" style="margin-top: 32px;">
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Brand identity</span>
-                    <p class="cs-table-value">Logo and wordmark built on typographic precision &mdash; no decorative elements. The name carries the concept; the mark just needs to be clean enough to get out of the way.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Typography</span>
-                    <p class="cs-table-value">A single type family with strong weight contrast. Headlines carry weight; body copy recedes. The hierarchy mirrors the brand&rsquo;s philosophy: direction, not noise.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Colour system</span>
-                    <p class="cs-table-value">Neutral base with one accent. Apparel designs provide visual richness; the brand system stays out of competition with them.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Content strategy</span>
-                    <p class="cs-table-value">Two sentences for the brand description. One CTA. Every word earns its place. Short copy was a deliberate design decision, not a time constraint &mdash; visuals should lead the experience.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">IA &amp; experience</span>
-                    <p class="cs-table-value">Linear: read the concept &rarr; browse designs &rarr; get in touch. No product filters, no cart, no decision paralysis. Channelling to LinkedIn/email optimised for conversational, qualified leads.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 05 — Prototype -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">05</span>
-                <h2 class="marathi-section-title">Prototype</h2>
-            </div>
-            <p class="marathi-lead">Design before build. Always.</p>
-            <p class="marathi-body">The Figma prototype went through three rounds before a single line of production code was written. Each round answered a specific question.</p>
-
-            <div class="cs-table" style="margin-top: 32px;">
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Round 1 — Structure</span>
-                    <p class="cs-table-value">Wireframes testing the IA. Core question: does the linear read &rarr; browse &rarr; contact flow feel natural, or does it feel like something is missing? <strong>Finding:</strong> users wanted &lsquo;How it works&rsquo; before the CTA.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Round 2 — Brand language</span>
-                    <p class="cs-table-value">High-fidelity mock applying typography, spacing, and the first round of graphic design samples. Core question: does the brand feel intentional or generic? <strong>Finding:</strong> copy was doing too much work. Images needed to lead earlier.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Round 3 — CTA design</span>
-                    <p class="cs-table-value">Testing the contact flow. Core question: does routing to LinkedIn and email feel like a feature or a limitation? <strong>Finding:</strong> when framed correctly (&lsquo;commission a design&rsquo; not &lsquo;contact me&rsquo;), it felt exclusive, not lazy.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 06 — Technical Decisions -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">06</span>
-                <h2 class="marathi-section-title">Technical Decisions</h2>
-            </div>
-            <p class="marathi-lead">Every constraint was a design decision.</p>
-            <p class="marathi-body">As co-founder and sole designer-developer, technical decisions were inseparable from product decisions. The stack was chosen to move fast without sacrificing design quality.</p>
-
-            <div class="marathi-decisions" style="margin-top: 32px;">
+            <div class="marathi-decisions" style="margin-top: 36px;">
                 <div class="marathi-decision">
                     <span class="marathi-decision-num">1</span>
                     <div class="marathi-decision-content">
                         <strong>No e-commerce stack in v1</strong>
-                        <p>Deliberately de-scoped. Adding cart, payments, and inventory management would have taken 3&times; longer and distracted from brand validation. LinkedIn/email CTA was a product decision, not a workaround.</p>
+                        <p>Deliberately de-scoped cart, payments, and inventory to avoid distracting from brand
+                        validation; routing to LinkedIn/email was a product decision, not a workaround, aimed at
+                        qualified conversations over conversion volume.</p>
                     </div>
                 </div>
                 <div class="marathi-decision">
                     <span class="marathi-decision-num">2</span>
                     <div class="marathi-decision-content">
-                        <strong>Portfolio-embedded page structure</strong>
-                        <p>Nesting TASI within the personal portfolio was intentional &mdash; it framed the brand as design-led from the first touchpoint, and leveraged existing portfolio traffic for early exposure.</p>
+                        <strong>The name as the strategy</strong>
+                        <p>The Sanskrit root &ldquo;tasi&rdquo; wasn&rsquo;t a naming exercise, it was the brand&rsquo;s
+                        conceptual spine; every visual and copy decision downstream was an extension of &ldquo;direction
+                        through an object.&rdquo;</p>
                     </div>
                 </div>
                 <div class="marathi-decision">
                     <span class="marathi-decision-num">3</span>
                     <div class="marathi-decision-content">
-                        <strong>Analytics from day one</strong>
-                        <p>Used SQL-based tracking to monitor which design categories generated the most engagement and which contact touchpoints (LinkedIn vs email) converted better. Data informed the next design iteration.</p>
+                        <strong>Linear IA with no product filters or cart</strong>
+                        <p>Read &rarr; browse &rarr; contact, intentionally removing decision paralysis and channeling
+                        visitors toward conversational, qualified leads instead of self-serve browsing.</p>
                     </div>
                 </div>
                 <div class="marathi-decision">
                     <span class="marathi-decision-num">4</span>
                     <div class="marathi-decision-content">
-                        <strong>Minimal dependencies</strong>
-                        <p>No third-party plugins or frameworks beyond what was strictly necessary. Fast load, easy to maintain solo, and no moving parts to break between design updates.</p>
+                        <strong>Restrained visual system</strong>
+                        <p>Neutral base with a single accent colour and one type family with strong weight contrast,
+                        so the brand system stays out of competition with the apparel graphics themselves.</p>
+                    </div>
+                </div>
+                <div class="marathi-decision">
+                    <span class="marathi-decision-num">5</span>
+                    <div class="marathi-decision-content">
+                        <strong>Portfolio-embedded launch</strong>
+                        <p>Nesting TASI inside an existing personal portfolio (rather than a standalone site) was
+                        intentional, framing the brand as design-led from the first touchpoint and borrowing existing
+                        traffic for early exposure.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 07 — Iterations -->
-        <section class="marathi-section">
+        <!-- 04 — The Outcome -->
+        <section class="marathi-section" id="outcome">
             <div class="marathi-section-header">
-                <span class="marathi-section-number">07</span>
-                <h2 class="marathi-section-title">Iterations</h2>
+                <span class="marathi-section-number">04</span>
+                <h2 class="marathi-section-title">The Outcome</h2>
             </div>
-            <p class="marathi-lead">What changed after launch &mdash; and why.</p>
-            <p class="marathi-body">TASI launched as a brand story page. Post-launch conversations and early analytics revealed three things that needed to change.</p>
 
-            <div class="cs-table" style="margin-top: 32px;">
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Iteration 1 — Added &lsquo;How it works&rsquo;</span>
-                    <p class="cs-table-value">Early visitors understood the concept but didn&rsquo;t know the next step. Added a brief 3-step process: briefing &rarr; concept options &rarr; final print. Contact rate improved immediately.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Iteration 2 — Shifted to team use cases</span>
-                    <p class="cs-table-value">Most early inquiries were for team or event merch, not personal statement pieces. Reordered the design showcases to lead with corporate/team examples. Aligned copy to speak to that buyer first.</p>
-                </div>
-                <div class="cs-table-row">
-                    <span class="cs-table-label">Iteration 3 — Tightened the CTA copy</span>
-                    <p class="cs-table-value">&lsquo;Get in touch with me&rsquo; was too vague. Changed to &lsquo;Commission a design&rsquo; which set clearer expectations and attracted more intentional, qualified leads. Reduced low-context enquiries significantly.</p>
-                </div>
-            </div>
+            <ul class="ts-outcome-list">
+                <li>Launched &mdash; v1 live, portfolio-embedded brand story page.</li>
+                <li>3 rounds of Figma prototyping validated structure, brand language, and CTA framing before any code shipped.</li>
+                <li>CTA copy iteration &mdash; &ldquo;Get in touch with me&rdquo; &rarr; &ldquo;Commission a design&rdquo; measurably reduced low-context inquiries and attracted more qualified leads.</li>
+                <li>Use-case pivot post-launch &mdash; analytics revealed most inquiries were for team/event merch, not personal statement pieces; showcases were reordered to lead with corporate/team examples.</li>
+            </ul>
         </section>
-
-        <!-- 08 — What I Learned -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">08</span>
-                <h2 class="marathi-section-title">What I Learned</h2>
             </div>
-
-            <div class="marathi-learnings">
-                <div>
-                    <p class="marathi-learning-title">Naming is product strategy.</p>
-                    <p class="marathi-learning-body">The Sanskrit root &lsquo;tasi&rsquo; wasn&rsquo;t a branding exercise &mdash; it was a strategic anchor. Every downstream decision (IA, copy, visual system, CTA framing) was easier because the concept was precise from the start. Vague brand names produce vague products.</p>
-                </div>
-                <div>
-                    <p class="marathi-learning-title">Constraint produces clarity.</p>
-                    <p class="marathi-learning-body">Removing the e-commerce stack forced the brand story to carry the entire experience. That constraint made the page better, not weaker. The lesson: scope decisions are design decisions. What you leave out shapes what remains.</p>
-                </div>
-                <div>
-                    <p class="marathi-learning-title">Analytics and design are the same loop.</p>
-                    <p class="marathi-learning-body">Using SQL to track which designs generated interest and which CTAs converted wasn&rsquo;t a post-launch add-on &mdash; it was built into the product from day one. The analyst instinct and the designer instinct are not in tension. They feed each other.</p>
-                </div>
-                <div>
-                    <p class="marathi-learning-title">v1 is a question, not an answer.</p>
-                    <p class="marathi-learning-body">TASI&rsquo;s launch was a hypothesis: does a narrative-driven, collaboration-first model resonate? The answer came through conversations, not conversion metrics. Senior design isn&rsquo;t about shipping a finished product &mdash; it&rsquo;s about shipping the right question.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- What's Next -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">Next</span>
-                <h2 class="marathi-section-title">What&rsquo;s Next</h2>
-            </div>
-            <p class="marathi-lead">The product roadmap &mdash; from brand experiment to scaled platform.</p>
-
-            <div class="cs-roadmap">
-                <div class="cs-roadmap-item">
-                    <span class="cs-roadmap-tag">Short term</span>
-                    <p class="cs-roadmap-text">Browsable design gallery by category (Minimal, Cultural, Corporate, Loud). Short &lsquo;How it works&rsquo; section. Intake form capturing use-case, budget, and timeline.</p>
-                </div>
-                <div class="cs-roadmap-item">
-                    <span class="cs-roadmap-tag">Medium term</span>
-                    <p class="cs-roadmap-text">Light text configurator &mdash; preview words and phrases in chosen type styles and placements. Still collaboration-first, but with a self-serve entry point.</p>
-                </div>
-                <div class="cs-roadmap-item">
-                    <span class="cs-roadmap-tag">Long term</span>
-                    <p class="cs-roadmap-text">A curated store of best-selling commission designs. Collaboration with illustrators &mdash; TASI as a platform for directional, narrative-driven graphics.</p>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <!-- Lookbook -->
-        <section class="lookbook-section">
+        <section class="lookbook-section" id="lookbook">
             <div class="lookbook-gallery">
                 <div class="lookbook-slide">
                     <img src="assets/tasi-2.jpg" alt="TASI First 5 Drops Collection" class="lookbook-image">
@@ -331,9 +216,9 @@
         </section>
 
         <!-- Designs -->
-        <section class="designs-section tasi-designs">
+        <section class="designs-section tasi-designs" id="designs">
             <div class="marathi-section-header" style="padding: 0 8vw 32px; max-width: 1100px; margin: 0 auto;">
-                <span class="marathi-section-number">Work</span>
+                <span class="marathi-section-number">05</span>
                 <h2 class="marathi-section-title">Designs</h2>
             </div>
             <div class="masonry-grid">
@@ -383,5 +268,6 @@
 
     <script src="js/burger-menu.js"></script>
     <script src="js/image-loader.js"></script>
+    <script src="js/tasi-sidebar.js"></script>
 </body>
 </html>

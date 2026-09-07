@@ -1,0 +1,277 @@
+/* ==========================================================================
+   TASI — Case Study Sidebar Layout
+   Page-specific: scoped to tasi.html only (via the existing .tasi-page body
+   class). Mirrors the format built for learn-marathi-web-app.html and
+   mahi-restaurant.html (fixed logo + fixed sidebar with scroll-spy,
+   flattened type, no thin divider lines, wide content column). The
+   Lookbook and Designs media sections stay outside this layout, full-bleed
+   and untouched, exactly as they were.
+   ========================================================================== */
+
+/* Designs gallery: reduced size. */
+.tasi-page .masonry-grid {
+    max-width: 700px;
+}
+
+/* Lookbook images (below Outcome): reduced size. */
+.lookbook-image {
+    max-width: 700px;
+}
+
+/* Revert this page's old cream background/body padding so it matches the
+   plain white format used elsewhere. */
+.tasi-page.case-study-page {
+    background-color: #ffffff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ── Logo / top nav ── */
+.tasi-page .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.tasi-page .about-link {
+    color: #000000;
+}
+
+.ts-layout {
+    padding-top: 140px;
+}
+
+/* ── Sidebar ── */
+.ts-sidebar {
+    position: fixed;
+    top: 140px;
+    left: var(--container-padding);
+    width: 220px;
+    z-index: 15;
+}
+
+.ts-content {
+    max-width: 960px;
+    margin-left: calc(var(--container-padding) + 220px + 64px);
+    padding-right: 8vw;
+}
+
+.ts-sidebar-nav {
+    padding-top: 4px;
+}
+
+.ts-sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ts-sidebar-item {
+    position: relative;
+}
+
+.ts-sidebar-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.ts-sidebar-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    margin-top: 3px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.ts-sidebar-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 1.4;
+    transition: color 0.25s ease;
+}
+
+.ts-sidebar-link:hover .ts-sidebar-label {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.ts-sidebar-item.is-active .ts-sidebar-dot {
+    background: #000000;
+    border-color: #000000;
+}
+
+.ts-sidebar-item.is-active .ts-sidebar-label {
+    color: #000000;
+}
+
+/* ── Top metadata row ── */
+.ts-meta-row {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 88px;
+    width: fit-content;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.ts-meta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #000000;
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+.ts-meta-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* ── Sections nested in the content column: drop the full-bleed
+   padding/max-width and thin divider lines the shared classes assume
+   for a sidebar-less layout ── */
+.ts-content .marathi-section {
+    max-width: none;
+    margin: 0;
+    padding: 64px 0;
+    scroll-margin-top: 40px;
+    border-top: none;
+}
+
+.ts-content .marathi-section:first-child {
+    padding-top: 0;
+}
+
+.ts-content .marathi-body,
+.ts-content .marathi-decisions,
+.ts-content .marathi-quote,
+.ts-content .marathi-learnings,
+.ts-content .cs-table,
+.ts-content .cs-roadmap {
+    max-width: 820px;
+}
+
+/* ── Section headers: regular weight, smaller, number matching title size ── */
+.ts-content .marathi-section-title {
+    font-weight: 400;
+    font-size: clamp(18px, 2.2vw, 26px);
+}
+
+.ts-content .marathi-section-number {
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 400;
+}
+
+/* ── Flatten every bold/semi-bold weight on this page to regular ── */
+.ts-content .marathi-lead,
+.ts-content .marathi-body strong,
+.ts-content .marathi-quote p,
+.ts-content .marathi-decision-num,
+.ts-content .marathi-decision-content strong,
+.ts-content .marathi-learning-title,
+.ts-content .cs-table-label,
+.ts-content .cs-roadmap-tag {
+    font-weight: 400;
+}
+
+/* ── Outcome list: plain bullets instead of the big-number stat grid,
+   since most items here aren't numeric. ── */
+.ts-outcome-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ts-outcome-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+.ts-outcome-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* ── Responsive: sidebar collapses into a horizontal scrollable tab bar ── */
+@media (max-width: 900px) {
+    .ts-layout {
+        padding: 120px 24px 0;
+    }
+
+    .ts-sidebar {
+        position: sticky;
+        top: 0;
+        left: auto;
+        width: auto;
+        z-index: 20;
+        background: #ffffff;
+        margin: 0 -24px 32px;
+        padding: 14px 24px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ts-content {
+        max-width: none;
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .ts-sidebar-list {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .ts-sidebar-item {
+        flex: 0 0 auto;
+    }
+
+    .ts-sidebar-link {
+        align-items: center;
+    }
+
+    .ts-sidebar-label {
+        white-space: nowrap;
+    }
+
+    .ts-content .marathi-section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .ts-layout {
+        padding: 100px 20px 0;
+    }
+
+    .ts-meta-row {
+        column-gap: 32px;
+    }
+}

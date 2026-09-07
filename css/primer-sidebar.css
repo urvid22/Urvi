@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Primer Seltzer — Case Study Sidebar Layout
+   Page-specific: scoped to primer-seltzer.html only (via the existing
+   .primer-page body class). Mirrors the format built for
+   learn-marathi-web-app.html, mahi-restaurant.html, and tasi.html (fixed
+   logo + fixed sidebar with scroll-spy, flattened type, no thin divider
+   lines, wide content column). The Designs media section stays outside
+   this layout, full-bleed and untouched, exactly as it was.
+   ========================================================================== */
+
+/* Designs gallery: a bit smaller and shifted right within its section. */
+.primer-page .masonry-grid {
+    max-width: 1000px;
+    margin: 0 140px 0 auto;
+}
+
+/* Revert this page's old cream background/body padding so it matches the
+   plain white format used elsewhere. */
+.primer-page.case-study-page {
+    background-color: #ffffff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ── Logo / top nav ── */
+.primer-page .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.primer-page .about-link {
+    color: #000000;
+}
+
+.pr-layout {
+    padding-top: 140px;
+}
+
+/* ── Sidebar ── */
+.pr-sidebar {
+    position: fixed;
+    top: 140px;
+    left: var(--container-padding);
+    width: 220px;
+    z-index: 15;
+}
+
+.pr-content {
+    max-width: 960px;
+    margin-left: calc(var(--container-padding) + 220px + 64px);
+    padding-right: 8vw;
+}
+
+.pr-sidebar-nav {
+    padding-top: 4px;
+}
+
+.pr-sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pr-sidebar-item {
+    position: relative;
+}
+
+.pr-sidebar-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.pr-sidebar-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    margin-top: 3px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.pr-sidebar-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 1.4;
+    transition: color 0.25s ease;
+}
+
+.pr-sidebar-link:hover .pr-sidebar-label {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pr-sidebar-item.is-active .pr-sidebar-dot {
+    background: #000000;
+    border-color: #000000;
+}
+
+.pr-sidebar-item.is-active .pr-sidebar-label {
+    color: #000000;
+}
+
+/* ── Top metadata row ── */
+.pr-meta-row {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 88px;
+    width: fit-content;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.pr-meta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #000000;
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+.pr-meta-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* ── Sections nested in the content column: drop the full-bleed
+   padding/max-width and thin divider lines the shared classes assume
+   for a sidebar-less layout ── */
+.pr-content .marathi-section {
+    max-width: none;
+    margin: 0;
+    padding: 64px 0;
+    scroll-margin-top: 40px;
+    border-top: none;
+}
+
+.pr-content .marathi-section:first-child {
+    padding-top: 0;
+}
+
+.pr-content .marathi-body,
+.pr-content .marathi-decisions,
+.pr-content .marathi-quote,
+.pr-content .marathi-learnings,
+.pr-content .cs-table {
+    max-width: 820px;
+}
+
+/* ── Section headers: regular weight, smaller, number matching title size ── */
+.pr-content .marathi-section-title {
+    font-weight: 400;
+    font-size: clamp(18px, 2.2vw, 26px);
+}
+
+.pr-content .marathi-section-number {
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 400;
+}
+
+/* ── Flatten every bold/semi-bold weight on this page to regular ── */
+.pr-content .marathi-lead,
+.pr-content .marathi-body strong,
+.pr-content .marathi-quote p,
+.pr-content .marathi-decision-num,
+.pr-content .marathi-decision-content strong,
+.pr-content .marathi-outcome-num,
+.pr-content .marathi-learning-title,
+.pr-content .cs-table-label {
+    font-weight: 400;
+}
+
+/* ── Responsive: sidebar collapses into a horizontal scrollable tab bar ── */
+@media (max-width: 900px) {
+    .pr-layout {
+        padding: 120px 24px 0;
+    }
+
+    .pr-sidebar {
+        position: sticky;
+        top: 0;
+        left: auto;
+        width: auto;
+        z-index: 20;
+        background: #ffffff;
+        margin: 0 -24px 32px;
+        padding: 14px 24px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pr-content {
+        max-width: none;
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .pr-sidebar-list {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .pr-sidebar-item {
+        flex: 0 0 auto;
+    }
+
+    .pr-sidebar-link {
+        align-items: center;
+    }
+
+    .pr-sidebar-label {
+        white-space: nowrap;
+    }
+
+    .pr-content .marathi-section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .pr-layout {
+        padding: 100px 20px 0;
+    }
+
+    .pr-meta-row {
+        column-gap: 32px;
+    }
+}

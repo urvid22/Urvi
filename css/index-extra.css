@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Index page — duplicated Education / Contact / Video cards
+   Recreates the look of the hero's video, contact box, and education card,
+   but with normal (non-absolute) positioning so they can sit in their own
+   spot below the Projects section instead of overlapping the hero.
+   ========================================================================== */
+
+/* Sym2 mark — a bit bigger than the default 28px */
+.info-small-box-sym {
+    width: 44px;
+}
+
+.info-small-box-sym:hover {
+    width: 46px;
+}
+
+/* M5.JPG — 4032x3024, landscape 4:3 */
+.dup-video {
+    display: block;
+    width: 280px;
+    max-width: 90vw;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* M7.jpg — 1200x1600, portrait 3:4 */
+.dup-contact-box {
+    width: 260px;
+    max-width: 90vw;
+    aspect-ratio: 3 / 4;
+    background-color: #ffffff;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border: 1px solid var(--color-maroon);
+    border-radius: var(--radius-item);
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* M3.JPG — 4032x3024, landscape 4:3 */
+.dup-education-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-maroon);
+    border-radius: var(--radius-item);
+    width: 320px;
+    max-width: 90vw;
+    aspect-ratio: 4 / 3;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer-cta-button {
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 28px;
+    padding: 12px 28px;
+    background-color: var(--color-maroon);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: opacity var(--transition-hover);
+}
+
+.footer-cta-button:hover,
+.footer-cta-button:focus {
+    opacity: 0.8;
+}
+
+.footer-email {
+    font-size: 14px;
+    color: var(--color-maroon);
+    margin: 0 0 32px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.footer-nav .footer-link {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.footer-nav-sep {
+    color: var(--color-maroon);
+    opacity: 0.4;
+}
+
+.footer-clocks {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.footer-clock {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-maroon);
+}
+
+.footer-clock-label {
+    opacity: 0.6;
+    margin-right: 6px;
+}
+
+.footer-clock-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: var(--color-maroon);
+    opacity: 0.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Mobile: center the topmost (hero) video instead of pinning it right.
+   ========================================================================== */
+@media (max-width: 768px) {
+    .edu-exp-video {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}

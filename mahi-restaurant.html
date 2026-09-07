@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Mahi Restaurant — Google UX Certification Case Study by Urvi Dhomne. Online food ordering app design.">
-    <meta property="og:title" content="Mahi Restaurant — Urvi">
-    <meta property="og:description" content="Google UX Certification Case Study — Restaurant online ordering app design.">
+    <meta name="description" content="Mah'eats — Product Design Case Study by Urvi Dhomne. A mobile app combining a curated recipe library with on-demand ordering from hand-picked healthy local restaurants.">
+    <meta property="og:title" content="Mah'eats — Urvi">
+    <meta property="og:description" content="A mobile app combining a curated recipe library with on-demand ordering from hand-picked healthy local restaurants.">
     <meta property="og:type" content="website">
 
-    <title>Urvi — Mahi Restaurant</title>
+    <title>Urvi — Mah'eats</title>
 
     <link rel="icon" type="image/png" href="assets/yellowsun.png">
 
@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/marathi.css">
     <link rel="stylesheet" href="css/mahi-restaurant.css">
+    <link rel="stylesheet" href="css/mahi-restaurant-sidebar.css">
 </head>
-<body class="case-study-page">
+<body class="case-study-page mahi-page">
 
     <nav class="top-nav case-study-nav">
         <a href="index.html" class="logo-link">
@@ -38,300 +39,226 @@
 
     <main class="main-content">
 
-        <!-- Hero -->
-        <div class="marathi-hero">
-            <p class="marathi-eyebrow">Case Study &mdash; UX Design</p>
-            <h1 class="marathi-hero-title">Mahi<br>Restaurant</h1>
-            <p class="marathi-hero-subtitle">
-                An online ordering app that makes it easy to customise your meal, check out fast, and track your delivery in real time.
-                Designed for Google&rsquo;s UX Certification with a focus on accessibility and user research.
-            </p>
+        <div class="mr-layout">
+            <!-- Sticky index sidebar -->
+            <aside class="mr-sidebar">
+                <nav class="mr-sidebar-nav" aria-label="Case study sections">
+                    <ol class="mr-sidebar-list">
+                        <li class="mr-sidebar-item">
+                            <a href="#product-problem" class="mr-sidebar-link">
+                                <span class="mr-sidebar-dot" aria-hidden="true"></span>
+                                <span class="mr-sidebar-label">01 &middot; The Product &amp; The Problem</span>
+                            </a>
+                        </li>
+                        <li class="mr-sidebar-item">
+                            <a href="#role-contribution" class="mr-sidebar-link">
+                                <span class="mr-sidebar-dot" aria-hidden="true"></span>
+                                <span class="mr-sidebar-label">02 &middot; My Role &amp; Contribution</span>
+                            </a>
+                        </li>
+                        <li class="mr-sidebar-item">
+                            <a href="#design-decisions" class="mr-sidebar-link">
+                                <span class="mr-sidebar-dot" aria-hidden="true"></span>
+                                <span class="mr-sidebar-label">03 &middot; Key Design Decisions</span>
+                            </a>
+                        </li>
+                        <li class="mr-sidebar-item">
+                            <a href="#outcome" class="mr-sidebar-link">
+                                <span class="mr-sidebar-dot" aria-hidden="true"></span>
+                                <span class="mr-sidebar-label">04 &middot; The Outcome</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+            </aside>
 
-            <div class="marathi-meta">
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Role</p>
-                    <p class="marathi-meta-value">UX Designer</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Tools</p>
-                    <p class="marathi-meta-value">Figma &middot; Google Forms</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Year</p>
-                    <p class="marathi-meta-value">2024</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Duration</p>
-                    <p class="marathi-meta-value">4 weeks</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 01 — The Problem -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">01</span>
-                <h2 class="marathi-section-title">The Problem</h2>
-            </div>
-            <p class="marathi-lead">Less customisation, longer checkouts.</p>
-            <p class="marathi-body">Existing food ordering apps gave users little control over ingredients and buried checkout behind too many steps. Mahi was designed to fix both — letting customers customise freely and get to confirmation in seconds.</p>
-        </section>
-
-        <!-- 02 — User Research -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">02</span>
-                <h2 class="marathi-section-title">User Research</h2>
-            </div>
-            <p class="marathi-body">
-                Through interviews and surveys with daily food app users, three core pain points emerged. Users with busy schedules struggled most with <strong>time constraints</strong>: long delivery waits, no advance planning tools, and slow checkout flows made the experience frustrating. <strong>Accessibility</strong> was another recurring issue — users couldn&rsquo;t reach delivery personnel, estimates were unreliable, and restaurant options felt limited. Finally, <strong>interface and usability</strong> problems including text-heavy menus, confusing layouts, and difficulty finding specific dishes made ordering feel like a chore. These findings directly shaped the design direction for Mahi.
-            </p>
-        </section>
-
-        <!-- Personas & Journey Maps — Accordion -->
-        <div class="accordion-container">
-            <div class="accordion-panel">
-                <div class="accordion-header" data-panel="personas">
-                    <h2 class="accordion-title">Personas</h2>
-                    <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-content" id="personas-content">
-                    <p class="section-intro-single">I conducted interviews and took numerous surveys to understand daily users who order food online and don&rsquo;t have time to cook their meals. I observed that people with a tight schedule often order online and need their orders to reach on time and know the delivery location and estimated time.</p>
-
-                    <div class="personas-container">
-                        <div class="persona-card">
-                            <div class="persona-header">
-                                <div class="persona-avatar">
-                                    <div class="avatar-placeholder">👧</div>
-                                </div>
-                                <div class="persona-info">
-                                    <h3 class="persona-name">Sugi</h3>
-                                    <div class="persona-details">
-                                        <p><strong>Age:</strong> 18</p>
-                                        <p><strong>Hometown:</strong> Mumbai, Maharashtra</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="persona-quote">
-                                &ldquo;Need Fresh food to keep me healthy even in this tight Schedule.&rdquo;
-                            </div>
-                            <div class="persona-content">
-                                <div class="persona-goals">
-                                    <h4>Goals</h4>
-                                    <ul>
-                                        <li>Want Fresh Food</li>
-                                        <li>Can Use any Payment Method</li>
-                                        <li>Time saving</li>
-                                    </ul>
-                                </div>
-                                <div class="persona-frustrations">
-                                    <h4>Frustrations</h4>
-                                    <ul>
-                                        <li>It&rsquo;s difficult to wait long while receiving order</li>
-                                        <li>Late delivery ruins my schedule timings</li>
-                                        <li>It&rsquo;s tough to locate the order I placed last week</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="persona-bio">
-                                <p>Sugi is about to complete her HSC Education. She loves classical dances and is an Extrovert. She attends Dance Classes, Swimming Classes and Tuitions everyday and often prefers ordering food online due to her packed schedule.</p>
-                            </div>
-                        </div>
-
-                        <div class="persona-card">
-                            <div class="persona-header">
-                                <div class="persona-avatar">
-                                    <div class="avatar-placeholder">👨‍🏫</div>
-                                </div>
-                                <div class="persona-info">
-                                    <h3 class="persona-name">Bucky</h3>
-                                    <div class="persona-details">
-                                        <p><strong>Age:</strong> 22</p>
-                                        <p><strong>Hometown:</strong> Mumbai, Maharashtra</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="persona-quote">
-                                &ldquo;I had my Breakfast after Brunch time. So a faster delivery would be better.&rdquo;
-                            </div>
-                            <div class="persona-content">
-                                <div class="persona-goals">
-                                    <h4>Goals</h4>
-                                    <ul>
-                                        <li>Can get food on time</li>
-                                        <li>Need proper cost prices on items</li>
-                                        <li>Tracking food properly</li>
-                                    </ul>
-                                </div>
-                                <div class="persona-frustrations">
-                                    <h4>Frustrations</h4>
-                                    <ul>
-                                        <li>Vegetarian &amp; Non-Veg food don&rsquo;t have correct indications</li>
-                                        <li>Different prices on App &amp; Restaurant</li>
-                                        <li>Delivery person doesn&rsquo;t answer calls</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="persona-bio">
-                                <p>Bucky is a Physics Student and has been a bright student. His maximum time is spent learning new skills — he takes a half-hour break sometimes, so he prefers getting food on time and should be able to order faster through the app.</p>
-                            </div>
-                        </div>
+            <div class="mr-content">
+                <!-- Top metadata row -->
+                <div class="mr-meta-row">
+                    <div>
+                        <p class="mr-meta-label">Timeline</p>
+                        <p class="mr-meta-value">2026</p>
                     </div>
-                    <p class="section-note">IMAGINARY NAMES TO HIDE IDENTITY</p>
-                </div>
-            </div>
-
-            <div class="accordion-panel">
-                <div class="accordion-header" data-panel="ujm-sugi">
-                    <h2 class="accordion-title">User Journey Map — Sugi</h2>
-                    <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-content" id="ujm-sugi-content">
-                    <div class="ujm-container">
-                        <img src="assets/Sugi-UJM.png" alt="User Journey Map - Sugi" class="ujm-image" loading="eager">
+                    <div>
+                        <p class="mr-meta-label">Tool</p>
+                        <p class="mr-meta-value">Figma &middot; Next.js &middot; Supabase &middot; Cursor &middot; Claude Code</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-panel">
-                <div class="accordion-header" data-panel="ujm-bucky">
-                    <h2 class="accordion-title">User Journey Map — Bucky</h2>
-                    <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-content" id="ujm-bucky-content">
-                    <div class="ujm-container">
-                        <img src="assets/Bucky-UJM.png" alt="User Journey Map - Bucky" class="ujm-image" loading="eager">
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-panel">
-                <div class="accordion-header" data-panel="wireframes">
-                    <h2 class="accordion-title">Wireframes</h2>
-                    <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-content" id="wireframes-content">
-                    <div class="wireframe-container">
-                        <img src="assets/Wireframe-Mahi.png" alt="Mahi Restaurant Wireframes" class="wireframe-image" loading="eager">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 03 — After Usability Study -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">03</span>
-                <h2 class="marathi-section-title">After Usability Study</h2>
-            </div>
-            <div class="refining-content">
-                <div class="masonry-grid">
-                    <div class="masonry-item"><img src="assets/R4A.png" alt="Design Screen R4A"></div>
-                    <div class="masonry-item"><img src="assets/R4B.png" alt="Design Screen R4B"></div>
-                    <div class="masonry-item"><img src="assets/R5.png" alt="Design Screen R5"></div>
-                    <div class="masonry-item"><img src="assets/R6.png" alt="Design Screen R6"></div>
-                    <div class="masonry-item"><img src="assets/R7.png" alt="Design Screen R7"></div>
-                    <div class="masonry-item"><img src="assets/R8.png" alt="Design Screen R8"></div>
-                    <div class="masonry-item"><img src="assets/R9.png" alt="Design Screen R9"></div>
-                    <div class="masonry-item"><img src="assets/R11.png" alt="Design Screen R11"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 04 — Key Insights -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">04</span>
-                <h2 class="marathi-section-title">Key Insights</h2>
-            </div>
-
-            <div class="marathi-decisions">
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">01</span>
-                    <div class="marathi-decision-content">
-                        <strong>Accessibility Consideration</strong>
-                        <p>Frequently used icons make it easy for all users to navigate without reading labels.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">02</span>
-                    <div class="marathi-decision-content">
-                        <strong>Accessibility Consideration</strong>
-                        <p>Adding alt texts for images and feedback after every order helps users and developers understand each other better.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">03</span>
-                    <div class="marathi-decision-content">
-                        <strong>Impact</strong>
-                        <p>After use, the app was commended for its easy usability, quick ordering flows, and delivery tracking system.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">04</span>
-                    <div class="marathi-decision-content">
-                        <strong>What I Learned</strong>
-                        <p>Considering every type of user in every situation is critical. Apps should solve problems — not create them.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">05</span>
-                    <div class="marathi-decision-content">
-                        <strong>Key Takeaway</strong>
-                        <p>Feedback is a must. Every round of feedback provides a new insight that helps improve the app at every step.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">06</span>
-                    <div class="marathi-decision-content">
-                        <strong>Next Step</strong>
-                        <p>Constant updates and surveys will enhance user satisfaction and attract more customers over time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 05 — Prototype -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">05</span>
-                <h2 class="marathi-section-title">Prototype</h2>
-            </div>
-            <div class="prototype-container">
-                <video class="prototype-video" autoplay loop muted playsinline>
-                    <source src="assets/Prototype-Mahi.mp4" type="video/mp4">
+                <video class="mr-hero-image" autoplay loop muted playsinline>
+                    <source src="assets/mah'eats_video.mp4" type="video/mp4">
                 </video>
+
+                <!-- 01 — The Product & The Problem -->
+                <section class="marathi-section" id="product-problem">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">01</span>
+                        <h2 class="marathi-section-title">The Product &amp; The Problem</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        Mah&rsquo;eats is a mobile app that combines a curated recipe library with on-demand ordering
+                        from a small, hand-picked network of local restaurants known for healthy food, built around
+                        one core insight: people want to eat healthy consistently, but lack the time or trustworthy
+                        options to do so every day.
+                    </p>
+
+                    <p class="marathi-body">
+                        The problem, in the user&rsquo;s own words: &ldquo;I want to eat healthy consistently, but I
+                        don&rsquo;t have the time or energy to cook every day, and when I don&rsquo;t cook, I have no
+                        trustworthy, genuinely healthy option nearby.&rdquo;
+                    </p>
+
+                    <p class="marathi-body">
+                        Existing delivery apps offer no nutrition transparency. Restaurants overstate health claims
+                        with no accountability. And most &ldquo;healthy&rdquo; apps default to a cold, clinical visual
+                        language &mdash; green, minimal, sterile &mdash; that doesn&rsquo;t match how people actually
+                        want to feel about food. Mah&rsquo;eats set out to solve this without forcing a choice: cook
+                        it or order it, same healthy intent, whichever fits the day.
+                    </p>
+                </section>
+
+                <!-- 02 — My Role & Contribution -->
+                <section class="marathi-section" id="role-contribution">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">02</span>
+                        <h2 class="marathi-section-title">My Role &amp; Contribution</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        Product Designer, owning the experience end to end across two core user paths &mdash; cooking
+                        and ordering &mdash; for two personas: the Busy Health-Conscious Professional and the
+                        Aspiring Home Cook.
+                    </p>
+
+                    <div class="cs-table" style="margin-top: 8px;">
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Product &amp; IA</p>
+                            <p class="cs-table-value">Defined the two-section model (Order vs. Recipes) as separate, dedicated spaces rather than a forced cook/order toggle.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Onboarding</p>
+                            <p class="cs-table-value">Designed a first-run flow (welcome screen, three preference questions, a &ldquo;Swipe to saut&eacute;&rdquo; slide-to-confirm interaction with a branded veggie-icon animation) not in the original scope, added to properly introduce the brand.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Core flows</p>
+                            <p class="cs-table-value">Designed the full order flow (browse &rarr; detail &rarr; cart &rarr; address &rarr; payment &rarr; confirmation) and the recipe flow (browse by cuisine or by ingredients on hand &rarr; step-by-step cooking with checkable steps).</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Visual identity</p>
+                            <p class="cs-table-value">Shaped the brand direction: warm, appetite-appealing, indulgent-looking but backed by clean ingredients, deliberately distinct from typical &ldquo;green = healthy&rdquo; apps; introduced a hand-drawn line-art vegetable icon system used throughout instead of generic icon libraries.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Navigation model</p>
+                            <p class="cs-table-value">Restructured the original 3-tab plan (Order/Recipes/History) into a 4-tab dashboard-style structure (Home/Order/Recipes/Profile) after discovering History worked better as a secondary destination, not a primary one.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 03 — Key Design Decisions -->
+                <section class="marathi-section" id="design-decisions">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">03</span>
+                        <h2 class="marathi-section-title">Key Design Decisions</h2>
+                    </div>
+
+                    <p class="marathi-lead">(Only the ones that mattered.)</p>
+
+                    <div class="marathi-decisions" style="margin-top: 36px;">
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">1</span>
+                            <div class="marathi-decision-content">
+                                <strong>Two separate sections, not one cook-or-order toggle</strong>
+                                <p>Order and Recipes each got their own dedicated space rather than being merged into
+                                a single flow, so users don&rsquo;t have to context-switch out of one mode to access
+                                the other.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">2</span>
+                            <div class="marathi-decision-content">
+                                <strong>Home redesigned as a dashboard, not a two-tab landing screen</strong>
+                                <p>The original plan had users land on a choice between two tabs. What shipped
+                                instead: three quick-access tiles (Recipes by Cuisine, Recipes by Ingredients, Order)
+                                plus a progress widget and a recently-viewed strip, giving Ingredients-based search
+                                equal visual weight instead of burying it a level deeper inside Recipes.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">3</span>
+                            <div class="marathi-decision-content">
+                                <strong>A curated, not algorithmic, restaurant model</strong>
+                                <p>10 restaurants hand-picked by Mah&rsquo;eats creators, each with a short &ldquo;why
+                                we picked this&rdquo; note and health credential tags, reinforcing trust over infinite
+                                choice; the cart is intentionally restricted to one restaurant at a time.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">4</span>
+                            <div class="marathi-decision-content">
+                                <strong>Warm brand system over clinical &ldquo;healthy&rdquo; visual language</strong>
+                                <p>Bubblegum pink, deep maroon, and muted gold replace the green-and-white palette
+                                most competitors default to, paired with a custom hand-drawn veggie icon set to keep
+                                the feel hand-picked rather than templated.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">5</span>
+                            <div class="marathi-decision-content">
+                                <strong>Ingredient-based recipe matching tuned for real pantries</strong>
+                                <p>Rather than requiring an exact ingredient match, recipes are scored and surfaced by
+                                how few ingredients are missing (0&ndash;2), so users get useful results even when
+                                they don&rsquo;t have everything on hand.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04 — The Outcome -->
+                <section class="marathi-section" id="outcome">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">04</span>
+                        <h2 class="marathi-section-title">The Outcome</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        (The PRD is written pre/at-launch, so treat these as build-status milestones rather than live
+                        performance metrics &mdash; swap in real numbers once available.)
+                    </p>
+
+                    <div class="marathi-outcomes" style="margin-top: 24px;">
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">10</p>
+                            <p class="marathi-outcome-label">restaurants curated and seeded across 3 cities</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">40</p>
+                            <p class="marathi-outcome-label">recipes live, spanning 9 cuisines</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">&#10003;</p>
+                            <p class="marathi-outcome-label">end-to-end order flow &mdash; browse &rarr; order &rarr; track &mdash; fully functional, including tipping and a digital receipt</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">&#10003;</p>
+                            <p class="marathi-outcome-label">nutrition info live on every recipe and restaurant dish</p>
+                        </div>
+                    </div>
+
+                    <p class="marathi-body" style="margin-top: 40px;">
+                        What&rsquo;s still open: nutrition-tracking UI exists but isn&rsquo;t wired to real
+                        order/recipe data yet, there&rsquo;s no real authentication (a per-device ID stands in), and
+                        the recipe library sits at 40 vs. a 50-recipe launch target, all flagged transparently in the
+                        PRD&rsquo;s own risk log rather than glossed over.
+                    </p>
+                </section>
             </div>
-        </section>
+        </div>
 
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionPanels = document.querySelectorAll('.accordion-panel');
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const panel = this.parentElement;
-                    const icon = this.querySelector('.accordion-icon');
-                    const isActive = panel.classList.contains('active');
-
-                    accordionPanels.forEach(p => {
-                        p.classList.remove('active');
-                        p.querySelector('.accordion-icon').textContent = '+';
-                    });
-
-                    if (!isActive) {
-                        panel.classList.add('active');
-                        icon.textContent = '−';
-                    }
-                });
-            });
-        });
-    </script>
-
     <script src="js/burger-menu.js"></script>
     <script src="js/image-loader.js"></script>
+    <script src="js/mahi-restaurant-sidebar.js"></script>
 </body>
 </html>

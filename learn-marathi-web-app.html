@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Learn Marathi — Product Design Case Study by Urvi Dhomne. A solo-shipped, full-stack language learning app for travellers seeking cultural connection in Maharashtra.">
-    <meta property="og:title" content="Learn Marathi — Case Study by Urvi">
+    <meta property="og:title" content="Learn Marathi App">
     <meta property="og:description" content="A solo-shipped, full-stack language learning app for travellers seeking cultural connection in Maharashtra — not just vocabulary.">
     <meta property="og:type" content="website">
 
@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/marathi.css">
+    <link rel="stylesheet" href="css/learn-marathi-sidebar.css">
 </head>
-<body class="case-study-page">
+<body class="case-study-page lm-page">
 
     <nav class="top-nav case-study-nav">
         <a href="index.html" class="logo-link">
@@ -37,253 +38,220 @@
 
     <main class="main-content">
 
-        <!-- Hero -->
-        <div class="marathi-hero">
-            <p class="marathi-eyebrow">Case Study &mdash; Product Design</p>
-            <h1 class="marathi-hero-title">Learn Marathi</h1>
-            <p class="marathi-hero-subtitle">
-                A solo-shipped, full-stack language learning app for travellers seeking cultural connection
-                in Maharashtra &mdash; not just vocabulary.
-            </p>
+        <div class="lm-layout">
+            <!-- Sticky index sidebar -->
+            <aside class="lm-sidebar">
+                <nav class="lm-sidebar-nav" aria-label="Case study sections">
+                    <ol class="lm-sidebar-list">
+                        <li class="lm-sidebar-item">
+                            <a href="#product-problem" class="lm-sidebar-link">
+                                <span class="lm-sidebar-dot" aria-hidden="true"></span>
+                                <span class="lm-sidebar-label">01 &middot; The Product &amp; The Problem</span>
+                            </a>
+                        </li>
+                        <li class="lm-sidebar-item">
+                            <a href="#role-contribution" class="lm-sidebar-link">
+                                <span class="lm-sidebar-dot" aria-hidden="true"></span>
+                                <span class="lm-sidebar-label">02 &middot; My Role &amp; Contribution</span>
+                            </a>
+                        </li>
+                        <li class="lm-sidebar-item">
+                            <a href="#design-decisions" class="lm-sidebar-link">
+                                <span class="lm-sidebar-dot" aria-hidden="true"></span>
+                                <span class="lm-sidebar-label">03 &middot; Key Design Decisions</span>
+                            </a>
+                        </li>
+                        <li class="lm-sidebar-item">
+                            <a href="#outcome" class="lm-sidebar-link">
+                                <span class="lm-sidebar-dot" aria-hidden="true"></span>
+                                <span class="lm-sidebar-label">04 &middot; The Outcome</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+            </aside>
 
-            <a href="https://lm.urvidhomne.com/" class="marathi-live-link" target="_blank" rel="noopener noreferrer">
-                View live site &rarr;
-            </a>
+            <div class="lm-content">
+                <!-- Top metadata row -->
+                <div class="lm-meta-row">
+                    <div class="lm-meta-col">
+                        <p class="lm-meta-label">Timeline</p>
+                        <p class="lm-meta-value">2026</p>
+                    </div>
+                    <div class="lm-meta-col">
+                        <p class="lm-meta-label">Tool</p>
+                        <p class="lm-meta-value">Figma &middot; Next.js 15 &middot; Supabase &middot; Vercel</p>
+                    </div>
+                </div>
 
-            <div class="marathi-meta">
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Role</p>
-                    <p class="marathi-meta-value">Solo &mdash; Product<br>Designer &amp; Developer</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Tools</p>
-                    <p class="marathi-meta-value">Figma &middot; Next.js 15<br>Supabase &middot; Vercel</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Year</p>
-                    <p class="marathi-meta-value">2025</p>
-                </div>
-                <div class="marathi-meta-cell">
-                    <p class="marathi-meta-label">Status</p>
-                    <p class="marathi-meta-value">Live in production</p>
-                </div>
+                <video class="lm-hero-image" autoplay loop muted playsinline>
+                    <source src="assets/learnmarathi_video.mp4" type="video/mp4">
+                </video>
+
+                <!-- 01 — The Product & The Problem -->
+                <section class="marathi-section" id="product-problem">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">01</span>
+                        <h2 class="marathi-section-title">The Product &amp; The Problem</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        Learn Marathi is a solo-built, full-stack language learning web app for travellers and heritage
+                        speakers connecting to Maharashtra; not another vocabulary drilling app.
+                    </p>
+
+                    <p class="marathi-body">
+                        Duolingo doesn&rsquo;t teach Marathi. Google Translate handles isolated words. Neither helps someone
+                        feel cultural context, confidence, or belonging when they actually visit Maharashtra or reconnect
+                        with their heritage. With 83 million Marathi speakers, the diaspora and travellers had no
+                        structured, culturally intelligent resource; just fragments.
+                    </p>
+
+                    <p class="marathi-body">
+                        The sharpest insight came from a pivot: the original PRD scoped a broad platform for diaspora and
+                        heritage speakers, script-first, coverage over depth. Talking to real users surfaced a sharper
+                        need; a traveller visiting Maharashtra who wanted cultural connection, not a grammar test.
+                        That reframing changed everything downstream: information architecture, content strategy, and
+                        interaction model.
+                    </p>
+                </section>
+
+                <!-- 02 — My Role & Contribution -->
+                <section class="marathi-section" id="role-contribution">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">02</span>
+                        <h2 class="marathi-section-title">My Role &amp; Contribution</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        Product design, frontend/backend development, and deployment, end to end.
+                    </p>
+
+                    <div class="cs-table" style="margin-top: 8px;">
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Product direction</p>
+                            <p class="cs-table-value">Defined the problem, ran the user pivot, scoped what shipped vs. cut.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">UX/UI design</p>
+                            <p class="cs-table-value">Built the full Figma component library before writing production code.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Frontend</p>
+                            <p class="cs-table-value">Next.js 15 App Router, Server Components.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Backend</p>
+                            <p class="cs-table-value">Supabase (Postgres + Auth), with Row-Level Security.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Infra</p>
+                            <p class="cs-table-value">Vercel deployment, custom domain, DNS configuration, SEO metadata.</p>
+                        </div>
+                        <div class="cs-table-row">
+                            <p class="cs-table-label">Build tooling</p>
+                            <p class="cs-table-value">Directed Claude Code for implementation, with design specs driving output quality.</p>
+                        </div>
+                    </div>
+
+                    <p class="marathi-body" style="margin-top: 32px;">
+                        This wasn&rsquo;t a design-then-build handoff; it was a tight loop: design a component,
+                        build it, learn from the build, return to design.
+                    </p>
+                </section>
+
+                <!-- 03 — Key Design Decisions -->
+                <section class="marathi-section" id="design-decisions">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">03</span>
+                        <h2 class="marathi-section-title">Key Design Decisions</h2>
+                    </div>
+
+                    <p class="marathi-lead">
+                        (Only the ones that mattered; each traces back to the one user: a traveller wanting
+                        cultural fluency.)
+                    </p>
+
+                    <div class="marathi-decisions" style="margin-top: 36px;">
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">1</span>
+                            <div class="marathi-decision-content">
+                                <strong>Four learning modes instead of one linear path</strong>
+                                <p>Script (Devanagari), spoken phrases, cultural context, and travel scenarios each serve a
+                                distinct intent. Depth over breadth.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">2</span>
+                            <div class="marathi-decision-content">
+                                <strong>54 indexed, SEO-optimised lesson pages, no forced onboarding</strong>
+                                <p>Learners can drop into any lesson directly, structured and searchable rather than gated
+                                behind a funnel.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">3</span>
+                            <div class="marathi-decision-content">
+                                <strong>Peek affordances for script confidence</strong>
+                                <p>Hold to reveal transliteration/translation, encouraging immersion without abandoning
+                                learners unfamiliar with Devanagari.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">4</span>
+                            <div class="marathi-decision-content">
+                                <strong>Card-based loops with gentle error states</strong>
+                                <p>5&ndash;10 task sets with non-punishing feedback (&ldquo;Almost; you mixed up two
+                                letters&rdquo;) instead of a red failure screen.</p>
+                            </div>
+                        </div>
+                        <div class="marathi-decision">
+                            <span class="marathi-decision-num">5</span>
+                            <div class="marathi-decision-content">
+                                <strong>Mobile-first at 390px</strong>
+                                <p>Travellers are on phones; desktop was treated as progressive enhancement, not the
+                                default canvas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04 — The Outcome -->
+                <section class="marathi-section" id="outcome">
+                    <div class="marathi-section-header">
+                        <span class="marathi-section-number">04</span>
+                        <h2 class="marathi-section-title">The Outcome</h2>
+                    </div>
+
+                    <div class="marathi-outcomes">
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">54</p>
+                            <p class="marathi-outcome-label">indexed lesson pages live in production</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">4</p>
+                            <p class="marathi-outcome-label">learning modes shipped (script, phrases, culture, travel scenarios)</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">1</p>
+                            <p class="marathi-outcome-label">designer, developer, and PM</p>
+                        </div>
+                        <div class="marathi-outcome-item">
+                            <p class="marathi-outcome-num">0</p>
+                            <p class="marathi-outcome-label">external dependencies beyond Supabase/Vercel</p>
+                        </div>
+                    </div>
+
+                    <p class="marathi-body" style="margin-top: 40px;">
+                        What it taught me: naming the user precisely; &ldquo;a traveller wanting cultural
+                        connection,&rdquo; not &ldquo;a Marathi learner&rdquo;; was the single decision that
+                        clarified everything else. And AI tooling amplified thinking rather than replacing it: the
+                        quality of Claude Code&rsquo;s output mirrored the quality of my own upstream design thinking.
+                        Vague direction produced vague code; precise specs produced precise builds.
+                    </p>
+                </section>
             </div>
         </div>
-
-        <!-- 01 — The Problem -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">01</span>
-                <h2 class="marathi-section-title">The Problem</h2>
-            </div>
-
-            <p class="marathi-lead">Duolingo doesn&rsquo;t teach Marathi.</p>
-            <p class="marathi-body">
-                Google Translate handles words. But neither tool helps someone feel cultural context, confidence, or
-                belonging when they visit Maharashtra. 83 million people speak Marathi. The diaspora, heritage
-                speakers, and travellers have almost no structured, culturally intelligent resource to learn it.
-            </p>
-
-            <div class="marathi-quote">
-                <p>&ldquo;This app isn&rsquo;t trying to be Duolingo. Google Translate covers translations. This
-                is designed to help people feel cultural connection &mdash; not memorize vocabulary.&rdquo;</p>
-            </div>
-        </section>
-
-        <!-- 02 — Discovery & User Pivot -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">02</span>
-                <h2 class="marathi-section-title">Discovery &amp; User Pivot</h2>
-            </div>
-
-            <p class="marathi-lead">The user I assumed was not the user I found.</p>
-            <p class="marathi-body">
-                The original PRD was broad &mdash; a general Marathi learning platform. As I built, tested, and talked to real
-                people, one user kept showing up with the sharpest need: a traveller visiting Maharashtra, wanting
-                cultural fluency, not a grammar test.
-            </p>
-
-            <div class="marathi-compare">
-                <div class="marathi-compare-header">
-                    <p>Starting Assumption</p>
-                </div>
-                <div class="marathi-compare-header">
-                    <p>Refined Reality</p>
-                </div>
-                <div class="marathi-compare-cell">
-                    <p>Broad platform for diaspora and heritage speakers. Comprehensive curriculum, script-first, coverage over depth.</p>
-                </div>
-                <div class="marathi-compare-cell">
-                    <p>A traveller visiting Maharashtra who wants cultural connection &mdash; confidence, context, and belonging.</p>
-                </div>
-            </div>
-
-            <div class="marathi-quote">
-                <p>&ldquo;The PRD I started with looked nothing like what shipped. Every user insight,
-                broken flow, and design iteration changed how I understood the product.&rdquo;</p>
-            </div>
-        </section>
-
-        <!-- 03 — Design Decisions -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">03</span>
-                <h2 class="marathi-section-title">Design Decisions</h2>
-            </div>
-
-            <p class="marathi-lead">Every decision traced back to one user.</p>
-            <p class="marathi-body">
-                With a focused user in mind, design work became about subtraction &mdash; removing anything that didn&rsquo;t
-                serve a traveller who wanted cultural fluency, not fluency scores.
-            </p>
-
-            <div class="marathi-decisions" style="margin-top: 36px;">
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">1</span>
-                    <div class="marathi-decision-content">
-                        <strong>4 learning modes, not one linear path</strong>
-                        <p>Each mode serves a distinct intent: Devanagari script, spoken phrases, cultural context, and
-                        travel scenarios. Depth over breadth.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">2</span>
-                    <div class="marathi-decision-content">
-                        <strong>54 indexed, SEO-optimised lesson pages</strong>
-                        <p>Learners drop into any lesson without a forced onboarding funnel. Structured, searchable, no
-                        mandatory gates.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">3</span>
-                    <div class="marathi-decision-content">
-                        <strong>Figma component library built first</strong>
-                        <p>A complete design system before any production code. Every component designed,
-                        documented, and stress-tested for scale.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">4</span>
-                    <div class="marathi-decision-content">
-                        <strong>Peek affordances for script confidence</strong>
-                        <p>Hold to reveal transliteration or translation. Encourages immersion while keeping learners
-                        safe &mdash; especially those unfamiliar with Devanagari.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">5</span>
-                    <div class="marathi-decision-content">
-                        <strong>Card-based loops with gentle error states</strong>
-                        <p>5&ndash;10 task sets with immediate, non-punishing feedback. &ldquo;Almost &mdash; you mixed up two letters&rdquo;
-                        not a red failure screen.</p>
-                    </div>
-                </div>
-                <div class="marathi-decision">
-                    <span class="marathi-decision-num">6</span>
-                    <div class="marathi-decision-content">
-                        <strong>Mobile-first at 390px</strong>
-                        <p>Travellers are on phones. Every screen designed at mobile dimensions first, desktop treated
-                        as progressive enhancement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 04 — Technical Ownership -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">04</span>
-                <h2 class="marathi-section-title">Technical Ownership</h2>
-            </div>
-
-            <p class="marathi-lead">Design informed the build. The build revealed design gaps.</p>
-            <p class="marathi-body">
-                Every layer owned &mdash; product direction, UX, frontend architecture, backend security, deployment, DNS
-                configuration, and post-launch iteration. Not a design handoff. A design-build loop.
-            </p>
-
-            <div class="marathi-stack">
-                <span class="marathi-chip">Next.js 15 App Router</span>
-                <span class="marathi-chip">Server Components</span>
-                <span class="marathi-chip">Supabase PostgreSQL</span>
-                <span class="marathi-chip">Row-Level Security</span>
-                <span class="marathi-chip">Vercel deployment</span>
-                <span class="marathi-chip">Custom domain + DNS</span>
-                <span class="marathi-chip">SEO metadata</span>
-                <span class="marathi-chip">Figma design system</span>
-                <span class="marathi-chip">Claude Code</span>
-            </div>
-
-            <div class="marathi-quote">
-                <p>&ldquo;AI didn&rsquo;t replace thinking in this process &mdash; it exposed it. Claude Code built
-                what I directed, and the quality of output reflected the quality of my thinking.
-                When thinking was clear, the build moved fast. When it wasn&rsquo;t, the gaps
-                showed up immediately.&rdquo;</p>
-            </div>
-        </section>
-
-        <!-- 05 — Outcomes -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">05</span>
-                <h2 class="marathi-section-title">Outcomes</h2>
-            </div>
-
-            <div class="marathi-outcomes">
-                <div class="marathi-outcome-item">
-                    <p class="marathi-outcome-num">54</p>
-                    <p class="marathi-outcome-label">indexed lesson pages</p>
-                </div>
-                <div class="marathi-outcome-item">
-                    <p class="marathi-outcome-num">4</p>
-                    <p class="marathi-outcome-label">learning modes shipped</p>
-                </div>
-                <div class="marathi-outcome-item">
-                    <p class="marathi-outcome-num">1</p>
-                    <p class="marathi-outcome-label">designer, developer, PM</p>
-                </div>
-                <div class="marathi-outcome-item">
-                    <p class="marathi-outcome-num">0</p>
-                    <p class="marathi-outcome-label">external dependencies</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 06 — What I Learned -->
-        <section class="marathi-section">
-            <div class="marathi-section-header">
-                <span class="marathi-section-number">06</span>
-                <h2 class="marathi-section-title">What I Learned</h2>
-            </div>
-
-            <div class="marathi-learnings">
-                <div>
-                    <p class="marathi-learning-title">User clarity restructures everything.</p>
-                    <p class="marathi-learning-body">
-                        The most impactful design decision wasn&rsquo;t a UI choice &mdash; it was naming the user precisely. Once
-                        the traveller replaced the generic &lsquo;Marathi learner,&rsquo; the entire IA, content strategy, and interaction
-                        model clarified.
-                    </p>
-                </div>
-                <div>
-                    <p class="marathi-learning-title">Design and build are not sequential.</p>
-                    <p class="marathi-learning-body">
-                        Building before design clarity locks in assumptions. Designing without building hides problems until
-                        production. The most productive mode was a tight loop &mdash; design a component, build it, learn,
-                        return to design.
-                    </p>
-                </div>
-                <div>
-                    <p class="marathi-learning-title">AI amplifies thinking, not replaces it.</p>
-                    <p class="marathi-learning-body">
-                        The quality of Claude Code&rsquo;s output directly reflected the quality of upstream design thinking.
-                        Vague direction produced vague code. Precise specs produced precise implementations. The tool
-                        exposed what I actually knew.
-                    </p>
-                </div>
-            </div>
-        </section>
 
     </main>
 
@@ -296,5 +264,6 @@
 
     <script src="js/burger-menu.js"></script>
     <script src="js/image-loader.js"></script>
+    <script src="js/learn-marathi-sidebar.js"></script>
 </body>
 </html>

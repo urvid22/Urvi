@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/index-extra.css">
 </head>
 <body class="about-page">
 
@@ -149,7 +150,9 @@
                         </div>
                     </a>
                     <a href="mahi-restaurant.html" class="project-card project-card--right project-card--offset">
-                        <div class="project-card-image" style="background-image:url('assets/Wireframe-Mahi.png'); aspect-ratio: 1302 / 850;"></div>
+                        <video class="project-card-image" style="aspect-ratio: 1302 / 850;" autoplay loop muted playsinline>
+                            <source src="assets/mah'eats_video.mp4" type="video/mp4">
+                        </video>
                         <div class="project-card-body">
                             <h3 class="project-card-title">Mah'eats &bull; 2026</h3>
                             <p class="project-card-desc">A healthy eating app that helps you cook with recipes by cuisine or by what's in your fridge, or order from curated local restaurants.</p>
@@ -169,49 +172,73 @@
                             <p class="project-card-desc">A ground-up brand and packaging system for a health-conscious seltzer brand, refined post-launch with real sales data.</p>
                         </div>
                     </a>
+
+                    <div class="project-card--left project-card--offset">
+                        <img src="assets/M5.JPG" alt="" class="dup-video">
+                    </div>
+
+                    <a href="mailto:urvi99@gmail.com" class="project-card--left project-card--offset dup-contact-box" style="background-image:url('assets/M7.jpg'); background-size:cover; background-position:center; margin-left:160px; position:relative; z-index:10;"></a>
+
+                    <div class="project-card--left project-card--offset dup-education-card" style="background-image:url('assets/M3.JPG'); background-size:cover; background-position:center; margin-top:-90px; margin-left:-20px;"></div>
                 </div>
             </div>
         </section>
 
-        <div class="mentally-subsection">
-            <div class="mentally-section">
-                <h3 class="mentally-heading">Mentally at:</h3>
-                <div class="mentally-grid">
-                    <div class="mentally-item">
-                        <img src="assets/M2.JPG" alt="Mentally at 2" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M3.JPG" alt="Mentally at 3" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M4.JPG" alt="Mentally at 4" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M5.JPG" alt="Mentally at 5" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M6.JPG" alt="Mentally at 6" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M7.jpg" alt="Mentally at 7" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M8.jpg" alt="Mentally at 8" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M9.jpg" alt="Mentally at 9" loading="lazy">
-                    </div>
-                    <div class="mentally-item">
-                        <img src="assets/M10.jpg" alt="Mentally at 10" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </main>
+
+    <!-- Footer -->
+    <footer class="footer-cta">
+        <div class="footer-content">
+            <h2 class="footer-heading">Let&rsquo;s work together</h2>
+
+            <nav class="footer-nav">
+                <a href="index.html" class="footer-link">Home</a>
+                <span class="footer-nav-sep">&middot;</span>
+                <a href="index.html#projects" class="footer-link">Projects</a>
+            </nav>
+
+            <div class="footer-clocks">
+                <p class="footer-clock"><span class="footer-clock-label">Mumbai:</span> <span id="clock-mumbai" class="footer-clock-time">&ndash;&ndash;:&ndash;&ndash;</span></p>
+                <p class="footer-clock"><span class="footer-clock-label">Washington DC:</span> <span id="clock-dc" class="footer-clock-time">&ndash;&ndash;:&ndash;&ndash;</span></p>
+            </div>
+
+            <p class="footer-copyright">&copy; 2026 Urvi Dhomne Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script>
+        // Footer — live local time for Mumbai and Washington DC
+        document.addEventListener('DOMContentLoaded', function() {
+            const mumbaiEl = document.getElementById('clock-mumbai');
+            const dcEl = document.getElementById('clock-dc');
+            if (!mumbaiEl || !dcEl) return;
+
+            const formatterMumbai = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'Asia/Kolkata',
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            const formatterDC = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York',
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+
+            function updateClocks() {
+                const now = new Date();
+                mumbaiEl.textContent = formatterMumbai.format(now);
+                dcEl.textContent = formatterDC.format(now);
+            }
+
+            updateClocks();
+            setInterval(updateClocks, 1000);
+        });
+
         // Custom cursor
         document.addEventListener('DOMContentLoaded', function() {
             const cursor = document.getElementById('customCursor');
@@ -263,39 +290,6 @@
                     this.style.boxShadow = '';
                 });
             });
-
-            // Drag-to-scroll for Mentally At on mobile
-            const mentallySection = document.querySelector('.mentally-section');
-            if (mentallySection && window.innerWidth < 768) {
-                let isDragging = false;
-                let startX = 0;
-                let startScroll = 0;
-
-                mentallySection.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    startX = e.pageX;
-                    startScroll = mentallySection.scrollLeft;
-                    mentallySection.style.cursor = 'grabbing';
-                });
-
-                mentallySection.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    e.preventDefault();
-                    mentallySection.scrollLeft = startScroll - (e.pageX - startX);
-                });
-
-                mentallySection.addEventListener('mouseup', () => {
-                    isDragging = false;
-                    mentallySection.style.cursor = 'grab';
-                });
-
-                mentallySection.addEventListener('mouseleave', () => {
-                    isDragging = false;
-                    mentallySection.style.cursor = 'grab';
-                });
-
-                mentallySection.style.cursor = 'grab';
-            }
         });
     </script>
 
