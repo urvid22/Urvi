@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dotted Grid + Ping</title>
+<style>
+
+    /* ==========================================================================
+       EASILY-ADJUSTABLE SETTINGS — everything you'd want to tweak lives here
+       ========================================================================== */
+    :root {
+        /* --- Background dot grid --- */
+        --dot-spacing: 28px;                    /* distance between dots */
+        --dot-size: 1.5px;                      /* radius of each background dot */
+        --dot-color: rgba(0, 0, 0, 0.15);       /* faint, always-visible dot color */
+
+        /* --- "Lit" dots revealed by the ping --- */
+        --lit-dot-size: 2px;                    /* radius of a lit dot (can differ from --dot-size) */
+        --lit-dot-color: rgba(255, 70, 70, 0.95); /* bright color for lit dots */
+
+        /* --- Ping position & speed --- */
+        --ping-x: 50%;                          /* horizontal position of the ping's origin */
+        --ping-y: 40%;                          /* vertical position of the ping's origin */
+        --ping-start-radius: 8px;               /* starting radius (5-10px range) */
+        --ping-max-radius: 150vmax;             /* end radius — big enough to cover any screen */
+        --ping-duration: 2.2s;                  /* time for one pulse to expand + fade */
+    }
+
+    /* Registering the radius as an animatable custom property.
+       Without this, browsers can't smoothly interpolate a custom
+       property when it's plugged into a gradient/mask. */
+    @property --ping-radius {
+        syntax: '<length>';
+        inherits: false;
+        initial-value: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        background-color: #ffffff;
+
+        /* The always-visible, faint dotted grid covering the whole page */
+        background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+        background-size: var(--dot-spacing) var(--dot-spacing);
+
+        /* Keep the grid pinned to the viewport (not the document) so it stays
+           perfectly aligned with the ping layer below even if the page scrolls */
+        background-attachment: fixed;
+    }
+
+    /* The ping layer: an identical dot grid (same spacing/positions),
+       just in the "lit" color, revealed only inside an expanding
+       circular mask. It is never a solid filled color — only the
+       dots that fall inside the current mask radius are visible. */
+    .ping-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+
+        background-image: radial-gradient(circle, var(--lit-dot-color) var(--lit-dot-size), transparent var(--lit-dot-size));
+        background-size: var(--dot-spacing) var(--dot-spacing);
+        background-position: 0 0; /* matches the base grid's origin exactly */
+
+        /* Hard-edged circular mask: fully visible inside the radius,
+           fully hidden outside it — this is what makes the pulse a
+           clean expanding disc of dots rather than a soft blur. */
+        --ping-radius: var(--ping-start-radius);
+        /* Use opaque WHITE (not black) for the "visible" stop — some
+           engines read masks by luminance rather than alpha, and white
+           reveals correctly under either interpretation. */
+        mask-image: radial-gradient(circle var(--ping-radius) at var(--ping-x) var(--ping-y), #fff 99%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle var(--ping-radius) at var(--ping-x) var(--ping-y), #fff 99%, transparent 100%);
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+
+        opacity: 1;
+
+        /* Plays exactly twice, then stops — animation-fill-mode keeps
+           the final (fully faded) state, so it stays gone. No JS needed. */
+        animation: ping-pulse var(--ping-duration) ease-out 2;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes ping-pulse {
+        0% {
+            --ping-radius: var(--ping-start-radius);
+            opacity: 1;
+        }
+        100% {
+            --ping-radius: var(--ping-max-radius);
+            opacity: 0;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="ping-layer"></div>
+
+</body>
+</html>

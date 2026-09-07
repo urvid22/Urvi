@@ -79,20 +79,6 @@ body.about-page::before {
     z-index: 0;
 }
 
-/* Full Name Image - Centered on screen (mobile only) */
-.fullname-image {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 50%;
-    height: auto;
-    z-index: 3000;
-    pointer-events: none;
-    transition: opacity 0.5s ease-out;
-    display: none;
-}
-
 /* ==========================================================================
    Navigation
    ========================================================================== */
@@ -877,14 +863,14 @@ body:has(.work-nav) .nav-link {
 
 /* About Section - First Fullscreen Section */
 .about-section {
-    padding: 40px 60px 80px;
+    padding: 40px 60px 4px;
     background-color: transparent;
     position: relative;
 }
 
 .about-content-wrapper {
     max-width: 1400px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -912,10 +898,10 @@ body:has(.work-nav) .nav-link {
     justify-content: flex-start;
     text-align: right;
     padding-left: 40px;
-    margin-top: -102px;
-    align-self: stretch;
+    margin: 0;
     position: relative;
     z-index: 20;
+    grid-column: 2 / 3;
 }
 
 .about-cta-btn {
@@ -967,14 +953,14 @@ body:has(.work-nav) .nav-link {
 
 .about-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 100px;
-    font-weight: 900;
+    font-size: 26px;
+    font-weight: 500;
     line-height: 0.9;
     color: var(--color-maroon);
     margin: 0;
     text-transform: uppercase;
     letter-spacing: -1px;
-    font-variation-settings: 'wght' 900;
+    font-variation-settings: 'wght' 500;
 }
 
 @keyframes inflate-letter {
@@ -1020,22 +1006,6 @@ body:has(.work-nav) .nav-link {
 .about-text-left .about-paragraph .typing-text.done,
 .about-text-right .about-paragraph .typing-text.done {
     border-right: none;
-}
-
-.about-video-centered {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 10;
-}
-
-.about-video-centered .about-profile-video {
-    max-width: 420px;
-    width: 100%;
-    max-height: 560px;
-    height: auto;
-    border-radius: 40px;
-    object-fit: cover;
 }
 
 /* Red Section - Second Fullscreen Section */
@@ -1509,7 +1479,7 @@ body:has(.work-nav) .nav-link {
 .education-timeline {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
     position: relative;
 }
 
@@ -1578,7 +1548,7 @@ body:has(.work-nav) .nav-link {
 .experience-timeline {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
     position: relative;
 }
 
@@ -1631,7 +1601,6 @@ body:has(.work-nav) .nav-link {
 .about-nav-section {
     position: relative;
     padding: 0;
-    overflow: hidden;
 }
 
 .about-section {
@@ -1654,18 +1623,23 @@ body:has(.work-nav) .nav-link {
 }
 
 .about-nav-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     position: relative;
     background-color: transparent;
     border-radius: 0;
-    transition: background-color 300ms ease;
-    overflow: hidden;
+    padding: 80px 20px;
 }
 
 .about-nav-container .centered-navigation {
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     gap: 0;
 }
 
@@ -1713,6 +1687,80 @@ body:has(.work-nav) .nav-link {
     line-height: 1;
 }
 
+/* Project Card — screenshot preview + title/description (Language Learning App) */
+.project-card {
+    display: block;
+    width: 480px;
+    max-width: 90vw;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border: 3px solid var(--color-maroon);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: opacity var(--transition-hover), box-shadow var(--transition-hover);
+}
+
+.project-card:hover,
+.project-card:focus {
+    opacity: 0.85;
+}
+
+/* Staggered layout — Language Learning left, TASI right and offset upward */
+.project-card--left {
+    align-self: flex-start;
+}
+
+.project-card--right {
+    align-self: flex-end;
+}
+
+.project-card--offset {
+    position: relative;
+    margin-top: -140px;
+    z-index: 3;
+}
+
+/* TASI's photo is a tall portrait — narrow the card to match its proportions */
+.project-card--narrow {
+    width: 340px;
+}
+
+.project-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    object-position: center;
+    border-bottom: 3px solid var(--color-maroon);
+}
+
+.project-card-body {
+    padding: 20px 24px;
+}
+
+.project-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0 0 8px;
+}
+
+.project-card-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin: 0;
+}
+
 
 /* ==========================================================================
    Info Section — Skills / Experience / Education three-column
@@ -1725,17 +1773,138 @@ body:has(.work-nav) .nav-link {
 
 .info-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    column-gap: 12px;
-    row-gap: 24px;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
     align-items: start;
+    justify-items: start;
+}
+
+/* Experience & Education section (top of page) — pinned to the right, narrower box */
+#info-top {
+    padding-top: 4px;
+    position: relative;
+}
+
+/* Profile video — overlaps the top-right corner of the Experience & Education card */
+.edu-exp-video {
+    position: absolute;
+    top: -18px;
+    right: 330px;
+    width: 260px;
+    height: auto;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#info-top .info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#info-top .info-card {
+    max-width: 320px;
+    position: relative;
+    z-index: 3;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.info-card-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: -60px;
+    position: relative;
+}
+
+.info-small-box {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 150px;
+    margin-bottom: -30px;
+    margin-right: 200px;
+    background-color: #ffffff;
+    background-image: radial-gradient(circle, rgba(134, 10, 34, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border: 1px solid var(--color-maroon);
+    border-radius: var(--radius-item);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 22px;
+    box-sizing: border-box;
+}
+
+.info-small-box-sym {
+    position: absolute;
+    top: 128px;
+    right: 200px;
+    transform: translate(50%, -50%);
+    width: 28px;
+    height: auto;
+    z-index: 4;
+    pointer-events: auto;
+    transition: width 300ms ease, transform 300ms ease;
+}
+
+.info-small-box-sym:hover {
+    width: 30px;
+    transform: translate(50%, -50%) rotate(12deg);
+}
+
+.contact-box-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+}
+
+.contact-box-email {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #000000;
+    text-decoration: none;
+}
+
+.contact-box-email:hover {
+    text-decoration: underline;
+}
+
+.contact-box-socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.contact-box-social-link {
+    display: inline-flex;
+    color: var(--color-maroon);
+    transition: opacity var(--transition-hover);
+}
+
+.contact-box-social-link:hover {
+    opacity: 0.7;
 }
 
 .info-card {
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0 0 0 20px;
-    border-left: 2px solid var(--color-maroon);
+    background-color: #ffffff;
+    border: 1px solid var(--color-maroon);
+    border-radius: var(--radius-item);
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 460px;
+    margin: 0;
+    text-align: left;
 }
 
 .info-heading {
@@ -1747,6 +1916,15 @@ body:has(.work-nav) .nav-link {
     margin-bottom: 16px;
 }
 
+.info-card .info-heading {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.info-card .info-heading.info-heading-secondary {
+    margin-top: 8px;
+}
+
 .info-card-skills {
 }
 
@@ -1754,16 +1932,16 @@ body:has(.work-nav) .nav-link {
 .skill-tools-flat {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4px 16px;
-    margin-bottom: 24px;
+    gap: 1px 16px;
+    margin-bottom: 6px;
 }
 
 .skill-tools-flat .tool-active,
 .skill-tools-flat .tool-future,
 .skill-tools-flat .tool-neutral {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.2;
     color: #000000;
 }
 
@@ -1782,7 +1960,7 @@ body:has(.work-nav) .nav-link {
 
 /* Timeline — 2×2 matrix, compact */
 .info-card .skills-timeline {
-    margin-top: 16px;
+    margin-top: 4px;
     padding: 0;
     max-width: none;
     margin-left: 0;
@@ -1793,7 +1971,7 @@ body:has(.work-nav) .nav-link {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 2px;
 }
 
 .info-card .timeline-year {
@@ -1818,7 +1996,7 @@ body:has(.work-nav) .nav-link {
 }
 
 .info-card .timeline-label {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     color: #000000;
 }
@@ -1835,7 +2013,7 @@ body:has(.work-nav) .nav-link {
 }
 
 .info-card .experience-role {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.02em;
 }
@@ -1845,24 +2023,31 @@ body:has(.work-nav) .nav-link {
 .info-card .experience-company,
 .info-card .education-duration,
 .info-card .education-school {
-    font-size: 16px;
+    font-size: 12px;
     opacity: 0.7;
 }
 
 .info-card .education-degree {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.02em;
+}
+
+.info-card .experience-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
 }
 
 .info-card .experience-item,
 .info-card .education-item {
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0;
 }
 
 .info-card .experience-item:last-child,
@@ -2182,6 +2367,15 @@ body:has(.work-nav) .nav-link {
         font-size: 22px;
     }
 
+    .project-card--left,
+    .project-card--right {
+        align-self: center;
+    }
+
+    .project-card--offset {
+        margin-top: 20px;
+    }
+
     .nav-spacer {
         height: 15px;
     }
@@ -2195,58 +2389,8 @@ body:has(.work-nav) .nav-link {
         padding: 0 30px;
     }
 
-    .curtain-top {
-        padding-top: 30px;
-    }
-
-    .curtain {
-        height: 52vh;
-    }
-
-    .fullname-image {
-        display: block;
-        max-width: 70%;
-    }
-
-    .hey-text {
+    .hero-name-block {
         display: none;
-    }
-
-    .dhomne-text {
-        display: none;
-    }
-
-    .curtain-name-top {
-        display: none;
-    }
-
-    .curtain-name-bottom {
-        display: none;
-    }
-
-    .location-prefix-left,
-    .location-left {
-        left: 20px;
-    }
-
-    .location-prefix-right,
-    .location-right {
-        right: 20px;
-    }
-
-    .location-prefix {
-        font-size: 12px;
-        bottom: 50px;
-    }
-
-    .label-english,
-    .label-location {
-        font-size: 24px;
-    }
-
-    .location-label {
-        bottom: 20px;
-        font-size: 12px;
     }
 
     .main-poster {
@@ -2293,19 +2437,6 @@ body:has(.work-nav) .nav-link {
         margin-bottom: 20px;
     }
 
-    .about-video-centered {
-        order: 1;
-        z-index: 5;
-    }
-
-    .about-video-centered .about-profile-video {
-        max-width: 250px;
-        width: 100%;
-        height: auto;
-        border-radius: 40px;
-        object-fit: cover;
-    }
-
     .experience-section {
         margin-top: 0;
         transform: none !important;
@@ -2333,6 +2464,11 @@ body:has(.work-nav) .nav-link {
 
     .info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .edu-exp-video {
+        width: 130px;
+        right: 20px;
     }
 
     .scrolling-banner {
@@ -2560,50 +2696,8 @@ body:has(.work-nav) .nav-link {
         display: none;
     }
 
-    .curtain {
-        height: 53vh;
-    }
-
-    .fullname-image {
-        display: block;
-        max-width: 80%;
-    }
-
-    .hey-text {
+    .hero-name-block {
         display: none;
-    }
-
-    .dhomne-text {
-        display: none;
-        text-align: center;
-    }
-
-    .curtain-name-top {
-        display: none;
-    }
-
-    .curtain-name-bottom {
-        display: none;
-    }
-
-    .location-prefix {
-        font-size: 11px;
-        bottom: 45px;
-    }
-
-    .label-english,
-    .label-location {
-        font-size: 20px;
-    }
-
-    .location-prefix-left,
-    .location-left {
-        left: 15px;
-    }
-
-    .location-prefix-right,
-    .location-right {
-        right: 15px;
     }
 
     .main-poster {
@@ -2656,19 +2750,6 @@ body:has(.work-nav) .nav-link {
         text-align: center;
         max-width: 100%;
         margin-bottom: 20px;
-    }
-
-    .about-video-centered {
-        order: 1;
-        z-index: 5;
-    }
-
-    .about-video-centered .about-profile-video {
-        max-width: 250px;
-        width: 100%;
-        height: auto;
-        border-radius: 40px;
-        object-fit: cover;
     }
 
     .experience-section {
@@ -2849,15 +2930,17 @@ body:has(.work-nav) .nav-link {
     }
 
     .info-card {
-        padding: 0 0 0 14px;
-    }
-
-    .info-card-skills {
-        margin-left: 0;
+        padding: 20px 18px;
+        max-width: 100%;
     }
 
     .info-heading {
         font-size: 16px;
+    }
+
+    .edu-exp-video {
+        width: 115px;
+        right: 20px;
     }
 }
 
