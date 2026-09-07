@@ -3,148 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Urvi - Product Manager & Designer driven to bridge the gap between technology and user needs. View my portfolio of design work.">
-    <meta property="og:title" content="Urvi - Product Portfolio">
-    <meta property="og:description" content="Product Manager & Designer driven to bridge the gap between technology and user needs">
+    <meta name="description" content="Urvi - Product Designer - Learn more about my background, skills, and design philosophy.">
+    <meta property="og:title" content="Urvi - About Me">
+    <meta property="og:description" content="Product Designer driven to bridge the gap between technology and user needs">
     <meta property="og:type" content="website">
 
-    <title>Urvi - Product Designer Portfolio</title>
+    <title>Urvi - About Me</title>
 
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/yellowsun.png">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&family=Oooh+Baby&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/components.css">
 </head>
-<body class="index-page">
+<body class="about-page">
 
-    <img src="assets/Name (red).png" alt="Urvi Dhomne" class="fullname-image" id="fullnameImage">
+    <!-- Custom Cursor -->
+    <!-- <img src="assets/iconsmall.png" alt="" class="custom-cursor" id="customCursor"> -->
 
-    <div class="curtain-container" id="curtainContainer" aria-hidden="true">
-        <div class="curtain curtain-top">
-            <div class="hey-text">Hey, I'm</div>
-            <img src="assets/nametop.png" alt="" class="curtain-name-top">
-            <div class="dot-marker" data-dot-index="0" style="left:9%;top:22%"><span class="dot-tag">love art</span></div>
-            <div class="dot-marker" data-dot-index="1" style="left:83%;top:18%"><span class="dot-tag">analyses everything</span></div>
-            <div class="dot-marker" data-dot-index="2" style="left:13%;top:67%"><span class="dot-tag">photography lover</span></div>
-        </div>
 
-        <div class="logo-container">
-            <h1 class="logo">URVI</h1>
-        </div>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="index.html" class="logo-link">
+            <img src="assets/sun red.svg" alt="Urvi" class="nav-logo">
+        </a>
+    </nav>
 
-        <div class="curtain curtain-bottom">
-            <img src="assets/namebottom.png" alt="" class="curtain-name-bottom">
-            <div class="dhomne-text">DHOMNE</div>
-            <div class="dot-marker" data-dot-index="3" style="left:79%;top:28%"><span class="dot-tag">exploring cafes</span></div>
-            <div class="dot-marker" data-dot-index="4" style="left:86%;top:55%"><span class="dot-tag">running a 5k</span></div>
-            <div class="dot-marker" data-dot-index="5" style="left:38%;top:48%"><span class="dot-tag">romanticizing life</span></div>
-            <div class="curtain-content">
-                <span class="location-prefix location-prefix-left">Originally from</span>
-                <div class="location-label location-left">
-                    <span class="label-english">Mumbai</span>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay">
+        <a href="index.html">Menu</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Section 1: Video Background with Profile -->
+        <section id="about" class="about-section section-fullscreen">
+            <div class="about-content-wrapper">
+
+                <div class="about-video-centered">
+                    <video class="about-profile-video" autoplay loop muted playsinline>
+                        <source src="assets/me.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <span class="location-prefix location-prefix-right">Currently in</span>
-                <div class="location-label location-right">
-                    <span class="label-location">Washington DC</span>
+
+                <div class="about-text-right">
+                    <h2 class="about-title">Product Design Manager</h2>
+                    <p class="about-bio">I do product work that closes the gap between what businesses need and what actually gets built, combining strategy, data fluency, and design execution in a way that's rare to find in one person.<br><br>Moving fluidly between discovery and delivery means fewer costly misfires, shorter cycles from insight to shipped, and no translation loss between what the data says, what the design communicates, and what lands on the roadmap.<br><br>The result: products that are accessible, intentional, and backed by evidence, because good product work is never just one of those things.</p>
+                    <div class="about-cta-group">
+                        <a href="#projects" class="about-cta-btn about-cta-btn--primary">View Projects</a>
+                        <a href="#strips" class="about-cta-btn about-cta-btn--sm">About Me</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Nav Section — full screen, links Primer → Voxels -->
+        <section class="about-nav-section section-fullscreen" id="projects">
+            <div class="about-nav-container">
+                <div class="centered-navigation visible">
+                    <h2 class="info-heading">Projects</h2>
+                    <a href="learn-marathi-web-app.html" class="nav-option"><span class="nav-rect" style="background-image:url('assets/LL-main.png')"></span>LANGUAGE LEARNING APP <span class="nav-tag">Product strategy & full-stack development</span></a>
+                    <a href="tasi.html" class="nav-option"><span class="nav-rect" style="background-image:url('assets/tasimainpicture.png')"></span>TASI <span class="nav-tag">Research-led product design</span></a>
+                    <a href="mahi-restaurant.html" class="nav-option"><span class="nav-rect" style="background-image:url('assets/Wireframe-Mahi.png')"></span>MAHI RESTAURANT <span class="nav-tag">Discovery to launch</span></a>
+                    <a href="primer-seltzer.html" class="nav-option"><span class="nav-rect" style="background-image:url('assets/primer.png')"></span>PRIMER SELTZER <span class="nav-tag">Brand & product design</span></a>
+                    <a href="voxel.html" class="nav-option nav-option-voxel"><span class="nav-rect" style="background-image:url('assets/VOX11.png')"></span>3D VOXELS <span class="nav-tag">Explorations</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Banners -->
+        <section class="red-section" id="strips">
+            <div class="about-text-content">
+
+                    <!-- Scrolling Banner -->
+                    <div class="scrolling-banner scrolling-banner-left">
+                        <div class="banner-content">
+                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> </span>
+                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> </span>
+                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> </span>
+                            <span>PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> PRODUCT DESIGNER <img src="assets/sym1.png" class="banner-icon" alt=""> CREATIVE PORTFOLIO <img src="assets/sym3.png" class="banner-icon" alt=""> </span>
+                        </div>
+                    </div>
+
+                    <div class="scrolling-banner scrolling-banner-middle">
+                        <div class="banner-content">
+                            <span>UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> </span>
+                            <span>UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> </span>
+                            <span>UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> </span>
+                            <span>UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> UX DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> VISUAL DESIGN <img src="assets/sym1.png" class="banner-icon" alt=""> </span>
+                        </div>
+                    </div>
+
+
+            </div>
+        </section>
+
+        <!-- Skills, Experience, Education — Three Column Section -->
+        <section class="info-section" id="info">
+            <div class="info-grid">
+
+                <!-- Left: Skills -->
+                <div class="info-card info-card-skills">
+                    <h2 class="info-heading">Skills and Tools</h2>
+                    <div class="skill-tools skill-tools-flat" data-tools='{"strategy":["Roadmapping","OKRs","RICE / MoSCoW","PRD authoring","Stakeholder alignment","North star metrics","Funnel & retention","A/B testing","SQL","Tableau"],"ai":["Claude","Cursor","Claude Code","Prompt engineering","AI-assisted development","Notion","Photoshop","MagicaVoxel"],"design":["Figma","Design systems","Interaction design","Accessibility","UX writing","Procreate","Illustrator","Mixed-methods research","Usability testing","Journey mapping","Competitive analysis"]}'>
+                        <span class="tool-neutral">Roadmapping</span>
+                        <span class="tool-neutral">OKRs</span>
+                        <span class="tool-neutral">RICE / MoSCoW</span>
+                        <span class="tool-neutral">PRD authoring</span>
+                        <span class="tool-neutral">Stakeholder alignment</span>
+                        <span class="tool-neutral">North star metrics</span>
+                        <span class="tool-neutral">Funnel & retention</span>
+                        <span class="tool-neutral">A/B testing</span>
+                        <span class="tool-neutral">SQL</span>
+                        <span class="tool-neutral">Tableau</span>
+                        <span class="tool-neutral">Claude</span>
+                        <span class="tool-neutral">Cursor</span>
+                        <span class="tool-neutral">Claude Code</span>
+                        <span class="tool-neutral">Prompt engineering</span>
+                        <span class="tool-neutral">AI-assisted development</span>
+                        <span class="tool-neutral">Notion</span>
+                        <span class="tool-neutral">Photoshop</span>
+                        <span class="tool-neutral">MagicaVoxel</span>
+                        <span class="tool-neutral">Figma</span>
+                        <span class="tool-neutral">Design systems</span>
+                        <span class="tool-neutral">Interaction design</span>
+                        <span class="tool-neutral">Accessibility</span>
+                        <span class="tool-neutral">UX writing</span>
+                        <span class="tool-neutral">Procreate</span>
+                        <span class="tool-neutral">Illustrator</span>
+                        <span class="tool-neutral">Mixed-methods research</span>
+                        <span class="tool-neutral">Usability testing</span>
+                        <span class="tool-neutral">Journey mapping</span>
+                        <span class="tool-neutral">Competitive analysis</span>
+                    </div>
+                    <div class="skills-timeline">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-years">
+                            <div class="timeline-year" data-year="strategy">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">Strategy & Analytics</span>
+                            </div>
+                            <div class="timeline-year" data-year="ai">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">AI & Tools</span>
+                            </div>
+                            <div class="timeline-year" data-year="design">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-label">Design & Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle: Experience -->
+                <div class="info-card">
+                    <h2 class="info-heading">Experience</h2>
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <h3 class="experience-role">Product Manager </h3>
+                            <p class="experience-duration">Aug 2025 - Present, Chicago, IL</p>
+                            <p class="experience-company">Rebecca Everlene Trust Company</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Product Designer</h3>
+                            <p class="experience-duration">Jun 2022 - Jun 2023, Mumbai</p>
+                            <p class="experience-company">Primer Seltzer</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Founding Manager</h3>
+                            <p class="experience-duration">Oct 2021 - Jun 2022, Mumbai</p>
+                            <p class="experience-company">TASI</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3 class="experience-role">Product Designer</h3>
+                            <p class="experience-duration">Jan 2020 - Jun 2021, Mumbai</p>
+                            <p class="experience-company">Independent Contractor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Education -->
+                <div class="info-card">
+                    <h2 class="info-heading">Education</h2>
+                    <div class="education-timeline">
+                        <div class="education-item">
+                            <h3 class="education-degree">Master of Science, Engineering Management</h3>
+                            <p class="education-duration">Aug 2023 - May 2025</p>
+                            <p class="education-school">University of Massachusetts Amherst</p>
+                        </div>
+                        <div class="education-item">
+                            <h3 class="education-degree">BE, Electronics Engineering</h3>
+                            <p class="education-duration">Aug 2017 - Jun 2022</p>
+                            <p class="education-school">University of Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="mentally-subsection">
+            <div class="mentally-section">
+                <h3 class="mentally-heading">Mentally at:</h3>
+                <div class="mentally-grid">
+                    <div class="mentally-item">
+                        <img src="assets/M2.JPG" alt="Mentally at 2" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M3.JPG" alt="Mentally at 3" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M4.JPG" alt="Mentally at 4" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M5.JPG" alt="Mentally at 5" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M6.JPG" alt="Mentally at 6" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M7.jpg" alt="Mentally at 7" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M8.jpg" alt="Mentally at 8" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M9.jpg" alt="Mentally at 9" loading="lazy">
+                    </div>
+                    <div class="mentally-item">
+                        <img src="assets/M10.jpg" alt="Mentally at 10" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </div>
-
-    <div class="top-left-logo" id="topLeftLogo">
-        <a href="index.html">
-            <img src="assets/sun red.svg" alt="Urvi" class="index-logo index-logo-red">
-            <img src="assets/sun beige.svg" alt="Urvi" class="index-logo index-logo-beige">
-        </a>
-    </div>
-
-    <img src="assets/mainposter.png" alt="" class="main-poster" id="mainPoster">
-
-
-    <main class="main-content">
-
-        <section id="landing" class="landing-section">
-        </section>
-
     </main>
 
+    <!-- Footer CTA -->
+    <footer class="footer-cta">
+        <div class="footer-content">
+            <h2 class="footer-heading">Like what you see?</h2>
+            <p class="footer-text">
+                Get in touch with me on
+                <a href="https://www.linkedin.com/in/urvidhomne/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function typeText(el, text, speed, callback) {
-                el.textContent = '';
-                var i = 0;
-                function tick() {
-                    el.textContent = text.slice(0, ++i);
-                    if (i < text.length) setTimeout(tick, speed);
-                    else if (callback) setTimeout(callback, 150);
-                }
-                tick();
-            }
+        // Custom cursor
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.getElementById('customCursor');
 
-            var prefixLeft    = document.querySelector('.location-prefix-left');
-            var prefixRight   = document.querySelector('.location-prefix-right');
-            var labelEnglish  = document.querySelector('.label-english');
-            var labelLocation = document.querySelector('.label-location');
-
-            if (prefixLeft)    prefixLeft.textContent    = '';
-            if (prefixRight)   prefixRight.textContent   = '';
-            if (labelEnglish)  labelEnglish.textContent  = '';
-            if (labelLocation) labelLocation.textContent = '';
-
-            var delay = 600;
-
-            setTimeout(function () {
-                typeText(prefixLeft, 'Originally from', 45, function () {
-                    typeText(labelEnglish, 'Mumbai', 90);
-                });
-            }, delay);
-
-            setTimeout(function () {
-                typeText(prefixRight, 'Currently in', 45, function () {
-                    typeText(labelLocation, 'Washington DC', 90);
-                });
-            }, delay + 150);
-        });
-    </script>
-
-    <script>
-    (function () {
-        document.addEventListener('DOMContentLoaded', function () {
-            var dots = Array.from(document.querySelectorAll('.dot-marker')).sort(function (a, b) {
-                return +a.dataset.dotIndex - +b.dataset.dotIndex;
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
             });
-            if (!dots.length) return;
+        });
 
-            var current = 0;
-            var active = true;
-            var timer = null;
+        // Slow down background video and reverse on loop
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgVideo = document.getElementById('aboutBgVideo');
+            if (bgVideo) {
+                bgVideo.playbackRate = 0.3; // 30% speed (slower)
 
-            function next() {
-                if (!active) return;
-                dots.forEach(function (d) { d.classList.remove('dot-active'); });
-                dots[current].classList.add('dot-active');
-                timer = setTimeout(function () {
-                    dots[current].classList.remove('dot-active');
-                    current = (current + 1) % dots.length;
-                    timer = setTimeout(next, 600);
-                }, 3000);
+                // Reverse direction on each loop
+                bgVideo.addEventListener('ended', function() {
+                    // Toggle between forward and reverse
+                    if (bgVideo.playbackRate > 0) {
+                        bgVideo.playbackRate = -0.3; // Play backwards
+                        bgVideo.currentTime = bgVideo.duration;
+                    } else {
+                        bgVideo.playbackRate = 0.3; // Play forwards
+                        bgVideo.currentTime = 0;
+                    }
+                    bgVideo.play();
+                });
             }
 
-            timer = setTimeout(next, 1400);
+            // Nav hover effects — change container background only
+            const navContainer = document.querySelector('.about-nav-container');
+            const caseStudyColors = {
+                'learn-marathi-web-app.html': '#F7AE31',
+                'mahi-restaurant.html': '#5568af',
+                'slack.html': '#A5509F',
+                'tasi.html': '#7B2D8E',
+                'primer-seltzer.html': '#636969',
+                'ai.html': '#CC5500'
+            };
+
+            document.querySelectorAll('.about-nav-section .nav-option').forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    if (!navContainer) return;
+                    const isLight = this.classList.contains('nav-option-voxel');
+                    const href = this.getAttribute('data-href') || this.getAttribute('href');
+                    const color = isLight ? '#E8E8E8' : (caseStudyColors[href] || '');
+                    navContainer.style.backgroundColor = color;
+                    navContainer.classList.toggle('nav-container-dark', !isLight && !!color);
+                });
+
+                option.addEventListener('mouseleave', function() {
+                    if (!navContainer) return;
+                    navContainer.style.backgroundColor = '';
+                    navContainer.classList.remove('nav-container-dark');
+                });
+            });
+
+            // Scroll-based movement for banners
+            function updateBanners() {
+                const bannerLeft = document.querySelector('.scrolling-banner-left');
+                const bannerMiddle = document.querySelector('.scrolling-banner-middle');
+                const scrollY = window.scrollY;
+                const moveAmount = scrollY * 1.0; // Movement speed
+
+                if (bannerLeft) {
+                    bannerLeft.style.transform = `translateX(-${moveAmount}px)`;
+                }
+                if (bannerMiddle) {
+                    bannerMiddle.style.transform = `translateX(${moveAmount - 900}px)`;
+                }
+            }
+
+            window.addEventListener('scroll', updateBanners);
+            updateBanners(); // Call once on load
+
+            const timelineYears = document.querySelectorAll('.timeline-year');
+            const skillToolsElements = document.querySelectorAll('.skill-tools');
+            let selectedCategory = null;
+
+            function updateToolsDisplay(category) {
+                skillToolsElements.forEach(toolElement => {
+                    const toolsData = JSON.parse(toolElement.getAttribute('data-tools'));
+                    const allTools = Object.values(toolsData).flat();
+                    const seen = [];
+                    const unique = allTools.filter(t => seen.includes(t) ? false : seen.push(t));
+                    if (!category) {
+                        toolElement.innerHTML = unique.map(tool =>
+                            `<span class="tool-neutral">${tool}</span>`
+                        ).join('');
+                    } else {
+                        const activeTools = toolsData[category] || [];
+                        toolElement.innerHTML = unique.map(tool =>
+                            `<span class="${activeTools.includes(tool) ? 'tool-active' : 'tool-future'}">${tool}</span>`
+                        ).join('');
+                    }
+                });
+            }
+
+            timelineYears.forEach(yearElement => {
+                yearElement.addEventListener('click', function() {
+                    timelineYears.forEach(y => y.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedCategory = this.getAttribute('data-year');
+                    updateToolsDisplay(selectedCategory);
+                });
+            });
+
+            updateToolsDisplay(selectedCategory);
+
+            // Drag-to-scroll for Mentally At on mobile
+            const mentallySection = document.querySelector('.mentally-section');
+            if (mentallySection && window.innerWidth < 768) {
+                let isDragging = false;
+                let startX = 0;
+                let startScroll = 0;
+
+                mentallySection.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.pageX;
+                    startScroll = mentallySection.scrollLeft;
+                    mentallySection.style.cursor = 'grabbing';
+                });
+
+                mentallySection.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    mentallySection.scrollLeft = startScroll - (e.pageX - startX);
+                });
+
+                mentallySection.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    mentallySection.style.cursor = 'grab';
+                });
+
+                mentallySection.addEventListener('mouseleave', () => {
+                    isDragging = false;
+                    mentallySection.style.cursor = 'grab';
+                });
+
+                mentallySection.style.cursor = 'grab';
+            }
         });
-    })();
     </script>
 
-    <script src="js/main.js"></script>
+    <!-- Burger Menu Script -->
+    <script src="js/burger-menu.js"></script>
+
+<!-- Image Loader Script -->
     <script src="js/image-loader.js"></script>
 
 </body>
