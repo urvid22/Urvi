@@ -1,8 +1,8 @@
 /* ==========================================================================
    TASI — Case Study Sidebar Layout
    Page-specific: scoped to tasi.html only (via the existing .tasi-page body
-   class). Mirrors the format built for learn-marathi-web-app.html and
-   mahi-restaurant.html (fixed logo + fixed sidebar with scroll-spy,
+   class). Mirrors the format built for learnMarathi.html and
+   mah'eats.html (fixed logo + fixed sidebar with scroll-spy,
    flattened type, no thin divider lines, wide content column). The
    Lookbook and Designs media sections stay outside this layout, full-bleed
    and untouched, exactly as they were.
@@ -115,6 +115,15 @@
     color: #000000;
 }
 
+/* ── Page title ── */
+.ts-page-title {
+    text-align: center;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 500;
+    color: #000000;
+    margin: 0 auto 32px;
+}
+
 /* ── Top metadata row ── */
 .ts-meta-row {
     display: grid;
@@ -141,6 +150,16 @@
     font-weight: 400;
     color: #000000;
     line-height: 1.5;
+}
+
+/* ── Hero image ── */
+.ts-hero-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    margin: 0 auto 56px;
 }
 
 /* ── Sections nested in the content column: drop the full-bleed

@@ -1,5 +1,5 @@
-// Mahi Restaurant case study — sidebar scroll-spy + smooth-scroll jump.
-// Page-specific: only referenced by mahi-restaurant.html.
+// Mah'eats case study — sidebar scroll-spy + smooth-scroll jump.
+// Page-specific: only referenced by mah'eats.html.
 (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('.mr-sidebar-link'));
     if (!links.length) return;

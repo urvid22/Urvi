@@ -1,5 +1,5 @@
 // Learn Marathi case study — sidebar scroll-spy + smooth-scroll jump.
-// Page-specific: only referenced by learn-marathi-web-app.html.
+// Page-specific: only referenced by learnMarathi.html.
 (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('.lm-sidebar-link'));
     if (!links.length) return;

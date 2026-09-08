@@ -1,6 +1,6 @@
 /* ==========================================================================
    Learn Marathi — Case Study Sidebar Layout
-   Page-specific: scoped to learn-marathi-web-app.html only.
+   Page-specific: scoped to learnMarathi.html only.
    ========================================================================== */
 
 /* ── Logo / top nav ──
@@ -100,6 +100,15 @@
 
 .lm-sidebar-item.is-active .lm-sidebar-label {
     color: #000000;
+}
+
+/* ── Page title ── */
+.lm-page-title {
+    text-align: center;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 500;
+    color: #000000;
+    margin: 0 auto 32px;
 }
 
 /* ── Top metadata row ── */

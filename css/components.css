@@ -411,6 +411,12 @@ body.nav-hover.nav-hover-light .nav-option-voxel:hover {
     animation: rotate 20s linear infinite;
 }
 
+/* Small name mark shown top-right of the nav on mobile only (see media queries below) */
+.nav-name-logo {
+    display: none;
+    height: auto;
+}
+
 /* About Link */
 .about-link {
     font-family: 'Montserrat', sans-serif;
@@ -2301,6 +2307,11 @@ body:has(.work-nav) .nav-link {
         height: 70px;
     }
 
+    .nav-name-logo {
+        display: block;
+        height: 22px;
+    }
+
     .about-link {
         font-size: 16px;
     }
@@ -2645,6 +2656,10 @@ body:has(.work-nav) .nav-link {
 
     .nav-logo {
         height: 60px;
+    }
+
+    .nav-name-logo {
+        height: 18px;
     }
 
     .nav-link {

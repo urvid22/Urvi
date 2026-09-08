@@ -2,7 +2,7 @@
    Primer Seltzer — Case Study Sidebar Layout
    Page-specific: scoped to primer-seltzer.html only (via the existing
    .primer-page body class). Mirrors the format built for
-   learn-marathi-web-app.html, mahi-restaurant.html, and tasi.html (fixed
+   learnMarathi.html, mah'eats.html, and tasi.html (fixed
    logo + fixed sidebar with scroll-spy, flattened type, no thin divider
    lines, wide content column). The Designs media section stays outside
    this layout, full-bleed and untouched, exactly as it was.
@@ -109,6 +109,15 @@
 
 .pr-sidebar-item.is-active .pr-sidebar-label {
     color: #000000;
+}
+
+/* ── Page title ── */
+.pr-page-title {
+    text-align: center;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 500;
+    color: #000000;
+    margin: 0 auto 32px;
 }
 
 /* ── Top metadata row ── */

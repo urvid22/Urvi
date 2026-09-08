@@ -115,14 +115,16 @@
     padding: 80px 60px;
 }
 
-.tasi-designs .section-title {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 900;
-    color: #860a22;
-    text-align: center;
-    margin-bottom: 60px;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
+/* Match the regular-weight section titles used everywhere else on the page
+   (this section lives outside .ts-content, so it doesn't inherit that override). */
+.tasi-designs .marathi-section-title {
+    font-weight: 400;
+    font-size: clamp(18px, 2.2vw, 26px);
+}
+
+.tasi-designs .marathi-section-number {
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 400;
 }
 
 /* Masonry Grid for TASI */

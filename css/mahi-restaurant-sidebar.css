@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Mahi Restaurant — Case Study Sidebar Layout
-   Page-specific: scoped to mahi-restaurant.html only. Mirrors the format
-   built for learn-marathi-web-app.html (fixed logo + fixed sidebar with
+   Mah'eats — Case Study Sidebar Layout
+   Page-specific: scoped to mah'eats.html only. Mirrors the format
+   built for learnMarathi.html (fixed logo + fixed sidebar with
    scroll-spy, flattened type, no thin divider lines, wide content column).
    ========================================================================== */
 
@@ -100,6 +100,15 @@
 
 .mr-sidebar-item.is-active .mr-sidebar-label {
     color: #000000;
+}
+
+/* ── Page title ── */
+.mr-page-title {
+    text-align: center;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 500;
+    color: #000000;
+    margin: 0 auto 32px;
 }
 
 /* ── Top metadata row ── */

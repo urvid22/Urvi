@@ -131,12 +131,44 @@
 }
 
 /* ==========================================================================
-   Mobile: center the topmost (hero) video instead of pinning it right.
+   Mobile: put the hero video in normal flow, centered and on top, with the
+   Contact Me box and Experience/Education card stacked below it.
    ========================================================================== */
 @media (max-width: 768px) {
     .edu-exp-video {
-        left: 50%;
+        position: static;
+        display: block;
+        left: auto;
         right: auto;
-        transform: translateX(-50%);
+        top: auto;
+        transform: none;
+        margin: 0 auto 28px;
+    }
+
+    #info-top .info-grid {
+        justify-content: center;
+    }
+
+    /* Center the Contact Me box instead of pinning it to the right, and
+       stack it cleanly above the Experience/Education card (no overlap). */
+    .info-card-col {
+        align-items: center;
+        gap: 20px;
+        margin-top: 0;
+    }
+
+    .info-small-box {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .info-small-box-sym {
+        right: auto;
+        left: calc(50% + 100px);
+        transform: translate(-50%, -50%);
+    }
+
+    .info-small-box-sym:hover {
+        transform: translate(-50%, -50%) rotate(12deg);
     }
 }
